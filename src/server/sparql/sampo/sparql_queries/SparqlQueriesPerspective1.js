@@ -14,6 +14,13 @@ export const workProperties = `
     ?id crm:P108i_was_produced_by/crm:P7_took_place_at ?productionPlace__id .
     ?productionPlace__id skos:prefLabel ?productionPlace__prefLabel .
   }
+  UNION
+  {
+    ?id crm:P65_shows_visual_item ?i_BNODE .
+    ?i_BNODE a crm:E36_Visual_Item .
+    ?i_BNODE <https://linked.art/ns/terms/digitally_shown_by> ?image__id.
+    ?image__id <https://linked.art/ns/terms/access_point> ?image__url .
+  }
 `
 
 export const knowledgeGraphMetadataQuery = `

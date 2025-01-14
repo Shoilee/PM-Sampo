@@ -327,8 +327,8 @@
           "label": "Production Place",
           "description": "The author(s) associated with the Work. Because of the structure of entries in the Schoenberg Database, the authors shown as being associated with a Work may actually be associated with other Works in the same manuscript instead."
         },
-        "language": {
-          "label": "Language",
+        "image": {
+          "label": "image",
           "description": "The language in which a Work is written in the manuscript (i.e., an “Expression” of a Work). One manuscript may contain multiple languages."
         },
         "expression": {

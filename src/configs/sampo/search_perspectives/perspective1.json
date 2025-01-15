@@ -114,7 +114,7 @@
             "sortByPredicate": "crm:P108i_was_produced_by/crm:P7_took_place_at/skos:prefLabel",
             "sortDirection": "desc"
         },
-        "timeSpan": {
+        "productionTimeSpan": {
             "containerClass": "ten",
             "facetType": "timespan",
             "startProperty": "crm:P82a_begin_of_the_begin", 

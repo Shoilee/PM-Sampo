@@ -113,6 +113,18 @@
             "sortBy": "instanceCount",
             "sortByPredicate": "crm:P108i_was_produced_by/crm:P7_took_place_at/skos:prefLabel",
             "sortDirection": "desc"
+        },
+        "timeSpan": {
+            "containerClass": "ten",
+            "facetType": "timespan",
+            "startProperty": "crm:P82a_begin_of_the_begin", 
+            "endProperty": "crm:P82b_end_of_the_end",
+            "filterType": "dateFilter",
+            "min": "0006-01-01",
+            "max": "2013-01-01", 
+            "predicate": "crm:P108i_was_produced_by/crm:P4_has_time-span",
+            "sortByAscPredicate": "crm:P108i_was_produced_by/crm:P4_has_time-spancrm:P82a_begin_of_the_begin",
+            "sortByDescPredicate": "crm:P108i_was_produced_by/crm:P4_has_time-spancrm:P82b_end_of_the_end"
         }
         
     }

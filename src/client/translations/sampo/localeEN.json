@@ -331,8 +331,8 @@
           "label": "image",
           "description": "The language in which a Work is written in the manuscript (i.e., an “Expression” of a Work). One manuscript may contain multiple languages."
         },
-        "expression": {
-          "label": "Expression",
+        "timeSpan": {
+          "label": "Time-Span",
           "description": "The expression(s) of the Work."
         },
         "manuscript": {

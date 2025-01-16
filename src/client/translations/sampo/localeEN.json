@@ -331,9 +331,29 @@
           "description": "The name or title of the Work.",
           "textFacetInputPlaceholder": "Search..."
         },
+        "acqusitionType": {
+          "label": "Acqusition Type",
+          "description": "Type of acquisition event."
+        },
         "productionPlace": {
-          "label": "Production Place",
-          "description": "The author(s) associated with the Work. Because of the structure of entries in the Schoenberg Database, the authors shown as being associated with a Work may actually be associated with other Works in the same manuscript instead."
+          "label": "Place of Origin",
+          "description": "The location where the manuscript was written. Multiple production places may appear for a single manuscript due to the following reasons: 1) there are discrepancies in the contributing data source, 2) there are discrepancies between several contributing data sources, 3) the precise date is uncertain, 4) the production indeed took place on several occasions (e.g. for composite manuscripts)."
+        },
+        "productionTimeSpan": {
+          "label": "Production date",
+          "description": "The date when the manuscript was written. Multiple production dates may appear for a single manuscript due to the following reasons: 1) there are discrepancies in the contributing data source, 2) there are discrepancies between several contributing data sources, 3) the precise date is uncertain, 4) the production indeed took place on several occasions (e.g. for composite manuscripts)."
+        },
+        "acqusitionTimeSpan": {
+          "label": "Acqusition Time-period",
+          "description": "The date or time period associated with the acquisition event."
+        },
+        "transferedTitleFrom": {
+          "label": "Transfered Title From",
+          "description": "The previous owner of the objects."
+        },
+        "transferedTitleTo": {
+          "label": "Transfered Title To",
+          "description": "The next owner of the objects."
         },
         "image": {
           "label": "image",

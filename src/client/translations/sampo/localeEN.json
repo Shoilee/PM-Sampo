@@ -356,28 +356,32 @@
           "description": "The next owner of the objects."
         },
         "image": {
-          "label": "image",
+          "label": "Image",
           "description": "The language in which a Work is written in the manuscript (i.e., an “Expression” of a Work). One manuscript may contain multiple languages."
         },
         "timeSpan": {
           "label": "Time-Span",
           "description": "The expression(s) of the Work."
         },
-        "manuscript": {
-          "label": "Manuscript",
-          "description": "The specific manuscript(s) in which the Work can be found."
+        "maker": {
+          "label": "Maker",
+          "description": "The creator of the object"
         },
         "productionTimespan": {
           "label": "Manuscript production date",
           "description": "The date(s) when the manuscript(s) in which the Work can be found were written. Multiple production dates may appear for a single manuscript, when there are discrepancies between the contributing data source or when the precise date is uncertain."
         },
-        "collection": {
-          "label": "Collection",
-          "description": "The specific collection(s) of manuscripts in which a Work can be found."
+        "type": {
+          "label": "Type",
+          "description": "Different type of objects based on the thesaurus"
         },
-        "source": {
-          "label": "Source",
-          "description": "The source database(s) (Schoenberg, Bibale, and Bodleian) that the Work occurs in. Click on the result table link to view the original record on the source’s website."
+        "materials": {
+          "label": "Materials",
+          "description": "Object consisits of different physical materials"
+        },
+        "intendedFor": {
+          "label": "Intended Use",
+          "description": "Intended use of the object"
         }
       }
     },

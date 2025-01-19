@@ -21,6 +21,12 @@ export const workProperties = `
     ?i_BNODE <https://linked.art/ns/terms/digitally_shown_by> ?image__id.
     ?image__id <https://linked.art/ns/terms/access_point> ?image__url .
   }
+  UNION
+  # TODO: My note is not showing up in the UI
+  {
+    ?id crm:P3_has_note ?note.
+  }
+
 `
 
 export const knowledgeGraphMetadataQuery = `

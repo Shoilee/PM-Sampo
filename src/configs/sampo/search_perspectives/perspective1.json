@@ -99,19 +99,40 @@
             "sortValues": true,
             "numberedList": false,
             "minWidth": 250
+        },
+        {
+            "id": "note",
+            "valueType": "literal",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 250
         }
     ],
     "facets": {
-        "acqusitionType": {
+        "type": {
             "containerClass": "ten",
             "facetType": "list",
             "filterType": "uriFilter",
             "pieChartButton": true,
-            "predicate": "crm:P24i_changed_ownership_through/rdfs:label",
+            "predicate": "crm:P2_has_type/skos:altLabel",
             "searchField": true,
             "sortButton": true,
             "sortBy": "instanceCount",
-            "sortByPredicate": "crm:P24i_changed_ownership_through/rdfs:label",
+            "sortByPredicate": "crm:P24i_changed_ownership_through/crm:P23_transferred_title_from/rdfs:label",
+            "sortDirection": "desc"
+        },
+        "maker": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "pieChartButton": true,
+            "predicate": "crm:P108i_was_produced_by/crm:P14_carried_out_by/rdfs:label",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "crm:P24i_changed_ownership_through/crm:P23_transferred_title_from/rdfs:label",
             "sortDirection": "desc"
         },
         "productionPlace": {
@@ -137,6 +158,18 @@
             "predicate": "crm:P108i_was_produced_by/crm:P4_has_time-span",
             "sortByAscPredicate": "crm:P108i_was_produced_by/crm:P4_has_time-spancrm:P82a_begin_of_the_begin",
             "sortByDescPredicate": "crm:P108i_was_produced_by/crm:P4_has_time-spancrm:P82b_end_of_the_end"
+        },
+        "acqusitionType": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "pieChartButton": true,
+            "predicate": "crm:P24i_changed_ownership_through/rdfs:label",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "crm:P24i_changed_ownership_through/rdfs:label",
+            "sortDirection": "desc"
         },
         "acqusitionTimeSpan": {
             "containerClass": "ten",
@@ -172,6 +205,29 @@
             "sortButton": true,
             "sortBy": "instanceCount",
             "sortByPredicate": "crm:P24i_changed_ownership_through/crm:P22_transferred_title_to",
+            "sortDirection": "desc"
+        },
+        "materials": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "pieChartButton": true,
+            "predicate": "crm:P45_consists_of/skos:altLabel",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "crm:P45_consists_of/skos:altLabel",
+            "sortDirection": "desc"
+        },
+        "intendedFor": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "pieChartButton": true,
+            "predicate": "crm:P103_was_intended_for/crm:P190_has_symbolic_content",
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "crm:P24i_changed_ownership_through/crm:P190_has_symbolic_content",
             "sortDirection": "desc"
         }
     }

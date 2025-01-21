@@ -212,6 +212,17 @@
             "sortByPredicate": "crm:P24i_changed_ownership_through/crm:P22_transferred_title_to",
             "sortDirection": "desc"
         },
+        "historicalEvents": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "crm:P141i_was_assigned_by/crm:P141_assigned",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "crm:P141i_was_assigned_by/crm:P141_assigned",
+            "sortDirection": "desc"
+        },
         "materials": {
             "containerClass": "ten",
             "facetType": "list",

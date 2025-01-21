@@ -371,6 +371,10 @@
           "label": "Manuscript production date",
           "description": "The date(s) when the manuscript(s) in which the Work can be found were written. Multiple production dates may appear for a single manuscript, when there are discrepancies between the contributing data source or when the precise date is uncertain."
         },
+        "historicalEvents": {
+          "label": "Connected Historical Events",
+          "description": "The historical events connected to the object"
+        },
         "type": {
           "label": "Type",
           "description": "Different type of objects based on the thesaurus"

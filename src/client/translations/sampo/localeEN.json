@@ -394,7 +394,7 @@
       }
     },
     "perspective3": {
-      "label": "Perspective 3",
+      "label": "Provenance Activity",
       "facetResultsType": "events",
       "shortDescription": "Perspective 3 description",
       "longDescription": "<p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"> Use this perspective to access data related to events associated with the histories of manuscripts and manuscript collections over the centuries. See <a href=\"/instructions\">instructions</a> for using the filters. The result view can be selected using the tabs: </p> <ul class=\"MuiTypography-root MuiTypography-body1\"> <li> <strong>TABLE</STRONG> view includes all events in the MMM data. </li> <li> <strong>MAP</STRONG> view visualizes the events that have location information on a map. </li> <li> <strong>EXPORT</strong> the SPARQL query used to generate the result table view into YASGUI query editor. </li> </ul>",
@@ -415,8 +415,8 @@
           "label": "Language",
           "description": "The language in which a Work is written in the manuscript (i.e., an “Expression” of a Work). One manuscript may contain multiple languages."
         },
-        "manuscript": {
-          "label": "Manuscript / Collection",
+        "collection": {
+          "label": "Collection",
           "description": "The manuscript or manuscript collection associated with the event."
         },
         "eventTimespan": {
@@ -436,12 +436,12 @@
           "description": "Note"
         },
         "surrender": {
-          "label": "Custody surrendered by",
-          "description": "Custody surrendered by"
+          "label": "Custody surrendered by / Title transferred from",
+          "description": "Custody surrendered by or Title transferred from"
         },
         "receiver": {
-          "label": "Custody received by",
-          "description": "Custody received by"
+          "label": "Custody received by / Title transferred to",
+          "description": "Custody received by or Title transferred to"
         },
         "observedOwner": {
           "label": "Observed owner",

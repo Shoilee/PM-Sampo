@@ -1,14 +1,15 @@
 {
     "id": "perspective3",
     "endpoint": {
-        "url": "https://ldf.fi/mmm/sparql",
+        "url": "https://api.colonialcollections.nl/datasets/nmvw/collection-archives/sparql",
         "useAuth": false,
         "prefixesFile": "SparqlQueriesPrefixes.js"
     },
     "sparqlQueriesFile": "SparqlQueriesPerspective3.js",
     "baseURI": "http://ldf.fi/mmm",
     "URITemplate": "<BASE_URI>/event/<LOCAL_ID>",
-    "facetClass": "crm:E10_Transfer_of_Custody crm:E12_Production mmm-schema:ManuscriptActivity",
+    "facetClass": "crm:E7_Activity",
+    "defaultConstraint": "<SUBJECT> crm:P9_consists_of ?event. [crm:P141i_was_assigned_by/crm:P141_assigned <https://hdl.handle.net/20.500.11840/event423>] crm:P24i_changed_ownership_through|crm:P30i_custody_transferred_through ?event",
     "frontPageImage": "main_page/events-452x262.jpg",
     "searchMode": "faceted-search",
     "enableDynamicLanguageChange": false,
@@ -47,6 +48,14 @@
                     }
                 }
             }
+        },
+        "export": {
+            "tabID": 1,
+            "component": "Export",
+            "tabPath": "export",
+            "tabIcon": "CloudDownload",
+            "resultClass": "perspective3",
+            "facetClass": "perspective3"
         },
         "placesEvents": {
             "tabID": 1,
@@ -91,7 +100,7 @@
             "minWidth": 200
         },
         {
-            "id": "manuscript",
+            "id": "collection",
             "valueType": "object",
             "makeLink": true,
             "externalLink": false,
@@ -109,7 +118,7 @@
             "minWidth": 200
         },
         {
-            "id": "place",
+            "id": "surrender",
             "valueType": "object",
             "makeLink": true,
             "externalLink": false,
@@ -118,26 +127,13 @@
             "minWidth": 250
         },
         {
-            "id": "surrender",
-            "valueType": "object",
-            "makeLink": true,
-            "externalLink": false,
-            "sortValues": true,
-            "numberedList": false,
-            "minWidth": 250,
-            "onlyOnInstancePage": true,
-            "onlyForClass": "http://erlangen-crm.org/current/E10_Transfer_of_Custody"
-        },
-        {
             "id": "receiver",
             "valueType": "object",
             "makeLink": true,
             "externalLink": false,
             "sortValues": true,
             "numberedList": false,
-            "minWidth": 250,
-            "onlyOnInstancePage": true,
-            "onlyForClass": "http://erlangen-crm.org/current/E10_Transfer_of_Custody"
+            "minWidth": 250
         },
         {
             "id": "observedOwner",
@@ -173,18 +169,15 @@
     ],
     "facets": {
         "type": {
-            "containerClass": "three",
-            "facetLabelPredicate": "skos:prefLabel|rdfs:label",
+            "containerClass": "two",
             "facetType": "list",
-            "facetValueFilter": "FILTER(?id NOT IN ( <http://ldf.fi/mmm/schema/PlaceNationality> ))",
             "filterType": "uriFilter",
-            "predicate": "a",
-            "sortBy": "prefLabel",
-            "sortByPredicate": "a/(skos:prefLabel|rdfs:label)",
-            "sortDirection": "asc",
-            "uriFilter": null
+            "pieChartButton": true,
+            "predicate": "crm:P9_consists_of/a",
+            "searchField": false,
+            "sortButton": false
         },
-        "manuscript": {
+        "collection": {
             "containerClass": "one",
             "facetType": "text",
             "filterType": "textFilter",

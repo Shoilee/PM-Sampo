@@ -9,7 +9,7 @@
     "baseURI": "http://ldf.fi/mmm",
     "URITemplate": "<BASE_URI>/work/<LOCAL_ID>",
     "facetClass": "crm:E22_Human-Made_Object",
-    "defaultConstraint": "<SUBJECT> crm:P141i_was_assigned_by/crm:P141_assigned [a crm:E5_Event] .",
+    "defaultConstraint": "<SUBJECT> crm:P141i_was_assigned_by/crm:P141_assigned <https://hdl.handle.net/20.500.11840/event423> .",
     "frontPageImage": "main_page/works-452x262.jpg",
     "searchMode": "faceted-search",
     "enableDynamicLanguageChange": false,
@@ -101,8 +101,17 @@
             "minWidth": 250
         },
         {
-            "id": "note",
-            "valueType": "literal",
+            "id": "productionTimeSpan",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 250
+        },
+        {
+            "id": "acquisitionTimeSpan",
+            "valueType": "object",
             "makeLink": false,
             "externalLink": false,
             "sortValues": true,
@@ -161,7 +170,7 @@
             "sortByAscPredicate": "crm:P108i_was_produced_by/crm:P4_has_time-spancrm:P82a_begin_of_the_begin",
             "sortByDescPredicate": "crm:P108i_was_produced_by/crm:P4_has_time-spancrm:P82b_end_of_the_end"
         },
-        "acqusitionType": {
+        "acquisitionType": {
             "containerClass": "ten",
             "facetType": "list",
             "filterType": "uriFilter",
@@ -174,7 +183,7 @@
             "sortByPredicate": "crm:P24i_changed_ownership_through/rdfs:label",
             "sortDirection": "desc"
         },
-        "acqusitionTimeSpan": {
+        "acquisitionTimeSpan": {
             "containerClass": "ten",
             "facetType": "timespan",
             "startProperty": "crm:P82a_begin_of_the_begin", 

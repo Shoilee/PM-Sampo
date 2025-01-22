@@ -22,9 +22,18 @@ export const workProperties = `
     ?image__id <https://linked.art/ns/terms/access_point> ?image__url .
   }
   UNION
-  # TODO: My note is not showing up in the UI
   {
-    ?id crm:P3_has_note ?note.
+    ?id crm:P108i_was_produced_by/crm:P4_has_time-span ?productionTimeSpan__id.
+    ?productionTimeSpan__id crm:P82a_begin_of_the_begin ?productionTimeSpan__start .
+    ?productionTimeSpan__id crm:P82b_end_of_the_end ?productionTimeSpan__end .
+    BIND(CONCAT(STR(?productionTimeSpan__start), " --- " , STR(?productionTimeSpan__end) ) AS ?productionTimeSpan__prefLabel)
+  }
+  UNION
+  {
+    ?id crm:P24i_changed_ownership_through/crm:P4_has_time-span ?acquisitionTimeSpan__id.
+    ?acquisitionTimeSpan__id crm:P82a_begin_of_the_begin ?acquisitionTimeSpan__start .
+    ?acquisitionTimeSpan__id crm:P82b_end_of_the_end ?acquisitionTimeSpan__end .
+    BIND(CONCAT(STR(?acquisitionTimeSpan__start), " --- " , STR(?acquisitionTimeSpan__end) ) AS ?acquisitionTimeSpan__prefLabel)
   }
 
 `

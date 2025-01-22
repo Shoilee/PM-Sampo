@@ -218,7 +218,7 @@
           "label": "Work",
           "description": "The intellectual content (works) contained in the manuscript."
         },
-        "acqusitionType": {
+        "acquisitionType": {
           "label": "Acqusition Type",
           "description": "Type of acquisition event."
         },
@@ -230,8 +230,8 @@
           "label": "Production date",
           "description": "The date when the manuscript was written. Multiple production dates may appear for a single manuscript due to the following reasons: 1) there are discrepancies in the contributing data source, 2) there are discrepancies between several contributing data sources, 3) the precise date is uncertain, 4) the production indeed took place on several occasions (e.g. for composite manuscripts)."
         },
-        "acqusitionTimeSpan": {
-          "label": "Acqusition Time-period",
+        "acquisitionTimeSpan": {
+          "label": "Acquisition Time-period",
           "description": "The date or time period associated with the acquisition event."
         },
         "transferedTitleFrom": {
@@ -313,9 +313,9 @@
       }
     },
     "perspective1": {
-      "label": "Production",
+      "label": "Objects",
       "facetResultsType": "objects",
-      "shortDescription": "Object production description",
+      "shortDescription": "Object description",
       "longDescription": "<p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"> Use this perspective to access data related to Works. The MMM data model follows the <a href='https://www.ifla.org/publications/node/11240' target='_blank' rel='noopener noreferrer'>FRBRoo</a> definition of a work, which refers to “distinct concepts or combinations of concepts identified in artistic and intellectual expressions.” Works contain title and author information. If two or more source datasets include the same Work and this has been verified, the information from the source datasets has been merged into one Work. See <a href=\"/instructions\">instructions</a> for using the filters. The result view can be selected using the tabs: </p> <ul class=\"MuiTypography-root MuiTypography-body1\"> <li> <strong>TABLE</STRONG> view gives you a list of specific works, and the manuscripts and manuscript collections in which they can be found. </li> <li> <strong>EXPORT</strong> the SPARQL query used to generate the result table view into YASGUI query editor. </li> </ul>",
       "instancePage": {
         "label": "Work",
@@ -331,8 +331,12 @@
           "description": "The name or title of the Work.",
           "textFacetInputPlaceholder": "Search..."
         },
-        "acqusitionType": {
-          "label": "Acqusition Type",
+        "note": {
+          "label": "Note",
+          "description": "Additional information about the Object."
+        },
+        "acquisitionType": {
+          "label": "Acquisition Type",
           "description": "Type of acquisition event."
         },
         "productionPlace": {
@@ -343,7 +347,7 @@
           "label": "Production date",
           "description": "The date when the manuscript was written. Multiple production dates may appear for a single manuscript due to the following reasons: 1) there are discrepancies in the contributing data source, 2) there are discrepancies between several contributing data sources, 3) the precise date is uncertain, 4) the production indeed took place on several occasions (e.g. for composite manuscripts)."
         },
-        "acqusitionTimeSpan": {
+        "acquisitionTimeSpan": {
           "label": "Acqusition Time-period",
           "description": "The date or time period associated with the acquisition event."
         },

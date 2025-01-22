@@ -101,7 +101,25 @@
             "minWidth": 250
         },
         {
+            "id": "acquisitionType",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 250
+        },
+        {
             "id": "acquisitionTimeSpan",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 250
+        },
+        {
+            "id": "transferedTitleFrom",
             "valueType": "object",
             "makeLink": false,
             "externalLink": false,

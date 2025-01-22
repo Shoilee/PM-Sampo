@@ -23,6 +23,11 @@ export const workProperties = `
   }
   UNION
   {
+    ?id crm:P24i_changed_ownership_through ?acquisitionType__id.
+    ?acquisitionType__id rdfs:label ?acquisitionType__prefLabel .
+  }
+  UNION
+  {
     ?id crm:P108i_was_produced_by/crm:P4_has_time-span ?productionTimeSpan__id.
     ?productionTimeSpan__id crm:P82a_begin_of_the_begin ?productionTimeSpan__start .
     ?productionTimeSpan__id crm:P82b_end_of_the_end ?productionTimeSpan__end .
@@ -34,6 +39,11 @@ export const workProperties = `
     ?acquisitionTimeSpan__id crm:P82a_begin_of_the_begin ?acquisitionTimeSpan__start .
     ?acquisitionTimeSpan__id crm:P82b_end_of_the_end ?acquisitionTimeSpan__end .
     BIND(CONCAT(STR(?acquisitionTimeSpan__start), " --- " , STR(?acquisitionTimeSpan__end) ) AS ?acquisitionTimeSpan__prefLabel)
+  }
+  UNION
+  {
+    ?id crm:P24i_changed_ownership_through/crm:P23_transferred_title_from ?transferedTitleFrom__id.
+    ?transferedTitleFrom__id rdfs:label ?transferedTitleFrom__prefLabel .
   }
 
 `

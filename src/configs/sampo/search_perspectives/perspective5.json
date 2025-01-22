@@ -1,11 +1,11 @@
 {
-    "id": "perspective2",
+    "id": "perspective5",
     "endpoint": {
         "url": "https://api.colonialcollections.nl/datasets/nmvw/collection-archives/sparql",
         "useAuth": false,
         "prefixesFile": "SparqlQueriesPrefixes.js"
     },
-    "sparqlQueriesFile": "SparqlQueriesPerspective2.js",
+    "sparqlQueriesFile": "SparqlQueriesPerspective5.js",
     "baseURI": "http://ldf.fi/mmm",
     "URITemplate": "<BASE_URI>/manifestation_singleton/<LOCAL_ID>",
     "facetClass": "crm:E22_Human-Made_Object",
@@ -18,7 +18,7 @@
     "defaultInstancePageTab": "table",
     "includeInSitemap": true,
     "resultClasses": {
-        "perspective2": {
+        "perspective5": {
             "paginatedResultsConfig": {
                 "tabID": 0,
                 "component": "ResultTable",
@@ -112,7 +112,7 @@
             "tabPath": "production_places",
             "tabIcon": "AddLocation",
             "sparqlQuery": "productionPlacesQuery",
-            "facetClass": "perspective2",
+            "facetClass": "perspective5",
             "filterTarget": "manuscripts",
             "resultMapper": "mapPlaces",
             "facetID": "productionPlace",
@@ -130,7 +130,7 @@
             "tabPath": "production_places_heatmap",
             "tabIcon": "AddLocation",
             "sparqlQuery": "productionPlacesQuery",
-            "facetClass": "perspective2",
+            "facetClass": "perspective5",
             "filterTarget": "manuscripts",
             "resultMapper": "mapPlaces",
             "layerType": "heatmapLayer",
@@ -144,7 +144,7 @@
             "tabPath": "last_known_locations",
             "tabIcon": "LocationOn",
             "sparqlQuery": "lastKnownLocationsQuery",
-            "facetClass": "perspective2",
+            "facetClass": "perspective5",
             "filterTarget": "manuscripts",
             "resultMapper": "mapPlaces",
             "facetID": "lastKnownLocation",
@@ -159,7 +159,7 @@
             "tabPath": "migrations",
             "tabIcon": "Redo",
             "sparqlQuery": "migrationsQuery",
-            "facetClass": "perspective2",
+            "facetClass": "perspective5",
             "filterTarget": "manuscript",
             "resultMapper": "makeObjectList",
             "layerType": "arcLayer",
@@ -191,7 +191,7 @@
                 "productionTimespanLineChartUpper": {
                     "height": "70%",
                     "sparqlQuery": "productionsByDecadeQuery",
-                    "facetClass": "perspective2",
+                    "facetClass": "perspective5",
                     "filterTarget": "instance",
                     "resultMapper": "mapLineChart",
                     "resultMapperConfig": {
@@ -211,7 +211,7 @@
                 "productionTimespanLineChartLower": {
                     "height": "30%",
                     "sparqlQuery": "productionsByDecadeQueryLower",
-                    "facetClass": "perspective2",
+                    "facetClass": "perspective5",
                     "filterTarget": "instance",
                     "resultMapper": "mapLineChart",
                     "resultMapperConfig": {
@@ -232,7 +232,7 @@
         },
         "productionsByDecadeAndCountry": {
             "sparqlQuery": "productionsByDecadeAndCountryQuery",
-            "facetClass": "perspective2",
+            "facetClass": "perspective5",
             "filterTarget": "manuscript",
             "resultMapper": "makeObjectList",
             "postprocess": {
@@ -248,7 +248,7 @@
             "tabPath": "event_dates",
             "tabIcon": "ShowChart",
             "sparqlQuery": "eventsByDecadeQuery",
-            "facetClass": "perspective2",
+            "facetClass": "perspective5",
             "filterTarget": "manuscript",
             "resultMapper": "mapMultipleLineChart",
             "resultMapperConfig": {
@@ -287,7 +287,7 @@
             "tabPath": "network",
             "tabIcon": "BubbleChart",
             "sparqlQuery": "manuscriptFacetResultsNetworkLinksQuery",
-            "facetClass": "perspective2",
+            "facetClass": "perspective5",
             "sparqlQueryNodes": "manuscriptNetworkNodesQuery",
             "filterTarget": "manuscript",
             "useNetworkAPI": true,
@@ -343,8 +343,8 @@
             "component": "Export",
             "tabPath": "export",
             "tabIcon": "CloudDownload",
-            "resultClass": "perspective2",
-            "facetClass": "perspective2"
+            "resultClass": "perspective5",
+            "facetClass": "perspective5"
         },
         "jenaText": {
             "propertiesQueryBlock": "fullTextSearchProperties"

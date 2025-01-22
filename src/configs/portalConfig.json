@@ -4,7 +4,8 @@
     "perspectives": {
         "searchPerspectives": [
             "perspective1",
-            "perspective2"
+            "perspective3",
+            "perspective5"
         ],
         "onlyInstancePages": [
             "places"

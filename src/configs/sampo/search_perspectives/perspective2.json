@@ -103,18 +103,6 @@
         }
     ],
     "facets": {
-        "acqusitionType": {
-            "containerClass": "ten",
-            "facetType": "list",
-            "filterType": "uriFilter",
-            "pieChartButton": true,
-            "predicate": "crm:P24i_changed_ownership_through/rdfs:label",
-            "searchField": true,
-            "sortButton": true,
-            "sortBy": "instanceCount",
-            "sortByPredicate": "crm:P24i_changed_ownership_through/rdfs:label",
-            "sortDirection": "desc"
-        },
         "productionPlace": {
             "containerClass": "ten",
             "facetType": "list",
@@ -125,42 +113,6 @@
             "sortButton": true,
             "sortBy": "instanceCount",
             "sortByPredicate": "crm:P108i_was_produced_by/crm:P7_took_place_at/skos:prefLabel",
-            "sortDirection": "desc"
-        },
-        "acqusitionTimeSpan": {
-            "containerClass": "ten",
-            "facetType": "timespan",
-            "startProperty": "crm:P82a_begin_of_the_begin", 
-            "endProperty": "crm:P82b_end_of_the_end",
-            "filterType": "dateFilter",
-            "min": "0000-01-01",
-            "max": "2025-01-01", 
-            "predicate": "crm:P24i_changed_ownership_through/crm:P4_has_time-span",
-            "sortByAscPredicate": "crm:P24i_changed_ownership_through/crm:P4_has_time-span/crm:P82a_begin_of_the_begin",
-            "sortByDescPredicate": "crm:P24i_changed_ownership_through/crm:P4_has_time-span/crm:P82b_end_of_the_end"
-        },
-        "transferedTitleFrom": {
-            "containerClass": "ten",
-            "facetType": "list",
-            "filterType": "uriFilter",
-            "pieChartButton": true,
-            "predicate": "crm:P24i_changed_ownership_through/crm:P23_transferred_title_from/rdfs:label",
-            "searchField": true,
-            "sortButton": true,
-            "sortBy": "instanceCount",
-            "sortByPredicate": "crm:P24i_changed_ownership_through/crm:P23_transferred_title_from/rdfs:label",
-            "sortDirection": "desc"
-        },
-        "transferedTitleTo": {
-            "containerClass": "six",
-            "facetType": "list",
-            "filterType": "uriFilter",
-            "pieChartButton": true,
-            "predicate": "crm:P24i_changed_ownership_through/crm:P22_transferred_title_to",
-            "searchField": true,
-            "sortButton": true,
-            "sortBy": "instanceCount",
-            "sortByPredicate": "crm:P24i_changed_ownership_through/crm:P22_transferred_title_to",
             "sortDirection": "desc"
         }
     }

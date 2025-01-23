@@ -1,7 +1,7 @@
 {
   "id": "works",
   "endpoint": {
-    "url": "http://ldf.fi/mmm/sparql",
+    "url": "https://api.colonialcollections.nl/datasets/nmvw/collection-archives/sparql",
     "useAuth": false,
     "prefixesFile": "SparqlQueriesPrefixes.js"
   },
@@ -32,6 +32,16 @@
   },
   "properties": [
     {
+      "id": "image",
+      "valueType": "image",
+      "previewImageHeight": "150",
+      "makeLink": true,
+      "externalLink": true,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 250
+    },
+    {
       "id": "uri",
       "valueType": "object",
       "makeLink": true,
@@ -50,7 +60,7 @@
       "minWidth": 250
     },
     {
-      "id": "author",
+      "id": "productionPlace",
       "valueType": "object",
       "makeLink": true,
       "externalLink": false,
@@ -59,28 +69,36 @@
       "minWidth": 250
     },
     {
-      "id": "language",
-      "valueType": "object",
-      "makeLink": true,
-      "externalLink": true,
-      "sortValues": true,
-      "numberedList": false,
-      "minWidth": 150
-    },
-    {
-      "id": "expression",
+      "id": "acquisitionType",
       "valueType": "object",
       "makeLink": true,
       "externalLink": false,
       "sortValues": true,
       "numberedList": false,
-      "minWidth": 150,
-      "onlyOnInstancePage": true
+      "minWidth": 250
     },
     {
-      "id": "manuscript",
+      "id": "material",
       "valueType": "object",
       "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 250
+    },
+    {
+      "id": "technique",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 250
+    },
+    {
+      "id": "dimensions",
+      "valueType": "object",
+      "makeLink": false,
       "externalLink": false,
       "sortValues": true,
       "numberedList": false,
@@ -96,13 +114,22 @@
       "minWidth": 250
     },
     {
-      "id": "collection",
+      "id": "acquisitionTimeSpan",
       "valueType": "object",
-      "makeLink": true,
+      "makeLink": false,
       "externalLink": false,
       "sortValues": true,
       "numberedList": false,
-      "minWidth": 200
+      "minWidth": 250
+    },
+    {
+        "id": "transferedTitleFrom",
+        "valueType": "object",
+        "makeLink": false,
+        "externalLink": false,
+        "sortValues": true,
+        "numberedList": false,
+        "minWidth": 250
     },
     {
       "id": "source",

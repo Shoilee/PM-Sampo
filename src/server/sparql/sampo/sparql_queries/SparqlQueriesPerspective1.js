@@ -4,7 +4,7 @@ export const workProperties = `
     {
       ?id dct:title ?prefLabel__id .
       BIND(?prefLabel__id AS ?prefLabel__prefLabel)
-      BIND(?id AS ?prefLabel__dataProviderUrl)
+      BIND(CONCAT("/${perspectiveID}/page/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1")) AS ?prefLabel__dataProviderUrl)
       BIND(?id as ?uri__id)
       BIND(?id as ?uri__dataProviderUrl)
       BIND(?id as ?uri__prefLabel)

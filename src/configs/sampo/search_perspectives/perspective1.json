@@ -6,8 +6,8 @@
         "prefixesFile": "SparqlQueriesPrefixes.js"
     },
     "sparqlQueriesFile": "SparqlQueriesPerspective1.js",
-    "baseURI": "http://ldf.fi/mmm",
-    "URITemplate": "<BASE_URI>/work/<LOCAL_ID>",
+    "baseURI": "https://hdl.handle.net/20.500.11840",
+    "URITemplate": "<BASE_URI>/<LOCAL_ID>",
     "facetClass": "crm:E22_Human-Made_Object",
     "defaultConstraint": "<SUBJECT> crm:P141i_was_assigned_by/crm:P141_assigned <https://hdl.handle.net/20.500.11840/event423> .",
     "frontPageImage": "main_page/works-452x262.jpg",

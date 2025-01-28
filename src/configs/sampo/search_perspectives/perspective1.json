@@ -25,13 +25,13 @@
                 "component": "ResultTable",
                 "tabPath": "table",
                 "tabIcon": "CalendarViewDay",
-                "propertiesQueryBlock": "workProperties",
+                "propertiesQueryBlock": "collectionProperties",
                 "pagesize": 10,
                 "sortBy": null,
                 "sortDirection": null
             },
             "instanceConfig": {
-                "propertiesQueryBlock": "workProperties",
+                "propertiesQueryBlock": "collectionProperties",
                 "instancePageResultClasses": {
                     "instancePageTable": {
                         "tabID": 0,

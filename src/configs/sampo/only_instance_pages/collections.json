@@ -1,13 +1,13 @@
 {
   "id": "collections",
   "endpoint": {
-    "url": "http://ldf.fi/mmm/sparql",
+    "url": "https://api.colonialcollections.nl/datasets/nmvw/collection-archives/sparql",
     "useAuth": false,
     "prefixesFile": "SparqlQueriesPrefixes.js"
   },
-  "sparqlQueriesFile": "SparqlQueriesPerspective2.js",
+  "sparqlQueriesFile": "SparqlQueriesPerspective1.js",
   "baseURI": "http://ldf.fi/mmm",
-  "URITemplate": "<BASE_URI>/collection/<LOCAL_ID>",
+  "URITemplate": "<BASE_URI>/work/<LOCAL_ID>",
   "resultClasses": {
     "collections": {
       "instanceConfig": {
@@ -32,6 +32,16 @@
   },
   "properties": [
     {
+      "id": "image",
+      "valueType": "image",
+      "previewImageHeight": "150",
+      "makeLink": true,
+      "externalLink": true,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 250
+    },
+    {
       "id": "uri",
       "valueType": "object",
       "makeLink": true,
@@ -50,7 +60,7 @@
       "minWidth": 250
     },
     {
-      "id": "manuscript",
+      "id": "productionPlace",
       "valueType": "object",
       "makeLink": true,
       "externalLink": false,
@@ -59,7 +69,7 @@
       "minWidth": 250
     },
     {
-      "id": "owner",
+      "id": "acquisitionType",
       "valueType": "object",
       "makeLink": true,
       "externalLink": false,
@@ -68,19 +78,64 @@
       "minWidth": 250
     },
     {
-      "id": "place",
+      "id": "material",
       "valueType": "object",
       "makeLink": true,
       "externalLink": false,
       "sortValues": true,
       "numberedList": false,
-      "minWidth": 200
+      "minWidth": 250
+    },
+    {
+      "id": "technique",
+      "valueType": "object",
+      "makeLink": true,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 250
+    },
+    {
+      "id": "dimensions",
+      "valueType": "object",
+      "makeLink": false,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 250
+    },
+    {
+      "id": "productionTimespan",
+      "valueType": "object",
+      "makeLink": false,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 250
+    },
+    {
+      "id": "acquisitionTimeSpan",
+      "valueType": "object",
+      "makeLink": false,
+      "externalLink": false,
+      "sortValues": true,
+      "numberedList": false,
+      "minWidth": 250
+    },
+    {
+        "id": "transferedTitleFrom",
+        "valueType": "object",
+        "makeLink": false,
+        "externalLink": false,
+        "sortValues": true,
+        "numberedList": false,
+        "minWidth": 250
     },
     {
       "id": "source",
       "valueType": "object",
-      "makeLink": false,
-      "externalLink": false,
+      "makeLink": true,
+      "externalLink": true,
       "sortValues": true,
       "numberedList": false,
       "minWidth": 200

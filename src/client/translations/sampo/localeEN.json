@@ -411,6 +411,10 @@
           "label": "Type",
           "description": "Distinguish between “Transfer of Custody”, “Production”, and other types of “Activity” events."
         },
+        "provenanceActivity": {
+          "label": "Provenance Activity",
+          "description": "“Activity” events that consists of the “Transfer of Custody” or “Acqusisition” event"
+        },
         "language": {
           "label": "Language",
           "description": "The language in which a Work is written in the manuscript (i.e., an “Expression” of a Work). One manuscript may contain multiple languages."

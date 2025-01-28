@@ -3,7 +3,7 @@ const perspectiveID = 'perspective3'
 export const eventProperties = `
     {
       ?id a ?type__id .
-      ?id crm:P9_consists_of/a ?type__prefLabel .
+      ?id a ?type__prefLabel .
       BIND(?type__id as ?prefLabel__id)
       BIND(?type__prefLabel as ?prefLabel__prefLabel)
       BIND(CONCAT("/${perspectiveID}/page/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1")) AS ?type__dataProviderUrl)
@@ -11,27 +11,30 @@ export const eventProperties = `
       BIND(?id as ?uri__dataProviderUrl)
       BIND(?id as ?uri__prefLabel)
     }
+    UNION{
+      ?id crm:P9i_forms_part_of ?provenanceActivity__id .
+      BIND (str(?provenanceActivity__id) AS ?provenanceActivity__prefLabel) .}
     UNION
     {
-      ?id crm:P9_consists_of ?event .
-      ?collection__id crm:P24i_changed_ownership_through|crm:P30i_custody_transferred_through ?event .
+      ?collection__id crm:P24i_changed_ownership_through|crm:P30i_custody_transferred_through ?id .
       ?collection__id dct:title ?collection__prefLabel .
+      BIND(CONCAT("/${perspectiveID}/page/", REPLACE(STR(collection), "^.*\\\\/(.+)", "$1")) AS ?collection__dataProviderUrl)
     }
     UNION
     {
-      ?id crm:P9_consists_of/crm:P4_has_time-span ?eventTimespan__id .
+      ?id crm:P4_has_time-span ?eventTimespan__id .
       OPTIONAL { ?eventTimespan__id crm:P82a_begin_of_the_begin ?eventTimespan__start }
       OPTIONAL { ?eventTimespan__id crm:P82b_end_of_the_end ?eventTimespan__end }
       BIND(CONCAT(STR(?eventTimespan__start), " --- " , STR(?eventTimespan__end) ) AS ?eventTimespan__prefLabel)
     }
     UNION
     {
-      ?id crm:P9_consists_of/ crm:P23_transferred_title_from|crm:P28_Custody_Surrendered_by ?surrender__id .
+      ?id crm:P23_transferred_title_from|crm:P28_Custody_Surrendered_by ?surrender__id .
       ?surrender__id rdfs:label ?surrender__prefLabel .
     }
     UNION
     {
-      ?id crm:P9_consists_of/ crm:P22_transferred_title_to|crm:P29_Custody_Recieved_By ?receiver__id .
+      ?id crm:P22_transferred_title_to|crm:P29_Custody_Recieved_By ?receiver__id .
       BIND(?receiver__id AS ?receiver__prefLabel)
     }
     

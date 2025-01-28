@@ -6,10 +6,10 @@
         "prefixesFile": "SparqlQueriesPrefixes.js"
     },
     "sparqlQueriesFile": "SparqlQueriesPerspective3.js",
-    "baseURI": "http://ldf.fi/mmm",
-    "URITemplate": "<BASE_URI>/event/<LOCAL_ID>",
-    "facetClass": "crm:E7_Activity",
-    "defaultConstraint": "<SUBJECT> crm:P9_consists_of ?event. [crm:P141i_was_assigned_by/crm:P141_assigned <https://hdl.handle.net/20.500.11840/event423>] crm:P24i_changed_ownership_through|crm:P30i_custody_transferred_through ?event",
+    "baseURI": "https://hdl.handle.net/20.500.11840",
+    "URITemplate": "<BASE_URI>/<LOCAL_ID>",
+    "facetClass": "crm:E8_Acquisition crm:E10_Transfer_of_Custody",
+    "defaultConstraint": "[crm:P141i_was_assigned_by/crm:P141_assigned <https://hdl.handle.net/20.500.11840/event423>] crm:P24i_changed_ownership_through|crm:P30i_custody_transferred_through <SUBJECT>",
     "frontPageImage": "main_page/events-452x262.jpg",
     "searchMode": "faceted-search",
     "enableDynamicLanguageChange": false,
@@ -100,10 +100,19 @@
             "minWidth": 200
         },
         {
-            "id": "collection",
+            "id": "provenanceActivity",
             "valueType": "object",
             "makeLink": true,
             "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 200
+        },
+        {
+            "id": "collection",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": true,
             "sortValues": false,
             "numberedList": false,
             "minWidth": 200
@@ -172,10 +181,13 @@
             "containerClass": "two",
             "facetType": "list",
             "filterType": "uriFilter",
-            "pieChartButton": true,
-            "predicate": "crm:P9_consists_of/a",
+            "predicate": "rdf:type",
+            "facetLabelPredicate": "skos:prefLabel",
             "searchField": false,
-            "sortButton": false
+            "sortButton": false,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "rdf:type",
+            "sortDirection": "desc"
         },
         "collection": {
             "containerClass": "one",

@@ -113,13 +113,13 @@
   "resultsAsCSV": "download the search results as a CSV table",
   "facets": {
     "dateFacet": {
-      "invalidDate": "Epäkelpo päivämäärä.",
-      "toBeforeFrom": "Alkupäivämäärän täytyy olla ennen loppupäivämäärää.",
-      "minDate": "Aikaisin sallittu päivämäärä on {minDate}",
-      "maxDate": "Myöhäisin sallittu päivämäärä on {maxDate}",
-      "cancel": "Peruuta",
-      "fromLabel": "Alku",
-      "toLabel": "Loppu"
+      "invalidDate": "Invalid date.",
+      "toBeforeFrom": "The start date must be before the end date.",
+      "minDate": "The earliest allowed date is {minDate}",
+      "maxDate": "The latest allowed date is {maxDate}",
+      "cancel": "Cancel",
+      "fromLabel": "Start",
+      "toLabel": "End"
     },
     "textFacet": {
       "inputLabel": "Etsi nimellä"

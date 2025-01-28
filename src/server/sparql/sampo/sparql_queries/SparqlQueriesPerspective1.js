@@ -1,6 +1,6 @@
 const perspectiveID = 'perspective1'
 
-export const workProperties = `
+export const collectionProperties = `
     {
       ?id dct:title ?prefLabel__id .
       BIND(?prefLabel__id AS ?prefLabel__prefLabel)
@@ -45,6 +45,11 @@ export const workProperties = `
     ?id crm:P24i_changed_ownership_through/crm:P23_transferred_title_from ?transferedTitleFrom__id.
     ?transferedTitleFrom__id rdfs:label ?transferedTitleFrom__prefLabel .
   }
+  UNION
+  {
+    ?id crm:P24i_changed_ownership_through | crm:P30i_custody_transferred_through ?provenanceEvent__id.
+    ?provenanceEvent__id crm:P2_has_type ?provenanceEvent__prefLabel .
+  } 
 
 `
 

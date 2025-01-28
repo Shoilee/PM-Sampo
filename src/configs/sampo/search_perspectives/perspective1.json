@@ -9,7 +9,7 @@
     "baseURI": "https://hdl.handle.net/20.500.11840",
     "URITemplate": "<BASE_URI>/<LOCAL_ID>",
     "facetClass": "crm:E22_Human-Made_Object",
-    "defaultConstraint": "<SUBJECT> crm:P141i_was_assigned_by/crm:P141_assigned <https://hdl.handle.net/20.500.11840/event423> .",
+    "defaultConstraint": "<SUBJECT> crm:P141i_was_assigned_by/crm:P141_assigned [a crm:E5_Event] .",
     "frontPageImage": "main_page/works-452x262.jpg",
     "searchMode": "faceted-search",
     "enableDynamicLanguageChange": false,

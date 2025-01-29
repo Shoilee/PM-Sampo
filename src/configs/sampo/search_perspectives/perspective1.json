@@ -157,8 +157,7 @@
         },
         "productionPlace": {
             "containerClass": "ten",
-            "facetType": "hierarchical",
-            "parentProperty": "skos:broader",
+            "facetType": "list",
             "filterType": "uriFilter",
             "pieChartButton": true,
             "predicate": "crm:P108i_was_produced_by/crm:P7_took_place_at",

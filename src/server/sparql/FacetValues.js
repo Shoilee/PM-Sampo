@@ -63,7 +63,7 @@ export const getFacet = async ({
   let filterBlock
   let unknownSelected = 'false'
   let currentSelectionsWithoutUnknown = []
-  console.log(facetConfig.namedGraph)
+  console.log(facetConfig.graph)
   if (constraints == null && defaultConstraint == null) {
     filterBlock = '# no filters'
   } else {
@@ -136,7 +136,7 @@ export const getFacet = async ({
       q = q.replace(/<PREDICATE>/g, facetConfig.predicate)
       q = q.replace(/<PARENTPROPERTY>/g, facetConfig.parentProperty)
     } else {
-      q = q.replace(/<PREDICATE>/g, `${facetConfig.predicate}`) 
+      q = q.replace(/<PREDICATE>/g, `${facetConfig.predicate}/${facetConfig.parentProperty}*`)
       q = q.replace('<PARENTS>', `
               OPTIONAL { ?id ${facetConfig.parentProperty} ?parent_ }
               BIND(COALESCE(?parent_, '0') as ?parent)

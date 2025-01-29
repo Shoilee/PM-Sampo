@@ -58,7 +58,9 @@ export const facetValuesQuery = `
           # facet values that return results
           {
             <FILTER>
+            <GRAPH_START> 
             ?instance <PREDICATE> ?id .
+            <GRAPH_END>
             <PARENTS>
             VALUES ?facetClass { <FACET_CLASS> }
             ?instance <FACET_CLASS_PREDICATE> ?facetClass .

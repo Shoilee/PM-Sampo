@@ -63,6 +63,7 @@ export const getFacet = async ({
   let filterBlock
   let unknownSelected = 'false'
   let currentSelectionsWithoutUnknown = []
+  console.log(facetConfig.graph)
   if (constraints == null && defaultConstraint == null) {
     filterBlock = '# no filters'
   } else {
@@ -111,6 +112,7 @@ export const getFacet = async ({
   } else {
     q = q.replace(/<UNKNOWN_VALUES>/g, unknownBlock)
   }
+ 
   q = q.replace('<SELECTED_VALUES>', selectedBlock)
   q = q.replace('<SELECTED_VALUES_NO_HITS>', selectedNoHitsBlock)
   q = q.replace(/<FACET_VALUE_FILTER>/g, facetConfig.facetValueFilter ? facetConfig.facetValueFilter : '')
@@ -119,6 +121,13 @@ export const getFacet = async ({
       ? facetConfig.facetLabelFilter
       : ''
   )
+  if (facetConfig.namedGraph) {
+    q = q.replaceAll('<GRAPH_START>', "GRAPH <" + facetConfig.namedGraph + ">{")
+    q = q.replaceAll('<GRAPH_END>',  "}")
+  }else{
+    q = q.replaceAll('<GRAPH_START>', '# no graph')
+    q = q.replaceAll('<GRAPH_END>', '# no graph')
+  }    
   if (facetConfig.facetType === 'hierarchical') {
     q = q.replace('<ORDER_BY>', '# no need for ordering')
 
@@ -176,7 +185,7 @@ export const getFacet = async ({
     q = q.replace(/<LANG>/g, langTag)
   }
 
-  // console.log(endpoint.prefixes + q)
+console.log(endpoint.prefixes + q)
 
   const response = await runSelectQuery({
     query: endpoint.prefixes + q,

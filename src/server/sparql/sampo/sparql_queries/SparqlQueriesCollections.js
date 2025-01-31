@@ -1,4 +1,4 @@
-const perspectiveID = 'collections'
+const perspectiveID = 'perspective1'
 
 export const collectionProperties = `
     {

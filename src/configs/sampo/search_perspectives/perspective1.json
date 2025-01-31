@@ -5,7 +5,7 @@
         "useAuth": false,
         "prefixesFile": "SparqlQueriesPrefixes.js"
     },
-    "sparqlQueriesFile": "SparqlQueriesPerspective1.js",
+    "sparqlQueriesFile": "SparqlQueriesCollections.js",
     "baseURI": "https://hdl.handle.net/20.500.11840",
     "URITemplate": "<BASE_URI>/<LOCAL_ID>",
     "facetClass": "crm:E22_Human-Made_Object",

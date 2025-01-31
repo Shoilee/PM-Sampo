@@ -312,7 +312,7 @@
         }
       }
     },
-    "perspective1": {
+    "collections": {
       "label": "Collections",
       "facetResultsType": "collections",
       "shortDescription": "Object description",
@@ -770,38 +770,6 @@
         "source": {
           "label": "Source",
           "description": "The source dataset (Schoenberg, Bibale, and Bodleian) and the place authority (Getty Thesaurus of Geographic Names and GeoNames) contributing the information on the place."
-        }
-      }
-    },
-    "collections": {
-      "instancePage": {
-        "label": "Collection",
-        "description": "<p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"> A collection refers to a group of manuscripts that were owned by the same actor, including individuals, institutions, or other types of groups. A manuscript can appear in multiple collections over time, and no explicit distinction is made between a manuscript’s current or former collections. Similarly, collections will include links to every manuscript that has ever been in the collection, regardless of whether all of those manuscripts were within the collection at the same time. </p>"
-      },
-      "properties": {
-        "uri": {
-          "label": "URI",
-          "description": "Uniform Resource Identifier"
-        },
-        "prefLabel": {
-          "label": "Name",
-          "description": "The name or title of the Collection."
-        },
-        "manuscript": {
-          "label": "Manuscript",
-          "description": "The manuscript(s) that have been a part of the collection at some point in time."
-        },
-        "owner": {
-          "label": "Owner",
-          "description": "Former or current owners (individual or institutional)."
-        },
-        "place": {
-          "label": "Place",
-          "description": "Location of the collection at some point during its existence"
-        },
-        "source": {
-          "label": "Source",
-          "description": "The source database (Schoenberg, Bibale, and Bodleian) that the Collection occurs in. Currently one Collection has always only one dataset as a source."
         }
       }
     },

@@ -1,5 +1,5 @@
 {
-    "id": "perspective1",
+    "id": "collections",
     "endpoint": {
         "url": "https://api.colonialcollections.nl/datasets/nmvw/collection-archives/sparql",
         "useAuth": false,
@@ -19,7 +19,7 @@
     "defaultTab": "table",
     "defaultInstancePageTab": "table",
     "resultClasses": {
-        "perspective1": {
+        "collections": {
             "paginatedResultsConfig": {
                 "tabID": 0,
                 "component": "ResultTable",
@@ -54,8 +54,8 @@
             "component": "Export",
             "tabPath": "export",
             "tabIcon": "CloudDownload",
-            "resultClass": "perspective1",
-            "facetClass": "perspective1"
+            "resultClass": "collections",
+            "facetClass": "collections"
         },
         "knowledgeGraphMetadata": {
             "sparqlQuery": "knowledgeGraphMetadataQuery",

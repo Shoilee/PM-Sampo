@@ -3,12 +3,12 @@
     "rootUrl": "",
     "perspectives": {
         "searchPerspectives": [
-            "perspective1",
+            "collections",
             "perspective3",
             "perspective5"
         ],
         "onlyInstancePages": [
-            "collections"
+            "actors"
         ]
     },
     "localeConfig": {
@@ -37,7 +37,7 @@
     },
     "knowledgeGraphMetadataConfig": {
         "showTable": false,
-        "perspective": "perspective1" 
+        "perspective": "collections" 
     },
     "layoutConfig": {
         "colorPalette": {

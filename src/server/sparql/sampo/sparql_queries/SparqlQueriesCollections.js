@@ -71,8 +71,12 @@ export const knowledgeGraphMetadataQuery = `
 export const collectionProvEventsQuery = `
   SELECT ?id ?uri__id ?uri__prefLabel ?uri__dataProviderUrl ?prefLabel__id 
   ?object__id ?object__prefLabel__id ?object__prefLabel__prefLabel 
+  ?object__uri__id ?object__uri__prefLabel ?object__uri__dataProviderUrl
   ?object__acquisitionTimeSpan__id ?object__acquisitionTimeSpan__start ?object__acquisitionTimeSpan__end ?object__acquisitionTimeSpan__prefLabel
-
+  ?object__transferedTitleFrom__id ?object__transferedTitleFrom__prefLabel
+  ?object__transferedTitleTo__id ?object__transferedTitleTo__prefLabel
+  ?object__type__id ?object__type__prefLabel ?object__type__data_provider_url
+  ?object__acquisitionType__id ?object__acquisitionType__prefLabel
   WHERE {
     <FILTER>
     BIND(<ID> as ?id)
@@ -83,8 +87,16 @@ export const collectionProvEventsQuery = `
     BIND(?prefLabel__id as ?prefLabel__prefLabel)
     ?id crm:P24i_changed_ownership_through|crm:P30i_custody_transferred_through ?object__id .
     {
+      BIND(?object__id AS ?object__uri__id)
+      BIND(?object__id AS ?object__uri__dataProviderUrl)
+      BIND(STR(?object__id) AS ?object__uri__prefLabel) 
       ?object__id rdfs:label ?object__prefLabel__id .
       BIND(?object__prefLabel__id as ?object__prefLabel__prefLabel)
+    }
+    UNION{
+      ?object__id a ?object__type__id .
+      BIND(?object__type__id as ?object__type__data_provider_url)
+      BIND(REPLACE(STR(?object__type__id), "^.*/(.*)$", "$1") as ?object__type__prefLabel)
     }
     UNION
     {
@@ -95,19 +107,19 @@ export const collectionProvEventsQuery = `
     }
     UNION
     {
-      ?object__id crm:P23_transferred_title_from | crm:P28_custody_surrendered_by ?object__transferedTitleFrom__id.
+      ?object__id crm:P23_transferred_title_from|crm:P28_custody_surrendered_by ?object__transferedTitleFrom__id.
       ?object__transferedTitleFrom__id rdfs:label ?object__transferedTitleFrom__prefLabel .
     }
     UNION
     {
-      ?object__id crm:P22_transferred_title_to | crm:P29_custody_received_by ?object__transferedTitleTo__id .
+      ?object__id crm:P22_transferred_title_to|crm:P29_custody_received_by ?object__transferedTitleTo__id .
       OPTIONAL{?object__transferedTitleTo__id rdfs:label ?object__transferedTitleTo__prefLabel .}
     }
 
     UNION
     {
-      ?object__id crm:P2_has_type ?object__type__id .
-      BIND(STR(?object__type__id) as ?object__type__prefLabel)
+      ?object__id crm:P2_has_type ?object__acquisitionType__id .
+      BIND(STR(?object__acquisitionType__id) as ?object__acquisitionType__prefLabel)
     } 
   }
 `

@@ -49,6 +49,24 @@
                         "filterTarget": "collection",
                         "properties": [
                             {
+                                "id": "uri",
+                                "valueType": "object",
+                                "makeLink": false,
+                                "externalLink": false,
+                                "sortValues": true,
+                                "numberedList": false,
+                                "minWidth": 200
+                            },
+                            {
+                                "id": "type",
+                                "valueType": "object",
+                                "makeLink": false,
+                                "externalLink": true,
+                                "sortValues": true,
+                                "numberedList": false,
+                                "minWidth": 200
+                            },
+                            {
                                 "id": "prefLabel",
                                 "valueType": "object",
                                 "makeLink": true,

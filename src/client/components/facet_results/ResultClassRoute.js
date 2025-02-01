@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux'
 // import LineChartSotasurmat from '../perspectives/sotasurmat/LineChartSotasurmat'
 const ResultTable = lazy(() => import('./ResultTable'))
 const InstancePageTable = lazy(() => import('../main_layout/InstancePageTable'))
+const InstancePageTableList = lazy(() => import('../main_layout/InstancePageTableList'))
 const ReactVirtualizedList = lazy(() => import('./ReactVirtualizedList'))
 const LeafletMap = lazy(() => import('./LeafletMap'))
 const Deck = lazy(() => import('./Deck'))
@@ -116,6 +117,36 @@ const ResultClassRoute = props => {
         }
       }
       routeComponent = <InstancePageTable {...instanceTableProps} />
+      break
+    }
+    case 'InstancePageTableList': {
+      const properties = resultClassConfig.properties
+        ? resultClassConfig.properties
+        : getVisibleRows(perspectiveState)
+      let instanceTableProps = {
+        portalConfig,
+        perspectiveConfig: perspective,
+        layoutConfig,
+        resultClass,
+        fetchResults: props.fetchResults,
+        properties,
+        screenSize
+      }
+      if (resultClassConfig.fetchResultsWhenMounted) {
+        instanceTableProps = {
+          ...instanceTableProps,
+          fetchResultsWhenMounted: true,
+          data: perspectiveState.results ? perspectiveState.results[0] : null,
+          uri: perspectiveState.instanceTableData.id,
+          resultUpdateID: perspectiveState.resultUpdateID
+        }
+      } else {
+        instanceTableProps = {
+          ...instanceTableProps,
+          data: perspectiveState.instanceTableData
+        }
+      }
+      routeComponent = <InstancePageTableList {...instanceTableProps} />
       break
     }
     case 'LeafletMap': {

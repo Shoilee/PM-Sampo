@@ -67,3 +67,47 @@ export const knowledgeGraphMetadataQuery = `
                       dct:modified ?databaseDump__modified .
   }
 `
+
+export const collectionProvEventsQuery = `
+  SELECT ?id ?uri__id ?uri__prefLabel ?uri__dataProviderUrl ?prefLabel__id 
+  ?object__id ?object__prefLabel__id ?object__prefLabel__prefLabel 
+  ?object__acquisitionTimeSpan__id ?object__acquisitionTimeSpan__start ?object__acquisitionTimeSpan__end ?object__acquisitionTimeSpan__prefLabel
+
+  WHERE {
+    <FILTER>
+    BIND(<ID> as ?id)
+    BIND(?id as ?uri__id)
+    BIND(?id as ?uri__prefLabel)
+    BIND(?id as ?uri__dataProviderUrl)
+    ?id dct:title ?prefLabel__id .
+    BIND(?prefLabel__id as ?prefLabel__prefLabel)
+    ?id crm:P24i_changed_ownership_through|crm:P30i_custody_transferred_through ?object__id .
+    {
+      ?object__id rdfs:label ?object__prefLabel__id .
+      BIND(?object__prefLabel__id as ?object__prefLabel__prefLabel)
+    }
+    UNION
+    {
+      ?object__id crm:P4_has_time-span ?object__acquisitionTimeSpan__id.
+      ?object__acquisitionTimeSpan__id crm:P82a_begin_of_the_begin ?object__acquisitionTimeSpan__start .
+      ?object__acquisitionTimeSpan__id crm:P82b_end_of_the_end ?object__acquisitionTimeSpan__end .
+      BIND(CONCAT(STR(?object__acquisitionTimeSpan__start), " --- " , STR(?object__acquisitionTimeSpan__end) ) AS ?object__acquisitionTimeSpan__prefLabel)
+    }
+    UNION
+    {
+      ?object__id crm:P23_transferred_title_from | crm:P28_custody_surrendered_by ?object__transferedTitleFrom__id.
+      ?object__transferedTitleFrom__id rdfs:label ?object__transferedTitleFrom__prefLabel .
+    }
+    UNION
+    {
+      ?object__id crm:P22_transferred_title_to | crm:P29_custody_received_by ?object__transferedTitleTo__id .
+      OPTIONAL{?object__transferedTitleTo__id rdfs:label ?object__transferedTitleTo__prefLabel .}
+    }
+
+    UNION
+    {
+      ?object__id crm:P2_has_type ?object__type__id .
+      BIND(STR(?object__type__id) as ?object__type__prefLabel)
+    } 
+  }
+`

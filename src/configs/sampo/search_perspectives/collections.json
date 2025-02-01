@@ -112,13 +112,6 @@
                                 "minWidth": 250
                             }
                         ]
-                    },
-                    "instancePageExport": {
-                        "tabID": 2,
-                        "component": "Export",
-                        "tabPath": "export",
-                        "tabIcon": "CloudDownload",
-                        "pageType": "instancePage"
                     }
                 }
             }

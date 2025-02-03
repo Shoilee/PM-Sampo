@@ -69,7 +69,8 @@ export const knowledgeGraphMetadataQuery = `
 `
 
 export const collectionProvEventsQuery = `
-  SELECT DISTINCT ?object__id  ?id ?uri__id ?uri__prefLabel ?uri__dataProviderUrl ?prefLabel__id  
+  SELECT DISTINCT ?object__id ?id ?uri__id ?uri__prefLabel ?uri__dataProviderUrl ?prefLabel__id  
+  ?object__prefLabel__id ?object__prefLabel__prefLabel
   ?object__uri__id ?object__uri__prefLabel ?object__uri__dataProviderUrl
   ?object__acquisitionTimeSpan__id ?object__acquisitionTimeSpan__prefLabel
   ?object__transferedTitleFrom__id ?object__transferedTitleFrom__prefLabel
@@ -93,6 +94,10 @@ export const collectionProvEventsQuery = `
       ?object__id a ?object__type__id .
       BIND(?object__type__id as ?object__type__dataProviderUrl)
       BIND(REPLACE(STR(?object__type__id), "^.*/(.*)$", "$1") as ?object__type__prefLabel)
+      OPTIONAL {
+        ?object__id rdfs:label ?object__prefLabel__id .
+        BIND(?object__prefLabel__id as ?object__prefLabel__prefLabel)
+      }
     }
     UNION
     {

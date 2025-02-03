@@ -60,8 +60,17 @@
                             {
                                 "id": "type",
                                 "valueType": "object",
-                                "makeLink": false,
+                                "makeLink": true,
                                 "externalLink": true,
+                                "sortValues": true,
+                                "numberedList": false,
+                                "minWidth": 200
+                            },
+                            {
+                                "id": "provActivity",
+                                "valueType": "object",
+                                "makeLink": true,
+                                "externalLink": false,
                                 "sortValues": true,
                                 "numberedList": false,
                                 "minWidth": 200

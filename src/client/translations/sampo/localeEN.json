@@ -401,6 +401,10 @@
         "provEvent": {
           "label": "Provenance Events",
           "description": "Provenance events related to the object"
+        },
+        "provActivity": {
+          "label": "Provenance Activity",
+          "description": "Acqusition or Transfer of Custody Event forms parm of the Provenance Activity"
         }
       }
     },

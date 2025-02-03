@@ -69,17 +69,17 @@ export const knowledgeGraphMetadataQuery = `
 `
 
 export const collectionProvEventsQuery = `
-  SELECT ?id ?uri__id ?uri__prefLabel ?uri__dataProviderUrl ?prefLabel__id 
-  ?object__id ?object__prefLabel__id ?object__prefLabel__prefLabel 
+  SELECT DISTINCT ?object__id  ?id ?uri__id ?uri__prefLabel ?uri__dataProviderUrl ?prefLabel__id  
   ?object__uri__id ?object__uri__prefLabel ?object__uri__dataProviderUrl
-  ?object__acquisitionTimeSpan__id ?object__acquisitionTimeSpan__start ?object__acquisitionTimeSpan__end ?object__acquisitionTimeSpan__prefLabel
+  ?object__acquisitionTimeSpan__id ?object__acquisitionTimeSpan__prefLabel
   ?object__transferedTitleFrom__id ?object__transferedTitleFrom__prefLabel
   ?object__transferedTitleTo__id ?object__transferedTitleTo__prefLabel
-  ?object__type__id ?object__type__prefLabel ?object__type__data_provider_url
+  ?object__type__id ?object__type__prefLabel ?object__type__dataProviderUrl
   ?object__acquisitionType__id ?object__acquisitionType__prefLabel ?object__acquisitionType__dataProviderUrl
+  ?object__provActivity__id ?object__provActivity__prefLabel ?object__provActivity__dataProviderUrl
   WHERE {
-    <FILTER>
-    BIND(<ID> as ?id)
+    ?collection crm:P141i_was_assigned_by/crm:P141_assigned [a crm:E5_Event] .
+    BIND(<https://hdl.handle.net/20.500.11840/1002252> as ?id)
     BIND(?id as ?uri__id)
     BIND(?id as ?uri__prefLabel)
     BIND(?id as ?uri__dataProviderUrl)
@@ -91,7 +91,7 @@ export const collectionProvEventsQuery = `
     BIND(STR(?object__id) AS ?object__uri__prefLabel) 
     {
       ?object__id a ?object__type__id .
-      BIND(?object__type__id as ?object__type__data_provider_url)
+      BIND(?object__type__id as ?object__type__dataProviderUrl)
       BIND(REPLACE(STR(?object__type__id), "^.*/(.*)$", "$1") as ?object__type__prefLabel)
     }
     UNION
@@ -117,5 +117,11 @@ export const collectionProvEventsQuery = `
       BIND(STR(?object__acquisitionType__id) as ?object__acquisitionType__prefLabel)
       BIND(?object__acquisitionType__id as ?object__acquisitionType__dataProviderUrl)
     } 
+    UNION
+    {
+      ?object__id crm:P9i_forms_part_of ?object__provActivity__id.
+      BIND(STR(?object__provActivity__id) AS ?object__provActivity__prefLabel)
+      BIND(STR(?object__provActivity__id) AS ?object__provActivity__dataProviderUrl)
+    }
   }
 `

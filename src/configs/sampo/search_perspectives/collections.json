@@ -51,7 +51,7 @@
                             {
                                 "id": "uri",
                                 "valueType": "object",
-                                "makeLink": false,
+                                "makeLink": true,
                                 "externalLink": false,
                                 "sortValues": true,
                                 "numberedList": false,
@@ -106,7 +106,7 @@
                                 "id": "acquisitionType",
                                 "valueType": "object",
                                 "makeLink": true,
-                                "externalLink": false,
+                                "externalLink": true,
                                 "sortValues": true,
                                 "numberedList": false,
                                 "minWidth": 250

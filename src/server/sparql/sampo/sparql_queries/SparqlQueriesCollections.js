@@ -76,7 +76,7 @@ export const collectionProvEventsQuery = `
   ?object__transferedTitleFrom__id ?object__transferedTitleFrom__prefLabel
   ?object__transferedTitleTo__id ?object__transferedTitleTo__prefLabel
   ?object__type__id ?object__type__prefLabel ?object__type__data_provider_url
-  ?object__acquisitionType__id ?object__acquisitionType__prefLabel
+  ?object__acquisitionType__id ?object__acquisitionType__prefLabel ?object__acquisitionType__dataProviderUrl
   WHERE {
     <FILTER>
     BIND(<ID> as ?id)
@@ -86,14 +86,10 @@ export const collectionProvEventsQuery = `
     ?id dct:title ?prefLabel__id .
     BIND(?prefLabel__id as ?prefLabel__prefLabel)
     ?id crm:P24i_changed_ownership_through|crm:P30i_custody_transferred_through ?object__id .
+    BIND(?object__id AS ?object__uri__id)
+    BIND(?object__id AS ?object__uri__dataProviderUrl)
+    BIND(STR(?object__id) AS ?object__uri__prefLabel) 
     {
-      BIND(?object__id AS ?object__uri__id)
-      BIND(?object__id AS ?object__uri__dataProviderUrl)
-      BIND(STR(?object__id) AS ?object__uri__prefLabel) 
-      ?object__id rdfs:label ?object__prefLabel__id .
-      BIND(?object__prefLabel__id as ?object__prefLabel__prefLabel)
-    }
-    UNION{
       ?object__id a ?object__type__id .
       BIND(?object__type__id as ?object__type__data_provider_url)
       BIND(REPLACE(STR(?object__type__id), "^.*/(.*)$", "$1") as ?object__type__prefLabel)
@@ -114,12 +110,12 @@ export const collectionProvEventsQuery = `
     {
       ?object__id crm:P22_transferred_title_to|crm:P29_custody_received_by ?object__transferedTitleTo__id .
       OPTIONAL{?object__transferedTitleTo__id rdfs:label ?object__transferedTitleTo__prefLabel .}
-    }
-
+    }  
     UNION
     {
       ?object__id crm:P2_has_type ?object__acquisitionType__id .
       BIND(STR(?object__acquisitionType__id) as ?object__acquisitionType__prefLabel)
+      BIND(?object__acquisitionType__id as ?object__acquisitionType__dataProviderUrl)
     } 
   }
 `

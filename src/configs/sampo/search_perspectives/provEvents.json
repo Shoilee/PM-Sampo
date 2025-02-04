@@ -101,7 +101,7 @@
             "id": "type",
             "valueType": "object",
             "makeLink": true,
-            "externalLink": false,
+            "externalLink": true,
             "sortValues": false,
             "numberedList": false,
             "minWidth": 200
@@ -189,7 +189,6 @@
             "facetType": "list",
             "filterType": "uriFilter",
             "predicate": "rdf:type",
-            "facetLabelPredicate": "skos:prefLabel",
             "searchField": false,
             "sortButton": false,
             "sortBy": "instanceCount",

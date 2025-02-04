@@ -17,6 +17,12 @@ export const histEventProperties =
     ?timeSpan__id crm:P82b_end_of_the_end ?timeSpan__end .
     BIND(CONCAT(STR(?timeSpan__start), " --- " , STR(?timeSpan__end) ) AS ?timeSpan__prefLabel)
   }
+  UNION
+  {
+    ?id crm:P67i_is_referred_to_by ?description__id .
+    ?description__id crm:P2_has_type aat:300435416 .
+    ?description__id crm:P190_has_symbolic_content ?description__prefLabel .
+  }
 `
 
 export const knowledgeGraphMetadataQuery = `

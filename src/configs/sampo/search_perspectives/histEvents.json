@@ -64,15 +64,6 @@
     },
     "properties": [
         {
-            "id": "uri",
-            "valueType": "object",
-            "makeLink": true,
-            "externalLink": false,
-            "sortValues": true,
-            "numberedList": false,
-            "onlyOnInstancePage": true
-        },
-        {
             "id": "prefLabel",
             "valueType": "object",
             "makeLink": true,
@@ -82,6 +73,14 @@
             "minWidth": 250
         },
         {
+            "id": "uri",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false
+        },
+        {
             "id": "timeSpan",
             "valueType": "object",
             "makeLink": false,
@@ -89,6 +88,15 @@
             "sortValues": true,
             "numberedList": false,
             "minWidth": 250
+        },
+        {
+            "id": "description",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true
         }
     ],
     "facets": {

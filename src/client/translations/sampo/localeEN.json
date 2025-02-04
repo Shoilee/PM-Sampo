@@ -488,7 +488,7 @@
       "properties": {
         "uri": {
           "label": "URI",
-          "description": "Uniform Resource Identifier"
+          "description": "Unique Identifier for Historical Events"
         },
         "prefLabel": {
           "label": "Label",
@@ -498,6 +498,10 @@
         "timeSpan":{
           "label": "Time-Span",
           "description": "The date or time period associated with the historical event."
+        },
+        "description": {
+          "label": "Description",
+          "description": "Textual description of the historical event."
         },
         "author": {
           "label": "Author",

@@ -185,7 +185,7 @@
     ],
     "facets": {
         "type": {
-            "containerClass": "two",
+            "containerClass": "three",
             "facetType": "list",
             "filterType": "uriFilter",
             "predicate": "rdf:type",

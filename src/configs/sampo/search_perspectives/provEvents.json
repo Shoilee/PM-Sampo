@@ -173,15 +173,6 @@
             "minWidth": 250,
             "collapsedMaxWords": 12,
             "onlyOnInstancePage": true
-        },
-        {
-            "id": "source",
-            "valueType": "object",
-            "makeLink": true,
-            "externalLink": true,
-            "sortValues": true,
-            "numberedList": false,
-            "minWidth": 200
         }
     ],
     "facets": {

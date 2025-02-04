@@ -85,7 +85,7 @@
             "id": "uri",
             "valueType": "object",
             "makeLink": true,
-            "externalLink": true,
+            "externalLink": false,
             "sortValues": true,
             "numberedList": false
         },

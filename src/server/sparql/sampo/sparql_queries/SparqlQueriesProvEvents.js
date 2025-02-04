@@ -6,7 +6,7 @@ export const eventProperties = `
       BIND(?prefLabel__id as ?prefLabel__prefLabel)
       BIND(CONCAT("/events/page/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1")) AS ?prefLabel__dataProviderUrl)
       BIND(?id as ?uri__id)
-      BIND(?id as ?uri__dataProviderUrl)
+      BIND(CONCAT("/events/page/", REPLACE(STR(?id), "^.*\\\\/(.+/.+/.+)", "$1")) as ?uri__dataProviderUrl)
       BIND(?id as ?uri__prefLabel)
     }
     UNION

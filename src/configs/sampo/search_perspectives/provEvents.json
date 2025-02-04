@@ -90,6 +90,14 @@
             "numberedList": false
         },
         {
+            "id": "prefLabel",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false
+        },
+        {
             "id": "type",
             "valueType": "object",
             "makeLink": true,

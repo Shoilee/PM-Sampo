@@ -79,8 +79,8 @@ export const collectionProvEventsQuery = `
   ?object__acquisitionType__id ?object__acquisitionType__prefLabel ?object__acquisitionType__dataProviderUrl
   ?object__provActivity__id ?object__provActivity__prefLabel ?object__provActivity__dataProviderUrl
   WHERE {
-    ?collection crm:P141i_was_assigned_by/crm:P141_assigned [a crm:E5_Event] .
-    BIND(<https://hdl.handle.net/20.500.11840/1002252> as ?id)
+    <FILTER>
+    BIND(<ID> as ?id)
     BIND(?id as ?uri__id)
     BIND(?id as ?uri__prefLabel)
     BIND(?id as ?uri__dataProviderUrl)

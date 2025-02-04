@@ -1,23 +1,15 @@
 const perspectiveID = 'histEvents'
 
 export const histEventProperties =
-`  {
-    ?id crm:P1_is_identified_by ?prefLabel__id .
-    ?prefLabel__id crm:P2_has_type aat:300404650.
-    ?prefLabel__id crm:P190_has_symbolic_content ?prefLabel__prefLabel .
-    BIND(CONCAT("/${perspectiveID}/page/", REPLACE(STR(?id), "^.*/(.*)$", "$1")) as ?prefLabel__dataProviderUrl)
-    BIND(?id as ?uri__id)
-    BIND(?id as ?uri__dataProviderUrl)
-    BIND(?id as ?uri__prefLabel)
-  }
-  UNION
-  {
-    ?id crm:P1_is_identified_by ?ID__id .
-    ?ID__id crm:P2_has_type aat:300404626.
-    ?ID__id crm:P190_has_symbolic_content ?ID__prefLabel .
-    BIND(?id as ?ID__dataProviderUrl)
-    
-  }
+`   {
+      ?id crm:P1_is_identified_by ?prefLabel__id .
+      ?prefLabel__id crm:P2_has_type aat:300404650.
+      ?prefLabel__id crm:P190_has_symbolic_content ?prefLabel__prefLabel .
+      BIND(CONCAT("/${perspectiveID}/page/", REPLACE(STR(?id), "^.*/(.*)$", "$1")) as ?prefLabel__dataProviderUrl)
+      BIND(?id as ?uri__id)
+      BIND(?id as ?uri__dataProviderUrl)
+      BIND(?id as ?uri__prefLabel)
+    }
   UNION
   {
     ?id crm:P4_has_time-span ?timeSpan__id .

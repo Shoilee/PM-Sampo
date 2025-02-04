@@ -239,16 +239,6 @@
             "sortBy": "instanceCount",
             "sortByPredicate": "crm:P22_transferred_title_to|crm:P29_Custody_Recieved_By/rdfs:label",
             "sortDirection": "desc"
-        },
-        "source": {
-            "containerClass": "three",
-            "facetType": "list",
-            "filterType": "uriFilter",
-            "pieChartButton": true,
-            "predicate": "dct:source",
-            "sortBy": "instanceCount",
-            "sortByPredicate": "dct:source/skos:prefLabel",
-            "sortDirection": "desc"
         }
     }
 }

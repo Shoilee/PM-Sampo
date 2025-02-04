@@ -5,7 +5,7 @@
         "searchPerspectives": [
             "collections",
             "provEvents",
-            "perspective5"
+            "histEvents"
         ],
         "onlyInstancePages": [
             "actors"

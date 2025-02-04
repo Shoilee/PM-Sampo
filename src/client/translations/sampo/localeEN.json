@@ -428,7 +428,7 @@
         },
         "provenanceActivity": {
           "label": "Provenance Activity",
-          "description": "“Activity” events that consists of the “Transfer of Custody” or “Acqusisition” event"
+          "description": "Provenance Activity that consists of the “Transfer of Custody” or “Acqusisition” event"
         },
         "language": {
           "label": "Language",
@@ -439,7 +439,7 @@
           "description": "The manuscript or manuscript collection associated with the event."
         },
         "eventTimespan": {
-          "label": "Date",
+          "label": "Event date",
           "description": "The date or time period associated with the event."
         },
         "place": {

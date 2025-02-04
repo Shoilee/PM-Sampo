@@ -204,16 +204,16 @@
             "textQueryProperty": "skos:prefLabel"
         },
         "eventTimespan": {
-            "containerClass": "four",
-            "endProperty": "crm:P82b_end_of_the_end",
+            "containerClass": "ten",
             "facetType": "timespan",
-            "filterType": "timespanFilter",
-            "max": null,
-            "min": null,
+            "startProperty": "crm:P82a_begin_of_the_begin", 
+            "endProperty": "crm:P82b_end_of_the_end",
+            "filterType": "dateFilter",
+            "min": "1000-01-01",
+            "max": "2025-01-01", 
             "predicate": "crm:P4_has_time-span",
             "sortByAscPredicate": "crm:P4_has_time-span/crm:P82a_begin_of_the_begin",
-            "sortByDescPredicate": "crm:P4_has_time-span/crm:P82b_end_of_the_end",
-            "startProperty": "crm:P82a_begin_of_the_begin"
+            "sortByDescPredicate": "crm:P4_has_time-span/crm:P82b_end_of_the_end"
         },
         "place": {
             "containerClass": "ten",

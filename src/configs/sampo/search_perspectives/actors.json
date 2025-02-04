@@ -1,0 +1,118 @@
+{
+    "id": "actors",
+    "endpoint": {
+        "url": "https://api.colonialcollections.nl/datasets/nmvw/collection-archives/sparql",
+        "useAuth": false,
+        "prefixesFile": "SparqlQueriesPrefixes.js"
+    },
+    "sparqlQueriesFile": "SparqlQueriesActors.js",
+    "baseURI": "https://hdl.handle.net/20.500.11840",
+    "URITemplate": "<BASE_URI>/<LOCAL_ID>",
+    "facetClass": "crm:E21_Person crm:E74_Group crm:E39_Actor",
+    "frontPageImage": "main_page/manuscripts-452x262.jpg",
+    "searchMode": "faceted-search",
+    "enableDynamicLanguageChange": false,
+    "defaultActiveFacets": [],
+    "defaultTab": "table",
+    "defaultInstancePageTab": "table",
+    "includeInSitemap": true,
+    "resultClasses": {
+        "actors": {
+            "paginatedResultsConfig": {
+                "tabID": 0,
+                "component": "ResultTable",
+                "tabPath": "table",
+                "tabIcon": "CalendarViewDay",
+                "propertiesQueryBlock": "actorProperties",
+                "paginatedResultsAlwaysExpandRows": false,
+                "paginatedResultsRowContentMaxHeight": 190,
+                "pagesize": 10,
+                "sortBy": null,
+                "sortDirection": null
+            },
+            "instanceConfig": {
+                "propertiesQueryBlock": "actorProperties",
+                "instancePageResultClasses": {
+                    "instancePageTable": {
+                        "tabID": 0,
+                        "component": "InstancePageTable",
+                        "tabPath": "table",
+                        "tabIcon": "CalendarViewDay"
+                    },
+                    "instancePageExport": {
+                        "tabID": 2,
+                        "component": "Export",
+                        "tabPath": "export",
+                        "tabIcon": "CloudDownload",
+                        "pageType": "instancePage"
+                    }
+                }
+            }
+        },
+        "export": {
+            "tabID": 8,
+            "component": "Export",
+            "tabPath": "export",
+            "tabIcon": "CloudDownload",
+            "resultClass": "actors",
+            "facetClass": "actors"
+        },
+        "knowledgeGraphMetadata": {
+            "sparqlQuery": "knowledgeGraphMetadataQuery",
+            "resultMapper": "makeObjectList"
+        }
+    },
+    "properties": [
+      {
+        "id": "uri",
+        "valueType": "object",
+        "makeLink": true,
+        "externalLink": true,
+        "sortValues": true,
+        "numberedList": false,
+        "onlyOnInstancePage": true
+      },
+      {
+        "id": "prefLabel",
+        "valueType": "object",
+        "makeLink": true,
+        "externalLink": false,
+        "sortValues": true,
+        "numberedList": false,
+        "minWidth": 150
+      },
+      {
+        "id": "type",
+        "valueType": "object",
+        "makeLink": true,
+        "externalLink": true,
+        "sortValues": false,
+        "numberedList": false,
+        "minWidth": 150
+      },
+      {
+        "id": "role",
+        "valueType": "string",
+        "makeLink": false,
+        "externalLink": false,
+        "sortValues": true,
+        "numberedList": false,
+        "minWidth": 250,
+        "disableSort": true
+      }
+    ],
+    "facets": {
+        "type": {
+            "containerClass": "three",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "rdf:type",
+            "facetLabelPredicate": "skos:prefLabel|rdfs:label",
+            "searchField": false,
+            "sortButton": false,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "rdf:type",
+            "sortDirection": "desc"
+        }
+    }
+}

@@ -824,7 +824,7 @@
     "actors": {
       "label": "Actors",
       "facetResultsType": "actors",
-      "shortDescription": "People and institutions related to manuscripts",
+      "shortDescription": "People and institutions related to object collections",
       "longDescription": "<p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"> This perspective provides access to data related to the persons and institutions who impacted the production or dissemination of manuscripts and works. Actors include authors of works, artists and scribes who produced manuscripts, and the individual owners and institutions who bought or sold manuscripts. If two or more source datasets include the same Actor and this has been verified, the information from the source datasets has been merged into one Actor. See <a href=\"/instructions\">instructions</a> for using the filters. The result view can be selected using the tabs: </p> <ul class=\"MuiTypography-root MuiTypography-body1\"> <li> <strong>TABLE</STRONG> view includes all Actors in the MMM data. </li> <li> <strong>MAP</STRONG> view visualizes the connection between Actors and the places where they lived or were located. </li> <li> <strong>EXPORT</strong> the SPARQL query used to generate the result table view into YASGUI query editor. </li> </ul>",
       "instancePage": {
         "label": "Actor",

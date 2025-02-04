@@ -5,10 +5,11 @@
         "searchPerspectives": [
             "collections",
             "provEvents",
-            "histEvents"
+            "histEvents",
+            "actors"
         ],
         "onlyInstancePages": [
-            "actors"
+            
         ]
     },
     "localeConfig": {

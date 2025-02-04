@@ -436,7 +436,7 @@
         },
         "collection": {
           "label": "Collection",
-          "description": "The manuscript or manuscript collection associated with the event."
+          "description": "Search by collection title"
         },
         "eventTimespan": {
           "label": "Event date",

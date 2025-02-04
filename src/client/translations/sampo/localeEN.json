@@ -495,6 +495,10 @@
           "description": "A short label describing the manuscript.",
           "textFacetInputPlaceholder": "Search..."
         },
+        "ID": {
+          "label": "Identifier",
+          "description": "The unique identifier of the historical event."
+        },
         "timeSpan":{
           "label": "Time-Span",
           "description": "The date or time period associated with the historical event."

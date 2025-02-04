@@ -82,6 +82,15 @@
             "minWidth": 250
         },
         {
+            "id": "ID",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": true,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 250
+        },
+        {
             "id": "timeSpan",
             "valueType": "object",
             "makeLink": false,

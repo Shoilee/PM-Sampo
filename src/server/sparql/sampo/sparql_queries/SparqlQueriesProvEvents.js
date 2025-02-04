@@ -5,14 +5,15 @@ export const eventProperties = `
       ?id rdfs:label ?prefLabel__id .
       BIND(?prefLabel__id as ?prefLabel__prefLabel)
       BIND(?id as ?uri__id)
+      # BIND(?id as ?uri__dataProviderUrl)
       BIND(CONCAT("/provEvents/page/", REPLACE(STR(?id), "^.*\\\\/(.+/.+/.+)", "$1")) as ?uri__dataProviderUrl)
       BIND(?id as ?uri__prefLabel)
     }
     UNION
     {
       ?id a ?type__id .
-      BIND(REPLACE(STR(?type__id), "^.*\\\\/(.+)", "$1") as ?type__prefLabel)
-      BIND(CONCAT("/types/page/", REPLACE(STR(?type__id), "^.*\\\\/(.+)", "$1")) as ?type__dataProviderUrl)
+      BIND(CONCAT("crm:", REPLACE(STR(?type__id), "^.*\\\\/(.+)", "$1")) as ?type__prefLabel)
+      BIND(?type__id as ?type__dataProviderUrl)
     }
     UNION{
       ?id crm:P9i_forms_part_of ?provenanceActivity__id .

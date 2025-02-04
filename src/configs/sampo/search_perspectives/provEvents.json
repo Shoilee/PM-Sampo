@@ -228,17 +228,24 @@
             "sortByPredicate": "crm:P7_took_place_at/skos:prefLabel",
             "type": "hierarchical"
         },
-        "placeType": {
-            "containerClass": "ten",
+        "fromActor": {
+            "containerClass": "three",
             "facetType": "list",
             "filterType": "uriFilter",
-            "literal": true,
-            "pieChartButton": true,
-            "predicate": "crm:P7_took_place_at/gvp:placeTypePreferred",
-            "searchField": true,
-            "sortButton": true,
+            "predicate": "crm:P23_transferred_title_from|crm:P28_Custody_Surrendered_by",
+            "facetLabelPredicate": "rdfs:label",
             "sortBy": "instanceCount",
-            "sortByPredicate": "crm:P7_took_place_at/gvp:placeTypePreferred",
+            "sortByPredicate": "crm:P23_transferred_title_from|crm:P28_Custody_Surrendered_by/rdfs:label",
+            "sortDirection": "desc"
+        },
+        "toActor": {
+            "containerClass": "three",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "crm:P22_transferred_title_to|crm:P29_Custody_Recieved_By",
+            "facetLabelPredicate": "rdfs:label",
+            "sortBy": "instanceCount",
+            "sortByPredicate": "crm:P22_transferred_title_to|crm:P29_Custody_Recieved_By/rdfs:label",
             "sortDirection": "desc"
         },
         "source": {

@@ -408,7 +408,7 @@
         }
       }
     },
-    "perspective3": {
+    "provEvents": {
       "label": "Provenance",
       "facetResultsType": "events",
       "shortDescription": "Objects' provenance related events",

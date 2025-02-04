@@ -1,4 +1,4 @@
-const perspectiveID = 'perspective3'
+const perspectiveID = 'provEvents'
 
 export const eventProperties = `
     {

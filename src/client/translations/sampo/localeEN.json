@@ -439,11 +439,11 @@
           "description": "Search by collection title"
         },
         "eventTimespan": {
-          "label": "Event date",
+          "label": "Provenance Event date",
           "description": "The date or time period associated with the event."
         },
         "place": {
-          "label": "Place",
+          "label": "Object's Place of Origin",
           "description": "The specific place(s) associated with the event."
         },
         "placeType": {

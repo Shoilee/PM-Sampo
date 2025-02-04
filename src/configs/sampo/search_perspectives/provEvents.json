@@ -187,6 +187,18 @@
             "sortByPredicate": "rdf:type",
             "sortDirection": "desc"
         },
+        "acquisitionType": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "pieChartButton": true,
+            "predicate": "rdfs:label",
+            "facetLabelPredicate": "rdfs:label",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortDirection": "desc"
+        },
         "collection": {
             "containerClass": "one",
             "facetType": "text",

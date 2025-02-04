@@ -423,8 +423,12 @@
           "description": "Uniform Resource Identifier"
         },
         "type": {
-          "label": "Type",
+          "label": "Event Type",
           "description": "Distinguish between “Transfer of Custody”, “Production”, and other types of “Activity” events."
+        },
+        "acquisitionType": {
+          "label": "Acquisition / Transfer of Custody Type",
+          "description": "Type of acquisition event."
         },
         "provenanceActivity": {
           "label": "Provenance Activity",

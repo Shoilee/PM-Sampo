@@ -11,9 +11,30 @@ export const actorProperties = `
     }
     UNION
     {
+      ?id crm:P1_is_identified_by ?name__id .
+      ?name__id crm:P2_has_type aat:300404650 .
+      ?name__id crm:P190_has_symbolic_content ?name__prefLabel .
+
+    }
+    UNION
+    {
       ?id a ?type__id .
-      BIND(CONCAT("crm:", REPLACE(STR(?type__id), "^.*\\\\/(.+)", "$1")) AS ?type__prefLabel) .
+      BIND(CONCAT("crm:", REPLACE(STR(?type__id), "^.*\\\\/(.+)", "$1")) AS ?type__prefLabel)
       BIND(?id AS ?type__dataProviderUrl)
+    }
+    UNION{
+      ?id crm:P2_has_type ?role__id .
+      ?role__id skos:prefLabel|rdfs:label ?role__prefLabel .
+    }
+    UNION{
+      ?id crm:P67i_is_referred_to_by ?gender__id .
+      ?gender__id crm:P2_has_type aat:300055147 .
+      ?gender__id crm:P190_has_symbolic_content ?gender__prefLabel .
+    }
+    UNION{
+      ?id crm:P67i_is_referred_to_by ?gender__id .
+      ?gender__id crm:P2_has_type aat:300055147 .
+      ?gender__id crm:P190_has_symbolic_content ?gender__prefLabel .
     }
 `
 

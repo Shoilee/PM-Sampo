@@ -836,12 +836,24 @@
           "description": "Uniform Resource Identifier"
         },
         "prefLabel": {
+          "label": "Label",
+          "description": "The label of the actor."
+        },
+        "name": {
           "label": "Name",
           "description": "The standardized name of the actor."
         },
         "type": {
           "label": "Type",
           "description": "Indicates whether the actor is an individual (Person) or an institution, corporation, or family (Group)"
+        },
+        "gender": {
+          "label": "Gender",
+          "description": "Indicates the gender of the actor."
+        },
+        "description": {
+          "label": "Description",
+          "description": "Description of the actor."
         },
         "birthDateTimespan": {
           "label": "Birth / formation date",

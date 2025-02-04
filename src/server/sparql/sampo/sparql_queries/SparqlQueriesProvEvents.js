@@ -21,7 +21,7 @@ export const eventProperties = `
     {
       ?collection__id crm:P24i_changed_ownership_through|crm:P30i_custody_transferred_through ?id .
       ?collection__id dct:title ?collection__prefLabel .
-      BIND(CONCAT("/perspective1/page/", REPLACE(STR(?collection__id), "^.*\\\\/(.+)", "$1")) AS ?collection__dataProviderUrl)
+      BIND(CONCAT("/collections/page/", REPLACE(STR(?collection__id), "^.*\\\\/(.+)", "$1")) AS ?collection__dataProviderUrl)
     }
     UNION
     {

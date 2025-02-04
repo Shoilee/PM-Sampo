@@ -31,7 +31,7 @@
                 "sortDirection": null
             },
             "instanceConfig": {
-                "propertiesQueryBlock": "manuscriptPropertiesInstancePage",
+                "propertiesQueryBlock": "histEventProperties",
                 "instancePageResultClasses": {
                     "instancePageTable": {
                         "tabID": 0,

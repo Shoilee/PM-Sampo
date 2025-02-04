@@ -5,7 +5,7 @@ export const histEventProperties =
       ?id crm:P1_is_identified_by ?prefLabel__id .
       ?prefLabel__id crm:P2_has_type aat:300404650.
       ?prefLabel__id crm:P190_has_symbolic_content ?prefLabel__prefLabel .
-      BIND(?id as ?prefLabel__dataProviderUrl)
+      BIND(CONCAT("/${perspectiveID}/page/", REPLACE(STR(?id), "^.*/(.*)$", "$1")) as ?prefLabel__dataProviderUrl)
       BIND(?id as ?uri__id)
       BIND(?id as ?uri__dataProviderUrl)
       BIND(?id as ?uri__prefLabel)

@@ -87,7 +87,8 @@
             "makeLink": true,
             "externalLink": false,
             "sortValues": true,
-            "numberedList": false
+            "numberedList": false,
+            "onlyOnInstancePage":true
         },
         {
             "id": "prefLabel",

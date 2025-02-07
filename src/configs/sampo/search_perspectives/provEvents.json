@@ -46,7 +46,8 @@
                         "tabIcon": "CloudDownload",
                         "pageType": "instancePage"
                     }
-                }
+                },
+            "localIDasURI": true
             }
         },
         "export": {

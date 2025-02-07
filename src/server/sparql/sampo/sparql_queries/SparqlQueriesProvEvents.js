@@ -4,9 +4,9 @@ export const eventProperties = `
     {
       ?id rdfs:label ?prefLabel__id .
       BIND(?prefLabel__id as ?prefLabel__prefLabel)
-      BIND(CONCAT('/${perspectiveID}/page/', ENCODE_FOR_URI(STR(REPLACE(STR(?id), "^.*\\\\/(.+/.+/.+)", "$1")))) as ?prefLabel__dataProviderUrl)
+      BIND(CONCAT('/${perspectiveID}/page/', REPLACE(STR(REPLACE(STR(?id), ':', '%3A', 'i')), '/', '%2F', 'i'), '/table') as ?prefLabel__dataProviderUrl)
       BIND(?id as ?uri__id)
-      BIND(CONCAT("/provEvents/page/", REPLACE(STR(?id), "^.*\\\\/(.+/.+/.+)", "$1")) as ?uri__dataProviderUrl)
+      BIND(CONCAT('/${perspectiveID}/page/', REPLACE(STR(REPLACE(STR(?id), ':', '%3A', 'i')), '/', '%2F', 'i'), '/table') as ?uri__dataProviderUrl)
       BIND(?id as ?uri__prefLabel)
     }
     UNION

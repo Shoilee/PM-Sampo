@@ -37,7 +37,7 @@ export const actorProperties = `
     }
     UNION{
       ?id crm:P67i_is_referred_to_by ?biography__id .
-      ?biography__id crm:P2_has_type aat:300379842 .
+      ?biography__id crm:P2_has_type aat:300435422 .
       ?biography__id crm:P190_has_symbolic_content ?biography__prefLabel .
     }
 `

@@ -79,7 +79,7 @@
     "table": "table",
     "provenance": "provenance",
     "histEvents": "historical events",
-    "actors": "actors",
+    "actors": "connected actors",
     "collections": "related collections",
     "map": "map",
     "production_places": "production places",
@@ -848,7 +848,7 @@
       "actorInstancePageActors": {
         "label": "Related Actors",
         "item": {
-          "label": "Event"
+          "label": "Actor"
         }
       },
       "actorInstancePageHistoricalEvents": {

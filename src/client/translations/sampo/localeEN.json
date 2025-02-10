@@ -462,6 +462,14 @@
           "label": "Note",
           "description": "Note"
         },
+        "surrender": {
+          "label": "Custody surrendered by / Title transferred from",
+          "description": "Custody surrendered by or Title transferred from"
+        },
+        "receiver": {
+          "label": "Custody received by / Title transferred to",
+          "description": "Custody received by or Title transferred to"
+        },
         "fromActor": {
           "label": "Custody surrendered by / Title transferred from",
           "description": "Custody surrendered by or Title transferred from"

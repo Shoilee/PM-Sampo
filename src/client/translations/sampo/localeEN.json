@@ -888,6 +888,10 @@
           "label": "Gender",
           "description": "Indicates the gender of the actor."
         },
+        "nationality": {
+          "label": "Nationality",
+          "description": "Indicates the nationality of the actor."
+        },
         "description": {
           "label": "Description",
           "description": "Description of the actor."

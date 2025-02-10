@@ -271,6 +271,16 @@
         "disableSort": true
       },
       {
+        "id": "nationality",
+        "valueType": "object",
+        "makeLink": false,
+        "externalLink": false,
+        "sortValues": true,
+        "numberedList": false,
+        "minWidth": 250,
+        "disableSort": true
+      },
+      {
         "id": "description",
         "valueType": "object",
         "makeLink": false,

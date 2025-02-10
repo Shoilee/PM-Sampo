@@ -32,9 +32,9 @@ export const actorProperties = `
       ?gender__id crm:P190_has_symbolic_content ?gender__prefLabel .
     }
     UNION{
-      ?id crm:P67i_is_referred_to_by ?gender__id .
-      ?gender__id crm:P2_has_type aat:300055147 .
-      ?gender__id crm:P190_has_symbolic_content ?gender__prefLabel .
+      ?id crm:P67i_is_referred_to_by ?nationality__id .
+      ?nationality__id crm:P2_has_type aat:300379842 .
+      ?nationality__id crm:P190_has_symbolic_content ?nationality__prefLabel .
     }
 `
 

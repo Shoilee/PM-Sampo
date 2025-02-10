@@ -205,13 +205,6 @@
                                 "onlyOnInstancePage": true
                             }
                         ]
-                    },
-                    "instancePageExport": {
-                        "tabID": 3,
-                        "component": "Export",
-                        "tabPath": "export",
-                        "tabIcon": "CloudDownload",
-                        "pageType": "instancePage"
                     }
                 }
             }

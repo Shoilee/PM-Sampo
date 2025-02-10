@@ -78,6 +78,7 @@
   "tabs": {
     "table": "table",
     "provenance": "provenance",
+    "histEvents": "historical events",
     "map": "map",
     "production_places": "production places",
     "production_places_heatmap": "production heatmap",
@@ -842,6 +843,12 @@
         "label": "Actor",
         "description": "<p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"> Actors are individuals or groups who influenced the production or provenance of a manuscript. Actor types include Person, Group, or Actor. Persons refer to individuals, while Groups indicate corporate or institutional bodies. The Actor type is used when a more specific type is unknown or not specified in the source dataset. </p>"
       },
+      "actorInstancePageHistoricalEvents": {
+        "label": "Historical Events",
+        "item": {
+          "label": "Event"
+        }
+      },
       "properties": {
         "uri": {
           "label": "URI",
@@ -890,6 +897,10 @@
         "role": {
           "label": "Role",
           "description": "Role(s)"
+        },
+        "timeSpan":{
+          "label": "Time-Span",
+          "description": "The date or time period associated with the historical event."
         },
         "source": {
           "label": "Source",

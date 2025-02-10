@@ -39,6 +39,63 @@
                         "tabPath": "table",
                         "tabIcon": "CalendarViewDay"
                     },
+                    "histEventInstancePageCollections": {
+                        "tabID": 1,
+                        "component": "InstancePageTableList",
+                        "fetchResultsWhenMounted": true,
+                        "tabPath": "collections",
+                        "tabIcon": "CalendarViewDay",
+                        "sparqlQuery": "histEventCollectionsQuery",
+                        "filterTarget": "collections",
+                        "properties": [
+                            {
+                              "id": "image",
+                              "valueType": "image",
+                              "previewImageHeight": "150",
+                              "makeLink": true,
+                              "externalLink": true,
+                              "sortValues": true,
+                              "numberedList": false,
+                              "minWidth": 250
+                          },  
+                          {
+                                "id": "uri",
+                                "valueType": "object",
+                                "makeLink": true,
+                                "externalLink": true,
+                                "sortValues": true,
+                                "numberedList": false,
+                                "minWidth": 200
+                            },
+                            {
+                              "id": "prefLabel",
+                              "valueType": "object",
+                              "makeLink": true,
+                              "externalLink": false,
+                              "sortValues": true,
+                              "numberedList": false,
+                              "minWidth": 200
+                            },
+                            {
+                                "id": "productionPlace",
+                                "valueType": "object",
+                                "makeLink": false,
+                                "externalLink": false,
+                                "sortValues": true,
+                                "numberedList": false,
+                                "minWidth": 250
+                            },
+                            {
+                                "id": "productionTimeSpan",
+                                "valueType": "object",
+                                "makeLink": false,
+                                "externalLink": false,
+                                "sortValues": true,
+                                "numberedList": false,
+                                "minWidth": 250
+                            }
+                        ]
+                    },
                     "instancePageExport": {
                         "tabID": 2,
                         "component": "Export",

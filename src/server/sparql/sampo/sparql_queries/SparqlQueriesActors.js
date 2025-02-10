@@ -123,7 +123,7 @@ export const actorCollectionsQuery = `
     {
       ?object__id dct:title ?object__prefLabel__id .
       BIND(?object__prefLabel__id AS ?object__prefLabel__prefLabel)
-      BIND(CONCAT("/collections/page/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1")) AS ?prefLabel__dataProviderUrl)
+      BIND(CONCAT("/collections/page/", REPLACE(STR(?object__id), "^.*\\\\/(.+)", "$1")) AS ?object__prefLabel__dataProviderUrl)
     }
     UNION
     {

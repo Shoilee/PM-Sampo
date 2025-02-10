@@ -187,13 +187,12 @@
                               "numberedList": false
                             },
                             {
-                                "id": "description",
+                                "id": "type",
                                 "valueType": "object",
-                                "makeLink": false,
-                                "externalLink": false,
+                                "makeLink": true,
+                                "externalLink": true,
                                 "sortValues": true,
-                                "numberedList": false,
-                                "onlyOnInstancePage": true
+                                "numberedList": false
                             }
                         ]
                     }

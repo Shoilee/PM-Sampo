@@ -151,6 +151,7 @@ export const actorActorsQuery = `
   SELECT DISTINCT ?object__id ?id ?uri__id ?uri__prefLabel ?uri__dataProviderUrl ?prefLabel__id  
   ?object__prefLabel__id ?object__prefLabel__prefLabel ?object__prefLabel__dataProviderUrl
   ?object__uri__id ?object__uri__prefLabel ?object__uri__dataProviderUrl
+  ?object__type__id ?object__type__prefLabel ?object__type__dataProviderUrl
   WHERE {
     <FILTER>
     BIND(<ID> as ?id)
@@ -172,6 +173,12 @@ export const actorActorsQuery = `
       ?object__id rdfs:label ?object__prefLabel__id .
       BIND(?object__prefLabel__id AS ?object__prefLabel__prefLabel)
       BIND(CONCAT("/actors/page/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1")) AS ?prefLabel__dataProviderUrl)
+}
+    UNION
+    {
+      ?object__id a ?object__type__id .
+      BIND(?object__type__id as ?object__type__dataProviderUrl)
+      BIND(REPLACE(STR(?object__type__id), "^.*/(.*)$", "$1") as ?object__type__prefLabel)
     }
   }LIMIT 10
 `

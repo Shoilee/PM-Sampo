@@ -172,8 +172,8 @@ export const actorActorsQuery = `
     {
       ?object__id rdfs:label ?object__prefLabel__id .
       BIND(?object__prefLabel__id AS ?object__prefLabel__prefLabel)
-      BIND(CONCAT("/actors/page/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1")) AS ?prefLabel__dataProviderUrl)
-}
+      BIND(CONCAT("/actors/page/", REPLACE(STR(?object__id), "^.*\\\\/(.+)", "$1")) AS ?object__prefLabel__dataProviderUrl)
+    }
     UNION
     {
       ?object__id a ?object__type__id .

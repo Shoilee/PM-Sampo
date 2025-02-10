@@ -35,6 +35,11 @@ export const actorProperties = `
       ?nationality__id crm:P2_has_type aat:300379842 .
       ?nationality__id crm:P190_has_symbolic_content ?nationality__prefLabel .
     }
+    UNION{
+      ?id crm:P67i_is_referred_to_by ?biography__id .
+      ?biography__id crm:P2_has_type aat:300379842 .
+      ?biography__id crm:P190_has_symbolic_content ?biography__prefLabel .
+    }
 `
 
 export const actorHistoricatEventsQuery = `

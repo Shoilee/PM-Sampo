@@ -892,8 +892,8 @@
           "label": "Nationality",
           "description": "Indicates the nationality of the actor."
         },
-        "description": {
-          "label": "Description",
+        "biography": {
+          "label": "Biography",
           "description": "Description of the actor."
         },
         "birthDateTimespan": {

@@ -14,7 +14,6 @@ export const actorProperties = `
       ?id crm:P1_is_identified_by ?name__id .
       ?name__id crm:P2_has_type aat:300404650 .
       ?name__id crm:P190_has_symbolic_content ?name__prefLabel .
-
     }
     UNION
     {

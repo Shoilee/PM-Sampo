@@ -281,6 +281,16 @@
         "disableSort": true
       },
       {
+        "id": "profession",
+        "valueType": "object",
+        "makeLink": false,
+        "externalLink": false,
+        "sortValues": true,
+        "numberedList": false,
+        "minWidth": 250,
+        "disableSort": true
+      },
+      {
         "id": "biography",
         "valueType": "object",
         "makeLink": false,

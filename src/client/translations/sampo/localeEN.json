@@ -900,6 +900,10 @@
           "label": "Remarks",
           "description": "Remarks of the actor."
         },
+        "profession": {
+          "label": "Profession",
+          "description": "Profession of the actor."
+        },
         "birthDateTimespan": {
           "label": "Birth / formation date",
           "description": "The date when the actor was born or established."

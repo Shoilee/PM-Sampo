@@ -45,6 +45,11 @@ export const actorProperties = `
       ?remarks__id crm:P2_has_type aat:300435415 .
       ?remarks__id crm:P190_has_symbolic_content ?remarks__prefLabel .
     }
+    UNION{
+      ?id crm:P67i_is_referred_to_by ?profession__id .
+      ?profession__id crm:P2_has_type aat:300393201 .
+      ?profession__id crm:P190_has_symbolic_content ?profession__prefLabel .
+    }
 `
 
 export const actorHistoricatEventsQuery = `

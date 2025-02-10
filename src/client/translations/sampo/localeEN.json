@@ -79,6 +79,7 @@
     "table": "table",
     "provenance": "provenance",
     "histEvents": "historical events",
+    "collections": "related collections",
     "map": "map",
     "production_places": "production places",
     "production_places_heatmap": "production heatmap",
@@ -849,10 +850,20 @@
           "label": "Event"
         }
       },
+      "actorInstancePageCollections": {
+        "label": "Collections",
+        "item": {
+          "label": "Object"
+        }
+      },
       "properties": {
         "uri": {
           "label": "URI",
           "description": "Uniform Resource Identifier"
+        },
+        "image":{
+          "label": "Image",
+          "description": "Image of the current entity"
         },
         "prefLabel": {
           "label": "Label",
@@ -882,25 +893,21 @@
           "label": "Death / dissolution date",
           "description": "The date when the actor died or dissolved."
         },
-        "place": {
-          "label": "Activity location",
-          "description": "Place(s) of activity linked to this actor."
-        },
-        "work": {
-          "label": "Work",
-          "description": "Work(s) linked to the actor."
-        },
-        "manuscript": {
-          "label": "Manuscript",
-          "description": "Manuscript(s) linked to the actor."
+        "productionPlace": {
+          "label": "Place of Origin",
+          "description": "The location where the object was produced."
         },
         "role": {
           "label": "Role",
           "description": "Role(s)"
         },
-        "timeSpan":{
-          "label": "Time-Span",
-          "description": "The date or time period associated with the historical event."
+        "productionTimeSpan":{
+          "label": "Production date",
+          "description": "The date or time period associated with object production."
+        },
+        "acquisition":{
+          "label": "Connecting Event",
+          "description": "Events related to the actor"
         },
         "source": {
           "label": "Source",

@@ -64,7 +64,6 @@ export const actorHistoricatEventsQuery = `
       ?object__prefLabel__id crm:P2_has_type aat:300404650.
       ?object__prefLabel__id crm:P190_has_symbolic_content ?object__prefLabel__prefLabel .
       BIND(CONCAT("/histEvents/page/", REPLACE(STR(?object__id), "^.*/(.*)$", "$1")) as ?object__prefLabel__dataProviderUrl)
-
     }
     UNION {
       ?object__id crm:P4_has_time-span ?object__timeSpan__id .

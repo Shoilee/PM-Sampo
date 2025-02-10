@@ -104,6 +104,8 @@ export const actorCollectionsQuery = `
 
     BIND(CONCAT("/provEvents/page/" , REPLACE(STR(REPLACE(STR(?object__acquisition__id), ':', '%3A', 'i')), '/', '%2F', 'i'), '/table') AS ?object__acquisition__dataProviderUrl)
     BIND(?object__acquisition__id AS ?object__acquisition__prefLabel)
+
+    BIND(REPLACE(STR(?object__connection__id), "^.*/(.+)", "$1") AS ?object__connection__prefLabel)
     {
       ?object__id dct:title ?object__prefLabel__id .
       BIND(?object__prefLabel__id AS ?object__prefLabel__prefLabel)
@@ -128,7 +130,7 @@ export const actorCollectionsQuery = `
       ?i_BNODE <https://linked.art/ns/terms/digitally_shown_by> ?object__image__id .
       ?object__image__id <https://linked.art/ns/terms/access_point> ?object__image__url .
     }
-  }LIMIT 50
+  }LIMIT 10
 `
 
 

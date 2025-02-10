@@ -148,6 +148,15 @@
                                 "sortValues": true,
                                 "numberedList": false,
                                 "minWidth": 200
+                            },
+                            {
+                                "id": "connection",
+                                "valueType": "object",
+                                "makeLink": false,
+                                "externalLink": false,
+                                "sortValues": true,
+                                "numberedList": false,
+                                "minWidth": 250
                             }
                         ]
                     },

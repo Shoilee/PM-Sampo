@@ -187,15 +187,6 @@
                               "numberedList": false
                             },
                             {
-                                "id": "timeSpan",
-                                "valueType": "object",
-                                "makeLink": false,
-                                "externalLink": false,
-                                "sortValues": true,
-                                "numberedList": false,
-                                "minWidth": 250
-                            },
-                            {
                                 "id": "description",
                                 "valueType": "object",
                                 "makeLink": false,

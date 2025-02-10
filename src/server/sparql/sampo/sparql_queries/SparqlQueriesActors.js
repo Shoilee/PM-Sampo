@@ -133,6 +133,34 @@ export const actorCollectionsQuery = `
   }LIMIT 10
 `
 
+export const actorActorsQuery = `
+  SELECT DISTINCT ?object__id ?id ?uri__id ?uri__prefLabel ?uri__dataProviderUrl ?prefLabel__id  
+  ?object__prefLabel__id ?object__prefLabel__prefLabel ?object__prefLabel__dataProviderUrl
+  ?object__uri__id ?object__uri__prefLabel ?object__uri__dataProviderUrl
+  WHERE {
+    <FILTER>
+    BIND(<ID> as ?id)
+    BIND(?id as ?uri__id)
+    BIND(?id as ?uri__prefLabel)
+    BIND(?id as ?uri__dataProviderUrl)
+
+    # connection with other actor
+    ?acqusiition1 crm:P23_transferred_title_from ?id .
+    ?collection crm:P24i_changed_ownership_through ?acqusiition1 .
+    ?acqusiition2 crm:P23_transferred_title_from ?object__id .
+    ?collection crm:P24i_changed_ownership_through ?acqusiition2 .
+    FILTER(?id != ?object__id)
+
+    BIND(?object__id AS ?object__uri__id)
+    BIND(?object__id AS ?object__uri__dataProviderUrl)
+    BIND(STR(?object__id) AS ?object__uri__prefLabel) 
+    {
+      ?object__id rdfs:label ?object__prefLabel__id .
+      BIND(?object__prefLabel__id AS ?object__prefLabel__prefLabel)
+      BIND(CONCAT("/actors/page/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1")) AS ?prefLabel__dataProviderUrl)
+    }
+  }LIMIT 10
+`
 
 export const actorPlacesQuery = `
   SELECT ?id ?lat ?long

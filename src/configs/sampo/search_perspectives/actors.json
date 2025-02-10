@@ -160,6 +160,52 @@
                             }
                         ]
                     },
+                    "actorInstancePageActors": {
+                        "tabID": 3,
+                        "component": "InstancePageTableList",
+                        "fetchResultsWhenMounted": true,
+                        "tabPath": "actors",
+                        "tabIcon": "CalendarViewDay",
+                        "sparqlQuery": "actorActorsQuery",
+                        "filterTarget": "histEvents",
+                        "properties": [
+                            {
+                                "id": "prefLabel",
+                                "valueType": "object",
+                                "makeLink": true,
+                                "externalLink": false,
+                                "sortValues": true,
+                                "numberedList": false,
+                                "minWidth": 200
+                            },
+                            {
+                              "id": "uri",
+                              "valueType": "object",
+                              "makeLink": true,
+                              "externalLink": true,
+                              "sortValues": true,
+                              "numberedList": false
+                            },
+                            {
+                                "id": "timeSpan",
+                                "valueType": "object",
+                                "makeLink": false,
+                                "externalLink": false,
+                                "sortValues": true,
+                                "numberedList": false,
+                                "minWidth": 250
+                            },
+                            {
+                                "id": "description",
+                                "valueType": "object",
+                                "makeLink": false,
+                                "externalLink": false,
+                                "sortValues": true,
+                                "numberedList": false,
+                                "onlyOnInstancePage": true
+                            }
+                        ]
+                    },
                     "instancePageExport": {
                         "tabID": 3,
                         "component": "Export",

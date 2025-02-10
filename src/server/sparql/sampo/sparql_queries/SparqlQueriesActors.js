@@ -102,7 +102,7 @@ export const actorCollectionsQuery = `
     BIND(?object__id AS ?object__uri__dataProviderUrl)
     BIND(STR(?object__id) AS ?object__uri__prefLabel) 
 
-    BIND(CONCAT("/provEvents/page/" , REPLACE(STR(?object__acquisition__id), "^.*/(.+)", "$1")) AS ?object__acquisition__dataProviderUrl)
+    BIND(CONCAT("/provEvents/page/" , REPLACE(STR(REPLACE(STR(?object__acquisition__id), ':', '%3A', 'i')), '/', '%2F', 'i'), '/table') AS ?object__acquisition__dataProviderUrl)
     BIND(?object__acquisition__id AS ?object__acquisition__prefLabel)
     {
       ?object__id dct:title ?object__prefLabel__id .

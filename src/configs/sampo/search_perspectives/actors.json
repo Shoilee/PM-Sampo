@@ -193,7 +193,15 @@
                                 "externalLink": true,
                                 "sortValues": true,
                                 "numberedList": false
-                            }
+                            },
+                            {
+                              "id": "collection",
+                              "valueType": "object",
+                              "makeLink": true,
+                              "externalLink": false,
+                              "sortValues": true,
+                              "numberedList": false
+                          }
                         ]
                     }
                 }

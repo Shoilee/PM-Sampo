@@ -152,6 +152,7 @@ export const actorActorsQuery = `
   ?object__prefLabel__id ?object__prefLabel__prefLabel ?object__prefLabel__dataProviderUrl
   ?object__uri__id ?object__uri__prefLabel ?object__uri__dataProviderUrl
   ?object__type__id ?object__type__prefLabel ?object__type__dataProviderUrl
+  ?object__collection__id ?object__collection__prefLabel ?object__collection__dataProviderUrl
   WHERE {
     <FILTER>
     BIND(<ID> as ?id)
@@ -161,10 +162,13 @@ export const actorActorsQuery = `
 
     # connection with other actor
     ?acqusiition1 crm:P23_transferred_title_from ?id .
-    ?collection crm:P24i_changed_ownership_through ?acqusiition1 .
+    ?object__collection__id crm:P24i_changed_ownership_through ?acqusiition1 .
     ?acqusiition2 crm:P23_transferred_title_from ?object__id .
-    ?collection crm:P24i_changed_ownership_through ?acqusiition2 .
+    ?object__collection__id crm:P24i_changed_ownership_through ?acqusiition2 .
     FILTER(?id != ?object__id)
+
+    ?object__collection__id dct:title | rdfs:label ?object__collection__prefLabel .
+    BIND(CONCAT("/collections/page/", REPLACE(STR(?object__collection__id), "^.*\\\\/(.+)", "$1")) AS ?object__collection__dataProviderUrl) 
 
     BIND(?object__id AS ?object__uri__id)
     BIND(?object__id AS ?object__uri__dataProviderUrl)

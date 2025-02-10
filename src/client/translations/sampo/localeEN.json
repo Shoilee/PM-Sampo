@@ -904,6 +904,10 @@
           "label": "Profession",
           "description": "Profession of the actor."
         },
+        "collection": {
+          "label": "Common Object(s)",
+          "description": "The list of common objects among the actors."
+        },
         "birthDateTimespan": {
           "label": "Birth / formation date",
           "description": "The date when the actor was born or established."

@@ -896,6 +896,10 @@
           "label": "Biography",
           "description": "Description of the actor."
         },
+        "remarks": {
+          "label": "Remarks",
+          "description": "Remarks of the actor."
+        },
         "birthDateTimespan": {
           "label": "Birth / formation date",
           "description": "The date when the actor was born or established."

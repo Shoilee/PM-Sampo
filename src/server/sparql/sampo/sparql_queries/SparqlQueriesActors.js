@@ -40,6 +40,11 @@ export const actorProperties = `
       ?biography__id crm:P2_has_type aat:300435422 .
       ?biography__id crm:P190_has_symbolic_content ?biography__prefLabel .
     }
+    UNION{
+      ?id crm:P67i_is_referred_to_by ?remarks__id .
+      ?remarks__id crm:P2_has_type aat:300435415 .
+      ?remarks__id crm:P190_has_symbolic_content ?remarks__prefLabel .
+    }
 `
 
 export const actorHistoricatEventsQuery = `

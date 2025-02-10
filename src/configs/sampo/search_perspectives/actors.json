@@ -290,6 +290,17 @@
         "minWidth": 250,
         "disableSort": true,
         "onlyOnInstancePage": true
+      },
+      {
+        "id": "remarks",
+        "valueType": "object",
+        "makeLink": false,
+        "externalLink": false,
+        "sortValues": true,
+        "numberedList": false,
+        "minWidth": 250,
+        "disableSort": true,
+        "onlyOnInstancePage": true
       }
     ],
     "facets": {

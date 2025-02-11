@@ -125,8 +125,26 @@
                 }
             }
         },
-        "export": {
+        "placesMsProduced": {
             "tabID": 1,
+            "component": "LeafletMap",
+            "tabPath": "production_places",
+            "tabIcon": "AddLocation",
+            "sparqlQuery": "productionPlacesQuery",
+            "facetClass": "collections",
+            "filterTarget": "collections",
+            "resultMapper": "mapPlaces",
+            "facetID": "productionPlace",
+            "showExternalLayers": true,
+            "instanceConfig": {
+                "propertiesQueryBlock": "placePropertiesInfoWindow",
+                "relatedInstances": "collectionsProducedAt",
+                "filterTarget": "related__id",
+                "createPopUpContent": "createPopUpContentMMM"
+            }
+        },
+        "export": {
+            "tabID": 2,
             "component": "Export",
             "tabPath": "export",
             "tabIcon": "CloudDownload",

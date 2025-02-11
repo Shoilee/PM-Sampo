@@ -503,7 +503,7 @@
       "histEventInstancePageCollections": {
         "label": "Historical Events",
         "item": {
-          "label": "Event"
+          "label": "Object"
         }
       },
       "properties": {

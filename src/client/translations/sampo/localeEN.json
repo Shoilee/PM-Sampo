@@ -552,11 +552,11 @@
           "label": "Acquisition Time-period",
           "description": "The date or time period associated with the acquisition event."
         },
-        "transferedTitleFrom": {
+        "fromActor": {
           "label": "Transfered Title From",
           "description": "The previous owner of the objects."
         },
-        "transferedTitleTo": {
+        "toActor": {
           "label": "Transfered Title To",
           "description": "The next owner of the objects."
         },

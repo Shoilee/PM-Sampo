@@ -32,6 +32,8 @@ export const histEventCollectionsQuery = `
   ?object__productionPlace__id ?object__productionPlace__prefLabel
   ?object__productionTimeSpan__id ?object__productionTimeSpan__prefLabel
   ?object__image__id ?object__image__url
+  ?object__fromActor__id ?object__fromActor__prefLabel ?object__fromActor__dataProviderUrl
+  ?object__toActor__id ?object__toActor__prefLabel ?object__toActor__dataProviderUrl
   WHERE {
     <FILTER>
     BIND(<ID> as ?id)
@@ -66,5 +68,22 @@ export const histEventCollectionsQuery = `
       ?i_BNODE <https://linked.art/ns/terms/digitally_shown_by> ?object__image__id .
       ?object__image__id <https://linked.art/ns/terms/access_point> ?object__image__url .
     }
-  }LIMIT 10
+    UNION
+    {
+      {?object__id crm:P24i_changed_ownership_through/crm:P23_transferred_title_from ?object__fromActor__id.}
+      UNION 
+      {?object__id crm:P30i_custody_transferred_through/crm:P23_transferred_title_from ?object__fromActor__id.}
+      ?object__fromActor__id rdfs:label ?object__fromActor__prefLabel .
+      BIND(CONCAT("/actors/page/", REPLACE(STR(?object__fromActor__id), "^.*\\\\/(.+)", "$1")) AS ?object__fromActor__dataProviderUrl)
+    }
+    UNION
+    {
+      {?object__id crm:P24i_changed_ownership_through/crm:P22_transferred_title_to ?object__toActor__id.}
+      UNION 
+      {?object__id crm:P30i_custody_transferred_through/crm:P29_custody_received_by ?object__toActor__id.}
+      OPTIONAL {?object__toActor__id rdfs:label ?label .}
+      BIND(COALESCE(?label, STR(?object__toActor__id)) AS ?object__toActor__prefLabel)
+      BIND(CONCAT("/actors/page/", REPLACE(STR(?object__toActor__id), "^.*\\\\/(.+)", "$1")) AS ?object__toActor__dataProviderUrl)
+    }
+  }Limit 100
 `

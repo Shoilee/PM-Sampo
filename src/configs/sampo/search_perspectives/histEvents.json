@@ -93,6 +93,24 @@
                                 "sortValues": true,
                                 "numberedList": false,
                                 "minWidth": 250
+                            },
+                            {
+                                "id": "fromActor",
+                                "valueType": "object",
+                                "makeLink": true,
+                                "externalLink": false,
+                                "sortValues": true,
+                                "numberedList": false,
+                                "minWidth": 250
+                            },
+                            {
+                                "id": "toActor",
+                                "valueType": "object",
+                                "makeLink": true,
+                                "externalLink": false,
+                                "sortValues": true,
+                                "numberedList": false,
+                                "minWidth": 250
                             }
                         ]
                     },

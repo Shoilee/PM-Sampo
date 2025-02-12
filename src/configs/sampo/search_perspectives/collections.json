@@ -157,6 +157,45 @@
             "heatmapThreshold": 0.025,
             "heatmapIntensity": 1
         },
+        "eventLineChart": {
+            "tabID": 4,
+            "component": "ApexCharts",
+            "tabPath": "event_dates",
+            "tabIcon": "ShowChart",
+            "sparqlQuery": "eventsByDecadeQuery",
+            "facetClass": "collections",
+            "filterTarget": "collections",
+            "resultMapper": "mapMultipleLineChart",
+            "resultMapperConfig": {
+                "fillEmptyValues": false
+            },
+            "createChartData": "createMultipleLineChartData",
+            "title": "objects events by decade",
+            "xaxisTitle": "Decade",
+            "xaxisType": "category",
+            "xaxisTickAmount": 30,
+            "yaxisTitle": "Count",
+            "seriesTitle": "Count",
+            "stroke": {
+                "curve": "straight",
+                "width": 2
+            },
+            "fill": {
+                "type": "gradient",
+                "gradient": {
+                    "shadeIntensity": 1,
+                    "inverseColors": false,
+                    "opacityFrom": 0.6,
+                    "opacityTo": 0.05,
+                    "stops": [
+                        20,
+                        60,
+                        100,
+                        100
+                    ]
+                }
+            }
+        },
         "export": {
             "tabID": 4,
             "component": "Export",

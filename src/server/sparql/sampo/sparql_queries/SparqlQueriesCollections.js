@@ -160,3 +160,58 @@ export const collectionsProducedAt = `
     }
 `
 
+export const eventsByDecadeQuery = `
+  SELECT DISTINCT ?category 
+  (COUNT(?production) AS ?productionCount) 
+  (COUNT(?transfer) AS ?transferCount) 
+  (COUNT(?observation) AS ?observationCount) 
+  WHERE {
+    <FILTER>
+    { 
+      ?manuscript crm:P108i_was_produced_by ?production .
+      ?production crm:P4_has_time-span/crm:P82a_begin_of_the_begin ?begin .
+      ?production crm:P4_has_time-span/crm:P82b_end_of_the_end ?end .
+
+      # Extract years from xsd:date
+      BIND(year(xsd:dateTime(?begin)) AS ?beginYear)
+      BIND(year(xsd:dateTime(?end)) AS ?endYear)
+      
+      # Compute decades 
+      BIND(FLOOR(?beginYear / 10) * 10 AS ?beginDecade)
+      BIND(FLOOR(?endYear / 10) * 10 AS ?endDecade)
+      
+      # Format the decade range
+      BIND(
+        IF(?beginDecade = ?endDecade, 
+          CONCAT(STR(?beginDecade), ""), 
+          CONCAT(STR(?endDecade), "")
+        ) AS ?category
+      )
+    } 
+    UNION 
+    {
+      ?manuscript crm:P24i_changed_ownership_through | crm:P30i_custody_transferred_through ?transfer .
+      ?transfer crm:P4_has_time-span/crm:P82a_begin_of_the_begin ?begin .
+      ?transfer crm:P4_has_time-span/crm:P82b_end_of_the_end ?end .
+
+      # Extract years from xsd:date
+      BIND(year(xsd:dateTime(?begin)) AS ?beginYear)
+      BIND(year(xsd:dateTime(?end)) AS ?endYear)
+      
+      # Compute decades 
+      BIND(FLOOR(?beginYear / 10) * 10 AS ?beginDecade)
+      BIND(FLOOR(?endYear / 10) * 10 AS ?endDecade)
+      
+      # Format the decade range
+      BIND(
+        IF(?beginDecade = ?endDecade, 
+          CONCAT(STR(?beginDecade), ""), 
+          CONCAT(STR(?endDecade), "")
+        ) AS ?category
+      )
+    } 
+  } 
+  GROUP BY ?category 
+  ORDER BY ?category
+`
+

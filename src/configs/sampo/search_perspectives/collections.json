@@ -143,8 +143,22 @@
                 "createPopUpContent": "createPopUpContentMMM"
             }
         },
+        "placesMsProducedHeatmap": {
+            "tabID": 3,
+            "component": "Deck",
+            "tabPath": "production_places_heatmap",
+            "tabIcon": "AddLocation",
+            "sparqlQuery": "productionPlacesQuery",
+            "facetClass": "collections",
+            "filterTarget": "collections",
+            "resultMapper": "mapPlaces",
+            "layerType": "heatmapLayer",
+            "heatmapRadiusPixels": 40,
+            "heatmapThreshold": 0.025,
+            "heatmapIntensity": 1
+        },
         "export": {
-            "tabID": 2,
+            "tabID": 4,
             "component": "Export",
             "tabPath": "export",
             "tabIcon": "CloudDownload",
@@ -163,6 +177,13 @@
                 27.314050
             ],
             "zoom": 5
+        },
+        "placesMsProducedHeatmap": {
+            "center": [
+                22.43,
+                10.37
+            ],
+            "zoom": 2
         }
     },
     "properties": [

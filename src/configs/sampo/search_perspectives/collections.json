@@ -173,15 +173,15 @@
     "maps": {
         "placesMsProduced": {
             "center": [
-                65.184809,
-                27.314050
+                52.1326,
+                5.2913
             ],
-            "zoom": 5
+            "zoom": 2
         },
         "placesMsProducedHeatmap": {
             "center": [
-                22.43,
-                10.37
+                52.1326,
+                5.2913
             ],
             "zoom": 2
         }

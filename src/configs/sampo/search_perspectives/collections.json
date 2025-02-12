@@ -342,7 +342,6 @@
             "predicate": "crm:P103_was_intended_for/crm:P190_has_symbolic_content",
             "sortButton": true,
             "sortBy": "instanceCount",
-            "sortByPredicate": "crm:P24i_changed_ownership_through/crm:P190_has_symbolic_content",
             "sortDirection": "desc"
         }
     }

@@ -135,7 +135,7 @@
             "filterTarget": "collections",
             "resultMapper": "mapPlaces",
             "facetID": "productionPlace",
-            "showExternalLayers": true,
+            "showExternalLayers": false,
             "instanceConfig": {
                 "propertiesQueryBlock": "placePropertiesInfoWindow",
                 "relatedInstances": "collectionsProducedAt",

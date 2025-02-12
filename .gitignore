@@ -6,3 +6,4 @@ dist
 token.json
 credentials.json
 .DS_Store
+src/configs/sampo/search_perspectives/perspective2.json

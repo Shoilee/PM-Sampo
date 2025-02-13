@@ -255,6 +255,16 @@
             "minWidth": 250
         },
         {
+            "id": "identifier",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 250,
+            "onlyOnInstancePage": true
+        },
+        {
             "id": "productionPlace",
             "valueType": "object",
             "makeLink": true,

@@ -23,6 +23,12 @@ export const collectionProperties = `
   }
   UNION
   {
+    ?id crm:P1_is_identified_by ?identifier__id .    
+    ?identifier__id crm:P2_has_type aat:300404626. 
+    ?identifier__id crm:P190_has_symbolic_content ?identifier__prefLabel .
+  }
+  UNION
+  {
     ?id crm:P24i_changed_ownership_through ?acquisitionType__id.
     ?acquisitionType__id rdfs:label ?acquisitionType__prefLabel .
   }

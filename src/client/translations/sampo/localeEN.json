@@ -345,6 +345,10 @@
           "label": "Note",
           "description": "Additional information about the Object."
         },
+        "identifier": {
+          "label": "Inventory Number",
+          "description": "Unique id for the object collection"
+        },
         "acquisitionType": {
           "label": "Acquisition Type",
           "description": "Type of acquisition event."

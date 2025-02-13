@@ -44,6 +44,7 @@ export const collectionProperties = `
   {
     ?id crm:P24i_changed_ownership_through/crm:P23_transferred_title_from ?transferedTitleFrom__id.
     ?transferedTitleFrom__id rdfs:label ?transferedTitleFrom__prefLabel .
+    BIND(CONCAT("/actors/page/", REPLACE(STR(?transferedTitleFrom__id), "^.*\\\\/(.+)", "$1")) AS ?transferedTitleFrom__dataProviderUrl)
   }
   UNION
   {

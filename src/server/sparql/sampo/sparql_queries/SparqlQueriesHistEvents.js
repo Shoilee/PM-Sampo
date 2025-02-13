@@ -86,4 +86,37 @@ export const histEventCollectionsQuery = `
       BIND(CONCAT("/actors/page/", REPLACE(STR(?object__toActor__id), "^.*\\\\/(.+)", "$1")) AS ?object__toActor__dataProviderUrl)
     }
   }Limit 100
+
 `
+
+export const histEventActorsQuery = `
+  SELECT DISTINCT ?object__id ?id ?uri__id ?uri__prefLabel ?uri__dataProviderUrl ?prefLabel__id  
+  ?object__prefLabel__id ?object__prefLabel__prefLabel ?object__prefLabel__dataProviderUrl
+  ?object__uri__id ?object__uri__prefLabel ?object__uri__dataProviderUrl
+  ?object__collection_id ?object__collection__prefLabel ?object__collection__dataProviderUrl
+
+  WHERE {
+    <FILTER>
+    BIND(<ID> as ?id)
+    BIND(?id as ?uri__id)
+    BIND(?id as ?uri__prefLabel)
+    BIND(?id as ?uri__dataProviderUrl)
+    ?collections crm:P141i_was_assigned_by/crm:P141_assigned ?id .
+    ?collections crm:P24i_changed_ownership_through/crm:P23_transferred_title_from ?object__id.
+    BIND(?object__id AS ?object__uri__id)
+    BIND(?object__id AS ?object__uri__dataProviderUrl)
+    BIND(STR(?object__id) AS ?object__uri__prefLabel) 
+    {
+      ?object__id rdfs:label ?object__prefLabel__id .
+      BIND(?object__prefLabel__id AS ?object__prefLabel__prefLabel)
+      BIND(CONCAT("/actors/page/", REPLACE(STR(?object__id), "^.*\\\\/(.+)", "$1")) AS ?object__prefLabel__dataProviderUrl)
+    }
+    UNION
+    {
+      BIND(?collections AS ?object__collection_id) 
+      ?object__collection_id dct:title ?object__collection__prefLabel .
+      BIND(CONCAT("/collections/page/", REPLACE(STR(?object__id), "^.*\\\\/(.+)", "$1")) AS ?object__collection__dataProviderUrl)
+    }
+    
+  }Limit 100
+  `

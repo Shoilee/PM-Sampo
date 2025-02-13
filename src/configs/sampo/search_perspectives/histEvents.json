@@ -114,8 +114,46 @@
                             }
                         ]
                     },
-                    "instancePageExport": {
+                    "histEventInstancePageActor": {
                         "tabID": 2,
+                        "component": "InstancePageTableList",
+                        "fetchResultsWhenMounted": true,
+                        "tabPath": "actors",
+                        "tabIcon": "CalendarViewDay",
+                        "sparqlQuery": "histEventActorsQuery",
+                        "filterTarget": "actors",
+                        "properties": [
+                          {
+                                "id": "uri",
+                                "valueType": "object",
+                                "makeLink": true,
+                                "externalLink": true,
+                                "sortValues": true,
+                                "numberedList": false,
+                                "minWidth": 200
+                            },
+                            {
+                              "id": "prefLabel",
+                              "valueType": "object",
+                              "makeLink": true,
+                              "externalLink": false,
+                              "sortValues": true,
+                              "numberedList": false,
+                              "minWidth": 200
+                            },
+                            {
+                                "id": "collection",
+                                "valueType": "object",
+                                "makeLink": true,
+                                "externalLink": false,
+                                "sortValues": true,
+                                "numberedList": false,
+                                "minWidth": 200
+                            }
+                        ]
+                    },
+                    "instancePageExport": {
+                        "tabID": 3,
                         "component": "Export",
                         "tabPath": "export",
                         "tabIcon": "CloudDownload",

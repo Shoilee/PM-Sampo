@@ -164,7 +164,6 @@ export const eventsByDecadeQuery = `
   SELECT DISTINCT ?category 
   (COUNT(?production) AS ?productionCount) 
   (COUNT(?transfer) AS ?transferCount) 
-  (COUNT(?observation) AS ?observationCount) 
   WHERE {
     <FILTER>
     { 

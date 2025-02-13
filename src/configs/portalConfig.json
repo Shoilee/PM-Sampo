@@ -20,11 +20,6 @@
                 "id": "en",
                 "label": "English",
                 "filename": "localeEN.json"
-            },
-            {
-                "id": "fi",
-                "label": "English",
-                "filename": "localeFI.json"
             }
         ]
     },
@@ -55,11 +50,11 @@
         "paginationToolbarHeight": 37,
         "tableFontSize": "0.8rem",
         "topBar": {
-            "logoImage": "logos/logo.png",
+            "logoImage": "logos/pm-logo.png",
             "logoTextTransform": "none",
             "hideLogoTextOnMobile": true,
             "showLanguageButton": true,
-            "feedbackLink": "https://link.webropolsurveys.com/...",
+            "feedbackLink": "https://pressingmatter.nl/contact/",
             "externalInstructions": false,
             "externalAboutPage": false,
             "reducedHeight": 48,
@@ -80,7 +75,7 @@
             ]
         },
         "mainPage": {
-            "bannerImage": "main_page/mmm-banner.jpg",
+            "bannerImage": "main_page/Visual-language_orange.jpg",
             "bannerBackround": "linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45) ), url(<BANNER_IMAGE_URL)",
             "bannerMobileHeight": 150,
             "bannerReducedHeight": 220,

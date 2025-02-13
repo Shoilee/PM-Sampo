@@ -3,8 +3,8 @@ import Paper from '@mui/material/Paper'
 import PropTypes from 'prop-types'
 import Box from '@mui/material/Box'
 import aaltoLogo from '../../../img/logos/Aalto_SCI_EN_13_BLACK_2_cropped.png'
-import hyLogo from '../../../img/logos/university-of-helsinki-logo-transparent-black.png'
-import heldigLogo from '../../../img/logos/heldig-logo-transparent-black.png'
+import vulogo from '../../../img/logos/VUlogo.png'
+import ucdslogo from '../../../img/logos/ucdslogo.jpg'
 
 /**
  * A component for creating a footer. The logos are imported inside this component.
@@ -59,30 +59,7 @@ const Footer = props => {
       </Box>
       <Box
         component='a'
-        href='https://www.helsinki.fi/en'
-        target='_blank'
-        rel='noopener noreferrer'
-        sx={theme => ({
-          width: 155,
-          height: 40,
-          [theme.breakpoints.up(props.layoutConfig.reducedHeightBreakpoint)]: {
-            width: 168,
-            height: 45
-          }
-        })}
-      >
-        <Box
-          component='img'
-          src={hyLogo}
-          alt='University of Helsinki logo'
-          sx={{
-            height: '100%'
-          }}
-        />
-      </Box>
-      <Box
-        component='a'
-        href='https://www.helsinki.fi/en/helsinki-centre-for-digital-humanities'
+        href='https://ucds.cs.vu.nl/'
         target='_blank'
         rel='noopener noreferrer'
         sx={theme => ({
@@ -96,8 +73,31 @@ const Footer = props => {
       >
         <Box
           component='img'
-          src={heldigLogo}
+          src={ucdslogo}
           alt='Helsinki Centre for Digital Humanities logo'
+          sx={{
+            height: '100%'
+          }}
+        />
+      </Box>
+      <Box
+        component='a'
+        href='https://vu.nl/en'
+        target='_blank'
+        rel='noopener noreferrer'
+        sx={theme => ({
+          width: 155,
+          height: 40,
+          [theme.breakpoints.up(props.layoutConfig.reducedHeightBreakpoint)]: {
+            width: 168,
+            height: 45
+          }
+        })}
+      >
+        <Box
+          component='img'
+          src={vulogo}
+          alt='Vrije Universiteit Amsterdam logo'
           sx={{
             height: '100%'
           }}

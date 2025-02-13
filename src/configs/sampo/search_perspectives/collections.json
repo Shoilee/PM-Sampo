@@ -10,7 +10,7 @@
     "URITemplate": "<BASE_URI>/<LOCAL_ID>",
     "facetClass": "crm:E22_Human-Made_Object",
     "defaultConstraint": "<SUBJECT> crm:P141i_was_assigned_by/crm:P141_assigned [a crm:E5_Event] .",
-    "frontPageImage": "main_page/works-452x262.jpg",
+    "frontPageImage": "main_page/collections.jpg",
     "searchMode": "faceted-search",
     "enableDynamicLanguageChange": false,
     "defaultActiveFacets": [

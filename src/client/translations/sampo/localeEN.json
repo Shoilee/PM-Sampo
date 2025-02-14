@@ -89,7 +89,7 @@
     "network": "network",
     "export": "export",
     "production_dates": "production dates",
-    "event_dates": "event dates",
+    "event_dates": "Acquisition dates",
     "map_clusters": "clustered map",
     "map_markers": "map",
     "heatmap": "heatmap",

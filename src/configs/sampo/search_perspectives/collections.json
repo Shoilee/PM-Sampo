@@ -170,7 +170,7 @@
                 "fillEmptyValues": false
             },
             "createChartData": "createMultipleLineChartData",
-            "title": "objects events by decade",
+            "title": "objects acqusition by begin date",
             "xaxisTitle": "Decade",
             "xaxisType": "category",
             "xaxisTickAmount": 30,
@@ -197,7 +197,7 @@
             }
         },
         "export": {
-            "tabID": 4,
+            "tabID": 5,
             "component": "Export",
             "tabPath": "export",
             "tabIcon": "CloudDownload",

@@ -1,7 +1,7 @@
 {
     "id": "actors",
     "endpoint": {
-        "url": "https://api.colonialcollections.nl/datasets/nmvw/collection-archives/sparql",
+        "url": "http://localhost:3048/ds/sparql",
         "useAuth": false,
         "prefixesFile": "SparqlQueriesPrefixes.js"
     },
@@ -337,7 +337,7 @@
             "containerClass": "ten",
             "facetType": "list",
             "filterType": "uriFilter",
-            "predicate": "crm:P2_has_type",
+            "predicate": "pm:roles",
             "searchField": false,
             "sortButton": false,
             "sortBy": "instanceCount",

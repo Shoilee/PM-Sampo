@@ -139,8 +139,7 @@
             "instanceConfig": {
                 "propertiesQueryBlock": "placePropertiesInfoWindow",
                 "relatedInstances": "collectionsProducedAt",
-                "filterTarget": "related__id",
-                "createPopUpContent": "createPopUpContentMMM"
+                "createPopUpContent": "createPopUpContentPM"
             }
         },
         "placesMsProducedHeatmap": {

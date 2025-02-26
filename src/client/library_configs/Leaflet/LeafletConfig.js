@@ -162,6 +162,26 @@ export const createPopUpContentMMM = ({ data, resultClass }) => {
   return container
 }
 
+export const createPopUpContentPM = ({ data, resultClass }) => {
+  console.log(data)
+  if (Array.isArray(data.prefLabel)) {
+    data.prefLabel = data.prefLabel[0]
+  }
+  const container = document.createElement('div')
+  const h3 = document.createElement('h3')
+  if (has(data.prefLabel, 'dataProviderUrl')) {
+    const link = document.createElement('a')
+    link.addEventListener('click', () => history.push(data.prefLabel.dataProviderUrl))
+    link.textContent = data.prefLabel.prefLabel
+    link.style.cssText = 'cursor: pointer; text-decoration: underline'
+    h3.appendChild(link)
+  } else {
+    h3.textContent = data.prefLabel.prefLabel
+  }
+  container.appendChild(h3)
+  return container
+}
+
 export const createPopUpContentNameSampo = ({ data, perspectiveID }) => {
   let popUpTemplate = ''
   popUpTemplate += `<a href=${data.id} target='_blank'><h3>${data.prefLabel}</h3></a>`

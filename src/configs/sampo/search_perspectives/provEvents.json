@@ -211,14 +211,14 @@
         "place": {
             "containerClass": "ten",
             "facetType": "hierarchical",
-            "facetValueFilter": "?id dct:source <http://vocab.getty.edu/tgn/> .",
             "filterType": "uriFilter",
-            "parentProperty": "gvp:broaderPreferred",
-            "predicate": "crm:P7_took_place_at",
+            "parentProperty": "skos:broader",
+            "predicate": "(^crm:P24i_changed_ownership_through|crm:P30i_custody_transferred_through)/pm:production_place",
+            "facetLabelPredicate": "skos:prefLabel",
             "searchField": true,
             "selectAlsoSubconcepts": true,
             "selectAlsoSubconceptsButton": true,
-            "sortByPredicate": "crm:P7_took_place_at/skos:prefLabel",
+            "sortByPredicate": "(^crm:P24i_changed_ownership_through|crm:P30i_custody_transferred_through)/pm:production_place/skos:prefLabel",
             "type": "hierarchical"
         },
         "fromActor": {

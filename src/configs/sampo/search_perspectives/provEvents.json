@@ -106,15 +106,6 @@
             "minWidth": 200
         },
         {
-            "id": "provenanceActivity",
-            "valueType": "object",
-            "makeLink": true,
-            "externalLink": false,
-            "sortValues": false,
-            "numberedList": false,
-            "minWidth": 200
-        },
-        {
             "id": "collection",
             "valueType": "object",
             "makeLink": true,

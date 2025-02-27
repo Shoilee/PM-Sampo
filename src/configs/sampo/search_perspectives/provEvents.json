@@ -7,7 +7,6 @@
     },
     "sparqlQueriesFile": "SparqlQueriesProvEvents.js",
     "facetClass": "crm:E8_Acquisition crm:E10_Transfer_of_Custody",
-    "defaultConstraint": "?collection crm:P141i_was_assigned_by/crm:P141_assigned <https://hdl.handle.net/20.500.11840/event423>. ?collection crm:P24i_changed_ownership_through|crm:P30i_custody_transferred_through <SUBJECT> .",
     "frontPageImage": "main_page/provenance.jpg",
     "searchMode": "faceted-search",
     "enableDynamicLanguageChange": false,

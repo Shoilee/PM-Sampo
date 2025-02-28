@@ -192,9 +192,9 @@
             "containerClass": "one",
             "facetType": "text",
             "filterType": "textFilter",
-            "sortByPredicate": "(crm:P30_transferred_custody_of |crm:P108_has_produced |mmm-schema:observed_manuscript )/skos:prefLabel",
-            "textQueryPredicate": "(crm:P30_transferred_custody_of |crm:P108_has_produced |mmm-schema:observed_manuscript)",
-            "textQueryProperty": "skos:prefLabel"
+            "sortByPredicate": "(^crm:P24i_changed_ownership_through|crm:P30i_custody_transferred_through)/inventory_number",
+            "textQueryPredicate": "(^crm:P24i_changed_ownership_through|crm:P30i_custody_transferred_through)/pm:inventory_number",
+            "textQueryProperty": "(^crm:P24i_changed_ownership_through|crm:P30i_custody_transferred_through)/pm:inventory_number"
         },
         "eventTimespan": {
             "containerClass": "ten",

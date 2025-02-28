@@ -11,46 +11,60 @@ export const collectionProperties = `
     }
   UNION
   {
-    ?id crm:P108i_was_produced_by/crm:P7_took_place_at ?productionPlace__id .
+    ?id pm:production_place ?productionPlace__id .
     ?productionPlace__id skos:prefLabel ?productionPlace__prefLabel .
   }
   UNION
   {
-    ?id crm:P65_shows_visual_item ?i_BNODE .
-    ?i_BNODE a crm:E36_Visual_Item .
-    ?i_BNODE <https://linked.art/ns/terms/digitally_shown_by> ?image__id.
-    ?image__id <https://linked.art/ns/terms/access_point> ?image__url .
+    ?id pm:shown_by ?image__id .
+    BIND(?image__id AS ?image__url)
   }
   UNION
   {
-    ?id crm:P1_is_identified_by ?identifier__id .    
-    ?identifier__id crm:P2_has_type aat:300404626. 
-    ?identifier__id crm:P190_has_symbolic_content ?identifier__prefLabel .
+    ?id pm:inventory_number ?inventoryNumber__id .
+    BIND(?inventoryNumber__id AS ?inventoryNumber__prefLabel)    
   }
   UNION
   {
-    ?id crm:P24i_changed_ownership_through ?acquisitionType__id.
-    ?acquisitionType__id rdfs:label ?acquisitionType__prefLabel .
+    ?id pm:identified_by ?identifier__id .
+    BIND(?identifier__id AS ?identifier__prefLabel)    
   }
   UNION
   {
-    ?id crm:P108i_was_produced_by/crm:P4_has_time-span ?productionTimeSpan__id.
+    ?id pm:maker ?maker__id.
+    ?maker__id rdfs:label ?maker__prefLabel 
+    BIND(CONCAT("/actors/page/", REPLACE(STR(?maker__id), "^.*\\\\/(.+)", "$1")) AS ?maker__dataProviderUrl)
+  }
+  UNION
+  {
+    ?id pm:production_time_span ?productionTimeSpan__id.
     ?productionTimeSpan__id crm:P82a_begin_of_the_begin ?productionTimeSpan__start .
     ?productionTimeSpan__id crm:P82b_end_of_the_end ?productionTimeSpan__end .
     BIND(CONCAT(STR(?productionTimeSpan__start), " --- " , STR(?productionTimeSpan__end) ) AS ?productionTimeSpan__prefLabel)
   }
   UNION
   {
-    ?id crm:P24i_changed_ownership_through/crm:P4_has_time-span ?acquisitionTimeSpan__id.
+    ?id crm:P24i_changed_ownership_through|crm:P30i_custody_transferred_through ?acquisitionType__id.
+    ?acquisitionType__id rdfs:label ?acquisitionType__prefLabel .
+  }
+  UNION
+  {
+    ?id (crm:P24i_changed_ownership_through|crm:P30i_custody_transferred_through)/crm:P4_has_time-span ?acquisitionTimeSpan__id.
     ?acquisitionTimeSpan__id crm:P82a_begin_of_the_begin ?acquisitionTimeSpan__start .
     ?acquisitionTimeSpan__id crm:P82b_end_of_the_end ?acquisitionTimeSpan__end .
     BIND(CONCAT(STR(?acquisitionTimeSpan__start), " --- " , STR(?acquisitionTimeSpan__end) ) AS ?acquisitionTimeSpan__prefLabel)
   }
   UNION
   {
-    ?id crm:P24i_changed_ownership_through/crm:P23_transferred_title_from ?transferedTitleFrom__id.
+    ?id (crm:P24i_changed_ownership_through/crm:P23_transferred_title_from)|(crm:P30i_custody_transferred_through/crm:P28_custody_surrendered_by) ?transferedTitleFrom__id.
     ?transferedTitleFrom__id rdfs:label ?transferedTitleFrom__prefLabel .
     BIND(CONCAT("/actors/page/", REPLACE(STR(?transferedTitleFrom__id), "^.*\\\\/(.+)", "$1")) AS ?transferedTitleFrom__dataProviderUrl)
+  }
+  UNION
+  {
+    ?id (crm:P24i_changed_ownership_through/crm:P22_transferred_title_to)|(crm:P30i_custody_transferred_through/crm:P29_custody_received_by) ?transferedTitleTo__id .
+    ?transferedTitleTo__id rdfs:label ?transferedTitleTo__prefLabel .
+    BIND(CONCAT("/actors/page/", REPLACE(STR(?transferedTitleTo__id), "^.*\\\\/(.+)", "$1")) AS ?transferedTitleTo__dataProviderUrl)
   }
   UNION
   {

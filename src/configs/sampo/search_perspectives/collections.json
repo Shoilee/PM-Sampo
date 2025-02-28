@@ -254,6 +254,16 @@
             "minWidth": 250
         },
         {
+            "id": "inventoryNumber",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 250,
+            "onlyOnInstancePage": true
+        },
+        {
             "id": "identifier",
             "valueType": "object",
             "makeLink": false,
@@ -271,6 +281,16 @@
             "sortValues": true,
             "numberedList": false,
             "minWidth": 250
+        },
+        {
+            "id": "maker",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 250,
+            "onlyOnInstancePage": true
         },
         {
             "id": "productionTimeSpan",
@@ -308,6 +328,15 @@
             "sortValues": true,
             "numberedList": false,
             "minWidth": 250
+        },
+        {
+            "id": "transferedTitleTo",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 250
         }
     ],
     "facets": {
@@ -318,10 +347,9 @@
             "pieChartButton": true,
             "predicate": "crm:P2_has_type",
             "facetLabelPredicate": "skos:prefLabel",
-            "searchField": true,
             "sortButton": true,
             "sortBy": "instanceCount",
-            "sortByPredicate": "crm:P24i_changed_ownership_through/crm:P23_transferred_title_from/rdfs:label",
+            "sortByPredicate": "ccrm:P2_has_type/skos:prefLabel",
             "sortDirection": "desc"
         },
         "maker": {
@@ -329,12 +357,12 @@
             "facetType": "list",
             "filterType": "uriFilter",
             "pieChartButton": true,
-            "predicate": "crm:P108i_was_produced_by/crm:P14_carried_out_by",
-            "facetLabelPredicate": "rdfs:label",
+            "predicate": "pm:maker",
+            "facetLabelPredicate": "rdfs:label|skos:prefLabel",
             "searchField": true,
             "sortButton": true,
             "sortBy": "instanceCount",
-            "sortByPredicate": "crm:P24i_changed_ownership_through/crm:P23_transferred_title_from/rdfs:label",
+            "sortByPredicate": "pm:maker/rdfs:label",
             "sortDirection": "desc"
         },
         "productionPlace": {
@@ -342,14 +370,13 @@
             "facetType": "list",
             "filterType": "uriFilter",
             "pieChartButton": true,
-            "predicate": "crm:P108i_was_produced_by/crm:P7_took_place_at",
+            "predicate": "pm:production_place",
             "facetLabelPredicate": "skos:prefLabel",
-            "namedGraph": "https://data.colonialcollections.nl/nmvw/graph/geography-objects",
             "hideUnknownValue": true,
             "searchField": true,
             "sortButton": true,
             "sortBy": "instanceCount",
-            "sortByPredicate": "crm:P108i_was_produced_by/crm:P7_took_place_at/skos:prefLabel",
+            "sortByPredicate": "pm:production_place/skos:prefLabel",
             "sortDirection": "desc"
         },
         "productionTimeSpan": {
@@ -360,21 +387,21 @@
             "filterType": "dateFilter",
             "min": "0006-01-01",
             "max": "2013-01-01", 
-            "predicate": "crm:P108i_was_produced_by/crm:P4_has_time-span",
-            "sortByAscPredicate": "crm:P108i_was_produced_by/crm:P4_has_time-spancrm:P82a_begin_of_the_begin",
-            "sortByDescPredicate": "crm:P108i_was_produced_by/crm:P4_has_time-spancrm:P82b_end_of_the_end"
+            "predicate": "production_time_span",
+            "sortByAscPredicate": "pm:production_time_spancrm:P82a_begin_of_the_begin",
+            "sortByDescPredicate": "production_time_spancrm:P82b_end_of_the_end"
         },
         "acquisitionType": {
             "containerClass": "ten",
             "facetType": "list",
             "filterType": "uriFilter",
             "pieChartButton": true,
-            "predicate": "crm:P24i_changed_ownership_through",
+            "predicate": "pm:provenance_type",
             "facetLabelPredicate": "rdfs:label",
             "searchField": true,
             "sortButton": true,
             "sortBy": "instanceCount",
-            "sortByPredicate": "crm:P24i_changed_ownership_through/rdfs:label",
+            "sortByPredicate": "rdfs:label",
             "sortDirection": "desc"
         },
         "acquisitionTimeSpan": {
@@ -383,23 +410,23 @@
             "startProperty": "crm:P82a_begin_of_the_begin", 
             "endProperty": "crm:P82b_end_of_the_end",
             "filterType": "dateFilter",
-            "min": "0000-01-01",
+            "min": "1000-01-01",
             "max": "2025-01-01", 
-            "predicate": "crm:P24i_changed_ownership_through/crm:P4_has_time-span",
-            "sortByAscPredicate": "crm:P24i_changed_ownership_through/crm:P4_has_time-span/crm:P82a_begin_of_the_begin",
-            "sortByDescPredicate": "crm:P24i_changed_ownership_through/crm:P4_has_time-span/crm:P82b_end_of_the_end"
+            "predicate": "pm:provenance_time_span",
+            "sortByAscPredicate": "pm:provenance_time_span/crm:P82a_begin_of_the_begin",
+            "sortByDescPredicate": "pm:provenance_time_span/crm:P82b_end_of_the_end"
         },
         "transferedTitleFrom": {
             "containerClass": "ten",
             "facetType": "list",
             "filterType": "uriFilter",
             "pieChartButton": true,
-            "predicate": "crm:P24i_changed_ownership_through/crm:P23_transferred_title_from",
+            "predicate": "pm:provenance_from_actor",
             "facetLabelPredicate": "rdfs:label",
             "searchField": true,
             "sortButton": true,
             "sortBy": "instanceCount",
-            "sortByPredicate": "crm:P24i_changed_ownership_through/crm:P23_transferred_title_from/rdfs:label",
+            "sortByPredicate": "pm:provenance_from_actor/rdfs:label",
             "sortDirection": "desc"
         },
         "transferedTitleTo": {
@@ -419,13 +446,15 @@
             "containerClass": "ten",
             "facetType": "list",
             "filterType": "uriFilter",
-            "predicate": "crm:P141i_was_assigned_by/crm:P141_assigned/crm:P1_is_identified_by",
+            "facetClass": "crm:E5_Event",
+            "pieChartButton": true,
+            "predicate": "pm:related_to/crm:P1_is_identified_by",
             "facetLabelPredicate": "crm:P190_has_symbolic_content",
             "facetValueFilter": "?id crm:P2_has_type aat:300404650 .",
             "searchField": true,
             "sortButton": true,
             "sortBy": "instanceCount",
-            "sortByPredicate": "crm:P141i_was_assigned_by/crm:P141_assigned",
+            "sortByPredicate": "pm:related_to",
             "sortDirection": "desc"
         },
         "materials": {
@@ -433,11 +462,10 @@
             "facetType": "list",
             "filterType": "uriFilter",
             "pieChartButton": true,
-            "predicate": "crm:P45_consists_of/skos:altLabel",
-            "searchField": true,
+            "predicate": "pm:materials_used",
             "sortButton": true,
             "sortBy": "instanceCount",
-            "sortByPredicate": "crm:P45_consists_of/skos:altLabel",
+            "sortByPredicate": "materials_used/skos:prefLabel",
             "sortDirection": "desc"
         },
         "intendedFor": {
@@ -445,8 +473,8 @@
             "facetType": "list",
             "filterType": "uriFilter",
             "pieChartButton": true,
-            "predicate": "crm:P103_was_intended_for/crm:P190_has_symbolic_content",
-            "sortButton": true,
+            "predicate": "pm:intended_use",
+            "facetLabelPredicate":"rdfs:label",
             "sortBy": "instanceCount",
             "sortDirection": "desc"
         }

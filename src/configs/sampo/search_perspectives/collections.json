@@ -387,9 +387,9 @@
             "filterType": "dateFilter",
             "min": "0006-01-01",
             "max": "2013-01-01", 
-            "predicate": "production_time_span",
-            "sortByAscPredicate": "pm:production_time_spancrm:P82a_begin_of_the_begin",
-            "sortByDescPredicate": "production_time_spancrm:P82b_end_of_the_end"
+            "predicate": "pm:production_time_span",
+            "sortByAscPredicate": "pm:production_time_span/crm:P82a_begin_of_the_begin",
+            "sortByDescPredicate": "pm:production_time_span/crm:P82b_end_of_the_end"
         },
         "acquisitionType": {
             "containerClass": "ten",

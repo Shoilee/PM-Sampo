@@ -38,7 +38,7 @@ const TopBar = props => {
   const handleMobileMenuOpen = event => setMobileMoreAnchorEl(event.currentTarget)
   const handleMobileMenuClose = () => setMobileMoreAnchorEl(null)
   const federatedSearchMode = props.location.pathname.indexOf('federated-search') !== -1
-  let showSearchField = true
+  let showSearchField = false
   if (has(layoutConfig.topBar, 'showSearchField')) {
     showSearchField = layoutConfig.topBar.showSearchField
   }

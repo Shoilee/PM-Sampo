@@ -524,21 +524,13 @@
           "label": "Time-Span",
           "description": "The date or time period associated with the historical event."
         },
-        "image":{
-          "label": "Image",
-          "description": "The image of the object"
-        },
         "description": {
           "label": "Description",
           "description": "Textual description of the historical event."
         },
-        "author": {
-          "label": "Author",
-          "description": "The author(s) who have contributed to the intellectual content (works) contained in the manuscript."
-        },
-        "work": {
-          "label": "Work",
-          "description": "The intellectual content (works) contained in the manuscript."
+        "note":{
+          "label": "Note",
+          "description": "Additional information about the historical events"
         },
         "acquisitionType": {
           "label": "Acqusition Type",

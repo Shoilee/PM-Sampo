@@ -23,6 +23,11 @@ export const histEventProperties =
     ?description__id crm:P2_has_type aat:300435416 .
     ?description__id crm:P190_has_symbolic_content ?description__prefLabel .
   }
+  UNION
+  {
+    ?id crm:P3_has_note ?note__id .
+    BIND (?note__id AS ?note__prefLabel)
+  }
 `
 
 export const histEventCollectionsQuery = `

@@ -203,6 +203,15 @@
             "minWidth": 250
         },
         {
+            "id": "note",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true
+        },
+        {
             "id": "description",
             "valueType": "object",
             "makeLink": false,

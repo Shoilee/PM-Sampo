@@ -189,7 +189,7 @@
             "id": "uri",
             "valueType": "object",
             "makeLink": true,
-            "externalLink": false,
+            "externalLink": true,
             "sortValues": true,
             "numberedList": false
         },

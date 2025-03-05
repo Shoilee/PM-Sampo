@@ -157,11 +157,9 @@ export const productionPlacesQuery = `
   (COUNT(DISTINCT ?collections) as ?instanceCount)
   WHERE {
     <FILTER>
-    ?collections crm:P108i_was_produced_by/crm:P7_took_place_at/skos:exactMatch ?id .
-    SERVICE <https://api.colonialcollections.nl/datasets/sarah/sarah-geonames/sparql>{
+    ?collections pm:production_place/skos:exactMatch ?id .
       ?id wgs84:lat ?lat ;
         wgs84:long ?long .
-    }
   }
   GROUP BY ?id ?lat ?long
 `

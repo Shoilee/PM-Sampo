@@ -170,7 +170,7 @@
             },
             "createChartData": "createMultipleLineChartData",
             "title": "objects acqusition by begin date",
-            "xaxisTitle": "Decade",
+            "xaxisTitle": "Year",
             "xaxisType": "category",
             "xaxisTickAmount": 30,
             "yaxisTitle": "Count",

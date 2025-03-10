@@ -78,8 +78,8 @@
   "tabs": {
     "table": "table",
     "provenance": "provenance",
-    "histEvents": "historical events",
-    "actors": "connected actors",
+    "histEvents": "related historical events",
+    "actors": "related actors",
     "collections": "related collections",
     "map": "map",
     "production_places": "production places",

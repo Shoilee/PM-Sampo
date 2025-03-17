@@ -11,12 +11,6 @@ application. The
 most convenient way to build a new user interface using Sampo-UI is to read the documentation 
 provided below, fork this repository, and start developing from there. For more information on SAMPO-UI visit: https://seco.cs.aalto.fi/tools/sampo-ui/
 
-## Development Team
-
-PM-Sampo is developed by an collaborative effort between [Semantic Computing Research (SeCo) Group ](https://seco.cs.aalto.fi) at Aalto University and [User-Centric Data Science (UCDS) Group](https://ucds.cs.vu.nl/) at the Vrije Universiteit Amsterdam, Finland. Contact [Sarah Shoilee](mailto:s.b.a.shoilee@vu.nl) for more details.
-
-
-
 
 ## Requirements
 
@@ -38,3 +32,21 @@ Install the dependencies specified in `package.json` (this command needs to be r
 Run client and server concurrently:
 
 `npm run dev`
+
+## Feedback
+
+If you find a bug or have suggestions for improvement, please **add an issue** in the repository:  
+1. Go to the **Issues** tab.  
+2. Click on **New Issue**.  
+3. Provide a clear description of the problem:  
+   - Steps to reproduce  
+   - Expected vs. actual behavior  
+   - Screenshots or error messages (if applicable)  
+4. Click **Submit** and our team will review it.  Thank you for your feedback! 🚀  
+
+
+## Development Team
+
+PM-Sampo is developed by an collaborative effort between [Semantic Computing Research (SeCo) Group ](https://seco.cs.aalto.fi) at Aalto University and [User-Centric Data Science (UCDS) Group](https://ucds.cs.vu.nl/) at the Vrije Universiteit Amsterdam, Finland. Contact [Sarah Shoilee](mailto:s.b.a.shoilee@vu.nl) for more details.
+
+**Acknowledgments.** PM-Sampo is an outcome of a research project, which is supported by the NWA-funded project Pressing Matter (NWA.1292.19.419), by the Research Council of Finland FIN-CLARIAH funding from the European Union NextGenerationEU instrument, and by the Aalto Science Institute (ASCI) Visiting Doctoral Researcher Programme, which facilitated collaboration and knowledge exchange between Vrije Universiteit Amsterdam and Aalto University, Finland. Computing resources provided by the CSC -- IT Center for Science were used in our work.

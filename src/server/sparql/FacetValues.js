@@ -63,7 +63,7 @@ export const getFacet = async ({
   let filterBlock
   let unknownSelected = 'false'
   let currentSelectionsWithoutUnknown = []
-  console.log(facetConfig.graph)
+  // console.log(facetConfig.graph)
   if (constraints == null && defaultConstraint == null) {
     filterBlock = '# no filters'
   } else {

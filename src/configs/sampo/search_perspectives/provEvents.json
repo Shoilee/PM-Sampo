@@ -193,8 +193,8 @@
             "facetType": "text",
             "filterType": "textFilter",
             "sortByPredicate": "(^crm:P24i_changed_ownership_through|crm:P30i_custody_transferred_through)/inventory_number",
-            "textQueryPredicate": "(^crm:P24i_changed_ownership_through|crm:P30i_custody_transferred_through)/pm:inventory_number",
-            "textQueryProperty": "(^crm:P24i_changed_ownership_through|crm:P30i_custody_transferred_through)/pm:inventory_number"
+            "textQueryPredicate": "(^crm:P24i_changed_ownership_through|crm:P30i_custody_transferred_through)",
+            "textQueryProperty": "pm:inventory_number"
         },
         "eventTimespan": {
             "containerClass": "ten",

@@ -74,6 +74,73 @@ export const collectionProperties = `
 
 `
 
+export const csvObjectsQuery = `
+  SELECT DISTINCT ?id ?title ?inventoryNumber ?uniqueIdentifier ?placeOfOrigin ?maker ?productionTimeSpan ?acquisitionType ?acquisitionTimeSpan ?fromActor ?toActor ?historicalEvent
+    WHERE {
+    <FILTER>
+      ?id a crm:E22_Human-Made_Object .
+  OPTIONAL
+  {
+    ?id dct:title ?title .
+  }
+  OPTIONAL
+  {
+    ?id pm:production_place ?productionPlace__id .
+    ?productionPlace__id skos:prefLabel ?placeOfOrigin .
+  }
+  OPTIONAL
+  {
+    ?id pm:inventory_number ?inventoryNumber .
+  }
+  OPTIONAL
+  {
+    ?id pm:identified_by ?uniqueIdentifier.    
+  }
+  OPTIONAL
+  {
+    ?id pm:maker ?maker__id.
+    ?maker__id rdfs:label ?maker .
+  }
+  OPTIONAL
+  {
+    ?id pm:production_time_span ?productionTimeSpan__id.
+    ?productionTimeSpan__id crm:P82a_begin_of_the_begin ?productionTimeSpan__start .
+    ?productionTimeSpan__id crm:P82b_end_of_the_end ?productionTimeSpan__end .
+    BIND(CONCAT(STR(?productionTimeSpan__start), " --- " , STR(?productionTimeSpan__end) ) AS ?productionTimeSpan)
+  }
+  OPTIONAL
+  {
+    ?id crm:P24i_changed_ownership_through|crm:P30i_custody_transferred_through ?acquisitionType__id.
+    ?acquisitionType__id rdfs:label ?acquisitionType .
+  }
+  OPTIONAL
+  {
+    ?id (crm:P24i_changed_ownership_through|crm:P30i_custody_transferred_through)/crm:P4_has_time-span ?acquisitionTimeSpan__id.
+    ?acquisitionTimeSpan__id crm:P82a_begin_of_the_begin ?acquisitionTimeSpan__start .
+    ?acquisitionTimeSpan__id crm:P82b_end_of_the_end ?acquisitionTimeSpan__end .
+    BIND(CONCAT(STR(?acquisitionTimeSpan__start), " --- " , STR(?acquisitionTimeSpan__end) ) AS ?acquisitionTimeSpan)
+  }
+  OPTIONAL
+  {
+    ?id (crm:P24i_changed_ownership_through/crm:P23_transferred_title_from)|(crm:P30i_custody_transferred_through/crm:P28_custody_surrendered_by) ?transferedTitleFrom__id.
+    ?transferedTitleFrom__id rdfs:label ?fromActor .
+  }
+  OPTIONAL
+  {
+    ?id (crm:P24i_changed_ownership_through/crm:P22_transferred_title_to)|(crm:P30i_custody_transferred_through/crm:P29_custody_received_by) ?transferedTitleTo__id .
+ 	  OPTIONAL {?transferedTitleTo__id rdfs:label ?transferedTitleTo__prefLabel .}
+  	BIND(COALESCE(?transferedTitleTo__prefLabel, ?transferedTitleTo__id) AS ?toActor)
+  }
+  OPTIONAL
+  {
+    ?id pm:related_to/crm:P1_is_identified_by ?historicalEvent__BNode .
+    ?historicalEvent__BNode crm:P2_has_type aat:300404650 .
+    ?historicalEvent__BNode crm:P190_has_symbolic_content ?historicalEvent .
+    ?historicalEvent__BNode ^crm:P1_is_identified_by [a crm:E5_Event].
+  }
+} LIMIT 10000
+`
+
 export const knowledgeGraphMetadataQuery = `
   SELECT * 
   WHERE {

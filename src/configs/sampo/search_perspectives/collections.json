@@ -195,11 +195,20 @@
                 }
             }
         },
-        "export": {
+        "csvExport": {
             "tabID": 5,
+            "tabPath": "csv_export",
+            "tabIcon": "CloudDownload",
+            "component": "ExportCSV",
+            "facetClass": "collections",
+            "sparqlQuery": "csvObjectsQuery",
+            "filterTarget": "id"
+        },
+        "export": {
+            "tabID": 6,
             "component": "Export",
             "tabPath": "export",
-            "tabIcon": "CloudDownload",
+            "tabIcon": "ArrowForward",
             "resultClass": "collections",
             "facetClass": "collections"
         },

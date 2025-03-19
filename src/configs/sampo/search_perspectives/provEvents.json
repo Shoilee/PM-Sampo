@@ -54,28 +54,6 @@
             "tabIcon": "CloudDownload",
             "resultClass": "provEvents",
             "facetClass": "provEvents"
-        },
-        "placesEvents": {
-            "tabID": 1,
-            "component": "LeafletMap",
-            "tabPath": "map",
-            "tabIcon": "AddLocation",
-            "sparqlQuery": "eventPlacesQuery",
-            "facetClass": "provEvents",
-            "filterTarget": "event",
-            "resultMapper": "mapPlaces",
-            "instanceConfig": {
-                "propertiesQueryBlock": "placePropertiesInfoWindow"
-            }
-        }
-    },
-    "maps": {
-        "placesEvents": {
-            "center": [
-                22.43,
-                10.37
-            ],
-            "zoom": 2
         }
     },
     "properties": [

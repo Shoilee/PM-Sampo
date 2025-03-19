@@ -1,7 +1,7 @@
 {
     "id": "actors",
     "endpoint": {
-        "url": "http://localhost:3048/ds/sparql",
+        "url": "http://ldf.fi/pm-sampo/sparql",
         "useAuth": false,
         "prefixesFile": "SparqlQueriesPrefixes.js"
     },

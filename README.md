@@ -43,7 +43,9 @@ If you find a bug or have suggestions for improvement, please **add an issue** i
    - Steps to reproduce  
    - Expected vs. actual behavior  
    - Screenshots or error messages (if applicable)  
-4. Click **Submit** and our team will review it.  Thank you for your feedback! 🚀  
+4. Click **Submit** and our team will review it.  
+
+Thank you for your feedback! 🚀  
 
 
 ## Development Team

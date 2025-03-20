@@ -1,7 +1,7 @@
 {
     "id": "histEvents",
     "endpoint": {
-        "url": "https://api.colonialcollections.nl/datasets/nmvw/collection-archives/sparql",
+        "url": "http://ldf.fi/pm-sampo/sparql",
         "useAuth": false,
         "prefixesFile": "SparqlQueriesPrefixes.js"
     },

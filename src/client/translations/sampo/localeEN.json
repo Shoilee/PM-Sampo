@@ -77,6 +77,7 @@
   },
   "tabs": {
     "table": "table",
+    "csv_export": "csv export",
     "provenance": "provenance",
     "histEvents": "related historical events",
     "actors": "related actors",
@@ -225,8 +226,12 @@
           "description": "Additional information about the Object."
         },
         "identifier": {
-          "label": "Inventory Number",
+          "label": "Unique Identifier",
           "description": "Unique id for the object collection"
+        },
+        "inventoryNumber": {
+          "label": "Inventory Number",
+          "description": "The inventory number of the object"
         },
         "acquisitionType": {
           "label": "Acquisition Type",

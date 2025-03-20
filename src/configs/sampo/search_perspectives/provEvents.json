@@ -1,13 +1,12 @@
 {
     "id": "provEvents",
     "endpoint": {
-        "url": "https://api.colonialcollections.nl/datasets/nmvw/collection-archives/sparql",
+        "url": "http://ldf.fi/pm-sampo/sparql",
         "useAuth": false,
         "prefixesFile": "SparqlQueriesPrefixes.js"
     },
     "sparqlQueriesFile": "SparqlQueriesProvEvents.js",
     "facetClass": "crm:E8_Acquisition crm:E10_Transfer_of_Custody",
-    "defaultConstraint": "?collection crm:P141i_was_assigned_by/crm:P141_assigned <https://hdl.handle.net/20.500.11840/event423>. ?collection crm:P24i_changed_ownership_through|crm:P30i_custody_transferred_through <SUBJECT> .",
     "frontPageImage": "main_page/provenance.jpg",
     "searchMode": "faceted-search",
     "enableDynamicLanguageChange": false,
@@ -55,28 +54,6 @@
             "tabIcon": "CloudDownload",
             "resultClass": "provEvents",
             "facetClass": "provEvents"
-        },
-        "placesEvents": {
-            "tabID": 1,
-            "component": "LeafletMap",
-            "tabPath": "map",
-            "tabIcon": "AddLocation",
-            "sparqlQuery": "eventPlacesQuery",
-            "facetClass": "provEvents",
-            "filterTarget": "event",
-            "resultMapper": "mapPlaces",
-            "instanceConfig": {
-                "propertiesQueryBlock": "placePropertiesInfoWindow"
-            }
-        }
-    },
-    "maps": {
-        "placesEvents": {
-            "center": [
-                22.43,
-                10.37
-            ],
-            "zoom": 2
         }
     },
     "properties": [
@@ -102,15 +79,6 @@
             "valueType": "object",
             "makeLink": true,
             "externalLink": true,
-            "sortValues": false,
-            "numberedList": false,
-            "minWidth": 200
-        },
-        {
-            "id": "provenanceActivity",
-            "valueType": "object",
-            "makeLink": true,
-            "externalLink": false,
             "sortValues": false,
             "numberedList": false,
             "minWidth": 200
@@ -202,9 +170,9 @@
             "containerClass": "one",
             "facetType": "text",
             "filterType": "textFilter",
-            "sortByPredicate": "(crm:P30_transferred_custody_of |crm:P108_has_produced |mmm-schema:observed_manuscript )/skos:prefLabel",
-            "textQueryPredicate": "(crm:P30_transferred_custody_of |crm:P108_has_produced |mmm-schema:observed_manuscript)",
-            "textQueryProperty": "skos:prefLabel"
+            "sortByPredicate": "(^crm:P24i_changed_ownership_through|crm:P30i_custody_transferred_through)/pm:inventory_number",
+            "textQueryPredicate": "(^crm:P24i_changed_ownership_through|crm:P30i_custody_transferred_through)",
+            "textQueryProperty": "pm:inventory_number"
         },
         "eventTimespan": {
             "containerClass": "ten",
@@ -221,14 +189,14 @@
         "place": {
             "containerClass": "ten",
             "facetType": "hierarchical",
-            "facetValueFilter": "?id dct:source <http://vocab.getty.edu/tgn/> .",
             "filterType": "uriFilter",
-            "parentProperty": "gvp:broaderPreferred",
-            "predicate": "crm:P7_took_place_at",
+            "parentProperty": "skos:broader",
+            "predicate": "(^crm:P24i_changed_ownership_through|crm:P30i_custody_transferred_through)/pm:production_place",
+            "facetLabelPredicate": "skos:prefLabel",
             "searchField": true,
             "selectAlsoSubconcepts": true,
             "selectAlsoSubconceptsButton": true,
-            "sortByPredicate": "crm:P7_took_place_at/skos:prefLabel",
+            "sortByPredicate": "(^crm:P24i_changed_ownership_through|crm:P30i_custody_transferred_through)/pm:production_place/skos:prefLabel",
             "type": "hierarchical"
         },
         "fromActor": {

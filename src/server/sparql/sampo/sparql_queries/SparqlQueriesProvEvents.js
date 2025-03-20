@@ -15,9 +15,6 @@ export const eventProperties = `
       BIND(CONCAT("crm:", REPLACE(STR(?type__id), "^.*\\\\/(.+)", "$1")) as ?type__prefLabel)
       BIND(?type__id as ?type__dataProviderUrl)
     }
-    UNION{
-      ?id crm:P9i_forms_part_of ?provenanceActivity__id .
-      BIND (str(?provenanceActivity__id) AS ?provenanceActivity__prefLabel) .}
     UNION
     {
       ?collection__id crm:P24i_changed_ownership_through|crm:P30i_custody_transferred_through ?id .

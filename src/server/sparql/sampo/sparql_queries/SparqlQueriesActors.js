@@ -11,9 +11,8 @@ export const actorProperties = `
     }
     UNION
     {
-      ?id crm:P1_is_identified_by ?name__id .
-      ?name__id crm:P2_has_type aat:300404650 .
-      ?name__id crm:P190_has_symbolic_content ?name__prefLabel .
+      ?id pm:identified_by ?name__id .
+      BIND(?name__id AS ?name__prefLabel)
     }
     UNION
     {
@@ -22,33 +21,28 @@ export const actorProperties = `
       BIND(?id AS ?type__dataProviderUrl)
     }
     UNION{
-      ?id crm:P2_has_type ?role__id .
-      ?role__id skos:prefLabel|rdfs:label ?role__prefLabel .
+      ?id pm:roles ?role__id .
+      BIND(?role__id AS ?role__prefLabel)
     }
     UNION{
-      ?id crm:P67i_is_referred_to_by ?gender__id .
-      ?gender__id crm:P2_has_type aat:300055147 .
-      ?gender__id crm:P190_has_symbolic_content ?gender__prefLabel .
+      ?id pm:gender ?gender__id .
+      BIND(?gender__id AS ?gender__prefLabel)
     }
     UNION{
-      ?id crm:P67i_is_referred_to_by ?nationality__id .
-      ?nationality__id crm:P2_has_type aat:300379842 .
-      ?nationality__id crm:P190_has_symbolic_content ?nationality__prefLabel .
+      ?id pm:nationality ?nationality__id .
+      BIND(?nationality__id AS ?nationality__prefLabel)
     }
     UNION{
-      ?id crm:P67i_is_referred_to_by ?biography__id .
-      ?biography__id crm:P2_has_type aat:300435422 .
-      ?biography__id crm:P190_has_symbolic_content ?biography__prefLabel .
+      ?id pm:biography ?biography__id .
+      BIND(?biography__id AS ?biography__prefLabel)
     }
     UNION{
-      ?id crm:P67i_is_referred_to_by ?remarks__id .
-      ?remarks__id crm:P2_has_type aat:300435415 .
-      ?remarks__id crm:P190_has_symbolic_content ?remarks__prefLabel .
+      ?id pm:remarks ?remarks__id .
+      BIND(?remarks__id AS ?remarks__prefLabel)
     }
     UNION{
-      ?id crm:P67i_is_referred_to_by ?profession__id .
-      ?profession__id crm:P2_has_type aat:300393201 .
-      ?profession__id crm:P190_has_symbolic_content ?profession__prefLabel .
+      ?id pm:profession ?profession__id .
+      BIND(?profession__id AS ?profession__prefLabel)
     }
 `
 

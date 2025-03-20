@@ -5,12 +5,13 @@ PM-Sampo offers a complete full-stack JavaScript application. PM-Sampo provides 
 
 Live demo is available at [pmsampo.demo.seco.cs.aalto.fi](https://pmsampo.demo.seco.cs.aalto.fi/en), integrating perspectives for provenance research use-case.
 
-PM-Sampo reuses the Sampo-UI design philosopy. [Sampo-UI](https://sampo-ui.demo.seco.cs.aalto.fi/en/) offers a comprehensive "starting base" of a full stack JavaScript web application. 
-Therefore it is not possible to include Sampo-UI as separate component into an existing 
-application. The 
-most convenient way to build a new user interface using Sampo-UI is to read the documentation 
-provided below, fork this repository, and start developing from there. For more information on SAMPO-UI visit: https://seco.cs.aalto.fi/tools/sampo-ui/
+PM-Sampo reuses the Sampo-UI design philosopy. [Sampo-UI](https://sampo-ui.demo.seco.cs.aalto.fi/en/) offers a comprehensive "starting base" of a full stack JavaScript web application. The most convenient way to build a new user interface using Sampo-UI is to read the documentation provided below, fork this repository, and start developing from there. For more information on SAMPO-UI visit: https://seco.cs.aalto.fi/tools/sampo-ui/
 
+## Data
+The data service is separated completely from the PM-Sampo demonstrator, following the SAMPO model principles
+only the external SPARQL endpoint is used to access the data within the portal. The SPARQL endpoint used in PM-Sampo is: [http://ldf.fi/pm-sampo/sparql](http://ldf.fi/pm-sampo/sparql)
+
+The data scheman and data extraction source code is available on: [https://github.com/Shoilee/PM-SampoDataManager](https://github.com/Shoilee/PM-SampoDataManager)
 
 ## Requirements
 

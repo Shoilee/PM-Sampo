@@ -33,9 +33,11 @@
   "facetBar": {
     "results": "Results",
     "filters": "Filters",
+    "exclusionFilters": "Exclusion filters",
     "activeFilters": "Active filters:",
     "removeAllFilters": "Remove all",
     "narrowDownBy": "Narrow down by",
+    "exclude": "Exclude values",
     "filterOptions": "Filter options",
     "filterByName": "Filter by name",
     "filterByBoundingBox": "Filter by bounding box",
@@ -296,6 +298,14 @@
         "provActivity": {
           "label": "Provenance Activity",
           "description": "Acqusition or Transfer of Custody Event forms parm of the Provenance Activity"
+        },
+        "excludeType": {
+          "label": "Exclude: Type",
+          "description": "Different type of objects based on the thesaurus NOT to be included in the results"
+        },
+        "excludeMaker": {
+          "label": "Exclude: Maker",
+          "description": "The creator of the object NOT to be included in the results"
         }
       }
     },

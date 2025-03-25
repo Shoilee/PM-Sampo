@@ -485,6 +485,30 @@
             "facetLabelPredicate":"rdfs:label",
             "sortBy": "instanceCount",
             "sortDirection": "desc"
+        },
+        "excludeType": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "crm:P2_has_type",
+            "facetLabelPredicate": "skos:prefLabel",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "ccrm:P2_has_type/skos:prefLabel",
+            "sortDirection": "desc"
+        },
+        "excludeMaker": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "pm:maker",
+            "facetLabelPredicate": "rdfs:label|skos:prefLabel",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "pm:maker/rdfs:label",
+            "sortDirection": "desc"
         }
     }
 }

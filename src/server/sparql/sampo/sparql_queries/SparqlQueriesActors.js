@@ -196,3 +196,28 @@ export const actorPlacesQuery = `
   }
   GROUP BY ?id ?lat ?long
 `
+
+export const networkLinksQuery = `
+SELECT DISTINCT (?actor as ?source) ?target (COUNT(DISTINCT ?collections) AS ?weight) (str(?weight) as ?prefLabel)
+  WHERE {
+  <FILTER>
+    ?acqusiition1 crm:P23_transferred_title_from ?actor .
+    ?collections crm:P24i_changed_ownership_through ?acqusiition1 .
+    ?acqusiition2 crm:P23_transferred_title_from ?target .
+    ?collections crm:P24i_changed_ownership_through ?acqusiition2 .
+    FILTER(?actor != ?target)
+} GROUP BY ?actor ?target
+`
+
+export const networkNodesFacetQuery = `
+ SELECT DISTINCT ?id ?prefLabel ?class ?href
+ WHERE {
+   VALUES ?class {crm:E21_Person crm:E74_Group crm:E39_Actor}
+    VALUES ?id { <ID_SET> }
+    ?id a ?class ;
+    rdfs:label ?_label .
+    
+    BIND(?_label AS ?prefLabel)
+    BIND(CONCAT("../../actors/page/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1")) AS ?href)
+  }
+`

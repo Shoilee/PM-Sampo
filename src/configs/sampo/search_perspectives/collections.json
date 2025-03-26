@@ -207,11 +207,11 @@
                     "intlTitle": "performancesOnATimeline",
                     "height": "70%",
                     "sparqlQuery": "fromActorQuery",
-                    "facetClass": "crm:E22_Human-Made_Object",
+                    "facetClass": "collections",
                     "filterTarget": "id",
                     "resultMapper": "createCorrespondenceChartData",
                     "resultMapperConfig": {
-                        "types": ["actors"],
+                        "types": ["actor"],
                         "lastLabel": "...",
                         "numberTopResults": 20
                     },
@@ -232,7 +232,7 @@
                 },
                 "fromActorDoubleLower": {
                     "height": "30%",
-                    "facetClass": "crm:E22_Human-Made_Object",
+                    "facetClass": "collections",
                     "filterTarget": "collections",
                     "sparqlQuery": "acquisitionPerformedQuery",
                     "resultMapper": "createCorrespondenceChartDataLower",
@@ -240,7 +240,7 @@
                         "fillEmptyValues": true
                     },
                     "createChartData": "createTopTimelineChartData2",
-                    "title": { "text": "Esitykset vuosittain", "align": "left" },
+                    "title": { "text": "Acquisition Timeline", "align": "left" },
                     "intlTitle": "annualPerformances",
                     "xaxis": {
                         "type": "datetime",

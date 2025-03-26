@@ -277,12 +277,12 @@ export const fromActorQuery = `
 `
 
 export const acquisitionPerformedQuery = `
-  SELECT DISTINCT (STR(?year) AS ?category) (COUNT(DISTINCT ?collection) AS ?collectionCount)
+  SELECT DISTINCT (STR(?year) AS ?category) (COUNT(DISTINCT ?collections) AS ?collectionCount)
   WHERE {
     <FILTER>
-    ?id a crm:E22_Human-Made_Object ;
-                pm:provenance_time_span/crm:P82a_begin_of_the_begin  ?_date ;
-    BIND(YEAR(xsd:date(?_date)) AS ?year)
+    ?collections pm:provenance_time_span/crm:P82a_begin_of_the_begin  ?startA .
+    BIND(YEAR(xsd:date(?startA)) AS ?year)
+    FILTER (?year >= 1700)
   }
   GROUP BY ?year ORDER BY ?year
 `

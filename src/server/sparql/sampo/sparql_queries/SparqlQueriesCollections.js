@@ -261,4 +261,22 @@ export const eventsByDecadeQuery = `
   GROUP BY ?category 
   ORDER BY ?category
 `
+export const placeVsAcquisitionQuery = `
+  SELECT *
+  WHERE {
+    <FILTER>
+    ?id a crm:E22_Human-Made_Object .
+    ?id dct:title ?prefLabel .
+    ?id pm:provenance_time_span/crm:P82a_begin_of_the_begin ?_date .
+  	BIND(year(xsd:dateTime(?_date)) AS ?startDate )
+    BIND(?startDate AS ?endDate )
+    OPTIONAL {
+      ?id pm:production_place/skos:exactMatch/wgs84:lat ?latPoint .
+      ?id pm:production_place/skos:exactMatch/wgs84:long ?longPoint .
+    }
 
+    BIND(COALESCE(?latPoint,?latM) AS ?lat)
+    BIND(COALESCE(?longPoint,?longM) AS ?long)
+  }
+  ORDER BY ASC(?startDate)
+`

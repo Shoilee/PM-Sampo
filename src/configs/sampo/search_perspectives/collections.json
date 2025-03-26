@@ -142,7 +142,7 @@
             }
         },
         "placesMsProducedHeatmap": {
-            "tabID": 3,
+            "tabID": 2,
             "component": "Deck",
             "tabPath": "production_places_heatmap",
             "tabIcon": "AddLocation",
@@ -154,6 +154,15 @@
             "heatmapRadiusPixels": 40,
             "heatmapThreshold": 0.025,
             "heatmapIntensity": 1
+        },
+        "placesAnimation": {
+            "tabID": 3,
+            "component": "TemporalMap",
+            "tabPath": "place_animation",
+            "tabIcon": "PlayArrow",
+            "sparqlQuery": "placeVsAcquisitionQuery",
+            "facetClass": "collections",
+            "filterTarget": "id"
         },
         "eventLineChart": {
             "tabID": 4,

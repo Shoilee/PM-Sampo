@@ -261,4 +261,117 @@ export const eventsByDecadeQuery = `
   GROUP BY ?category 
   ORDER BY ?category
 `
+export const collectionsByTypeQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?collection) as ?instanceCount)
+  WHERE {
+    <FILTER>
+    {
+      ?collection a crm:E22_Human-Made_Object .
+      ?collection crm:P2_has_type ?category .
+      ?category skos:prefLabel ?prefLabel .
+    }
+    UNION
+    {
+      ?collection a crm:E22_Human-Made_Object .
+      FILTER NOT EXISTS {
+        ?collection crm:P2_has_type [] .
+      }
+      BIND("Unknown" as ?category)
+      BIND("Unknown" as ?prefLabel)
+    }
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
 
+export const collectionsByMakerQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?collection) as ?instanceCount)
+  WHERE {
+    <FILTER>
+    {
+      ?collection a crm:E22_Human-Made_Object ;
+                  pm:maker  ?category .
+      ?category rdfs:label ?prefLabel .
+    }
+    UNION
+    {
+      ?collection a crm:E22_Human-Made_Object .
+      FILTER NOT EXISTS {
+        ?collection pm:maker [] .
+      }
+      BIND("Unknown" as ?category)
+      BIND("Unknown" as ?prefLabel)
+    }
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
+export const collectionsByAcquisitionTypeQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?collection) as ?instanceCount)
+  WHERE {
+    <FILTER>
+    {
+      ?collection a crm:E22_Human-Made_Object ;
+                  pm:provenance_type  ?category .
+      ?category rdfs:label ?prefLabel .
+    }
+    UNION
+    {
+      ?collection a crm:E22_Human-Made_Object .
+      FILTER NOT EXISTS {
+        ?collection pm:provenance_type [] .
+      }
+      BIND("Unknown" as ?category)
+      BIND("Unknown" as ?prefLabel)
+    }
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
+export const collectionsBytransferedTitleFromQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?collection) as ?instanceCount)
+  WHERE {
+    <FILTER>
+    {
+      ?collection a crm:E22_Human-Made_Object ;
+                  pm:provenance_from_actor  ?category .
+      ?category rdfs:label ?prefLabel .
+    }
+    UNION
+    {
+      ?collection a crm:E22_Human-Made_Object .
+      FILTER NOT EXISTS {
+        ?collection pm:provenance_from_actor [] .
+      }
+      BIND("Unknown" as ?category)
+      BIND("Unknown" as ?prefLabel)
+    }
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
+export const collectionsBytransferedTitleToQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?collection) as ?instanceCount)
+  WHERE {
+    <FILTER>
+    {
+      ?collection a crm:E22_Human-Made_Object ;
+                  crm:P24i_changed_ownership_through/crm:P22_transferred_title_to  ?category .
+      ?category rdfs:label ?prefLabel .
+    }
+    UNION
+    {
+      ?collection a crm:E22_Human-Made_Object .
+      FILTER NOT EXISTS {
+        ?collection crm:P24i_changed_ownership_through/crm:P22_transferred_title_to [] .
+      }
+      BIND("Unknown" as ?category)
+      BIND("Unknown" as ?prefLabel)
+    }
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`

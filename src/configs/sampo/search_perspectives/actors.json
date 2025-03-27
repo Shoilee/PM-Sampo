@@ -219,7 +219,7 @@
             "useNetworkAPI": true,
             "limit": 200,
             "optimize": 1.5,
-            "preprocess": "preprocessPageRank",
+            "preprocess": "preprocessPMSampo",
             "style": [
                 {
                     "selector": "node",

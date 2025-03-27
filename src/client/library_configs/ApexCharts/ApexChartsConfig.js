@@ -301,11 +301,11 @@ export const createClickableMarkersTopTimelineChartData = ({
       reversed: true,
       labels: {
         formatter: function (value) {
-          return (value >= 0) ? results.topTies[value] || '' : ''
+          return (value >= 0) ? (results.topTies[value] ? results.topTies[value].substring(0, 30) : '' ) : ''
         },
         minWidth: 150,
         maxWidth: 300,
-        align: 'right'
+        align: 'right',
       }
     },
     ...(grid) && { grid },

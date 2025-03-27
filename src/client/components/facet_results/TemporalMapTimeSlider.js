@@ -4,6 +4,8 @@ import PropTypes from 'prop-types'
 import Slider from '@mui/material/Slider'
 import { BaseControl } from 'react-map-gl'
 import moment from 'moment'
+import UndoIcon from '@mui/icons-material/Undo';
+import { Button } from '@mui/material'
 
 const blue = 'rgb(0, 126, 230)'
 const iOSBoxShadow =
@@ -181,7 +183,7 @@ class TemporalMapTimeSlider extends BaseControl {
 
   _sliderValueText = value => {
     const isoDate = this.props.dates[value]
-    return moment(isoDate).format('DD.MM.YYYY')
+    return isoDate
   }
 
   _render () {
@@ -234,14 +236,19 @@ class TemporalMapTimeSlider extends BaseControl {
 
             <div className='row'>
               <div className='control-buttons row'>
-                <div className='button' onClick={this.handleResetSlider}>
+               {/* <div className='button' onClick={this.handleResetSlider}>
                   <i className='icon undo' />
                 </div>
                 <div className='button' onClick={this.handleAnimation}>
                   <i className={`icon ${playOrPause}`} />
-                </div>
-              </div>
-
+                </div> */}
+              <button onClick={this.handleResetSlider}>
+                REWIND BACK
+              </button>
+              <button onClick={this.handleAnimation}>
+                PLAY / PAUSE
+              </button>
+               </div>
               <div className='slider column'>
                 {/* <div className="bar-chart-container">
                   <BarChart memory={memory} />

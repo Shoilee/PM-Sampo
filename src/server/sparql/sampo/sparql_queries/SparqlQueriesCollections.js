@@ -262,3 +262,27 @@ export const eventsByDecadeQuery = `
   ORDER BY ?category
 `
 
+export const fromActorQuery = `
+  SELECT DISTINCT ?id ?actor__label (xsd:date(?_date) AS ?date) (year(xsd:date(?_date)) AS ?year) ?type ?collections_label ?collections_url
+  WHERE {
+    <FILTER>
+    ?id a crm:E22_Human-Made_Object ;
+          dct:title ?collections_label ;
+          pm:provenance_time_span/crm:P82a_begin_of_the_begin ?_date ;
+          pm:provenance_from_actor ?actor ;
+    BIND(CONCAT("/${perspectiveID}/page/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1")) AS ?collections_url)
+    ?actor rdfs:label ?actor__label .
+    BIND("actor" AS ?type)
+  }
+`
+
+export const acquisitionPerformedQuery = `
+  SELECT DISTINCT (STR(?year) AS ?category) (COUNT(DISTINCT ?collections) AS ?collectionsCount)
+  WHERE {
+    <FILTER>
+    ?collections pm:provenance_time_span/crm:P82a_begin_of_the_begin  ?startA .
+    BIND(YEAR(xsd:date(?startA)) AS ?year)
+    FILTER (?year >= 1700)
+  }
+  GROUP BY ?year ORDER BY ?year
+`

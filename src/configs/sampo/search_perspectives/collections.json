@@ -194,8 +194,105 @@
                 }
             }
         },
-        "fromActorTimeline": {
+        "collectionsByProperty": {
             "tabID": 5,
+            "component": "ApexCharts",
+            "doNotRenderOnMount": true,
+            "tabPath": "pie_chart",
+            "tabIcon": "PieChart",
+            "facetClass": "collections",
+            "dropdownForResultClasses": true,
+            "defaultResultClass": "collectionsByType",
+            "resultClasses": {
+                "collectionsByMaker": {
+                    "sparqlQuery": "collectionsByMakerQuery",
+                    "filterTarget": "collection",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": 0.01,
+                    "dropdownForChartTypes": true,
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                },
+                "collectionsByType": {
+                    "sparqlQuery": "collectionsByTypeQuery",
+                    "filterTarget": "collection",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": 0.01,
+                    "dropdownForChartTypes": true,
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                },
+                "collectionsByAcquisitionType": {
+                    "sparqlQuery": "collectionsByAcquisitionTypeQuery",
+                    "filterTarget": "collection",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": 0.01,
+                    "dropdownForChartTypes": true,
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                },
+                "collectionsBytransferedTitleFrom": {
+                    "sparqlQuery": "collectionsBytransferedTitleFromQuery",
+                    "filterTarget": "collection",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": 0.01,
+                    "dropdownForChartTypes": true,
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                },
+                "collectionsBytransferedTitleTo": {
+                    "sparqlQuery": "collectionsBytransferedTitleToQuery",
+                    "filterTarget": "collection",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": 0.01,
+                    "dropdownForChartTypes": true,
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                }
+            }
+        },
+        "fromActorTimeline": {
+            "tabID": 6,
             "component": "ApexChartsDouble",
             "tabPath": "acqusition_timeseries",
             "tabIcon": "Tune",
@@ -268,7 +365,7 @@
             }
         },
         "csvExport": {
-            "tabID": 6,
+            "tabID": 7,
             "tabPath": "csv_export",
             "tabIcon": "CloudDownload",
             "component": "ExportCSV",

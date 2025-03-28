@@ -79,6 +79,7 @@
     "table": "table",
     "acqusition_timeseries": "Actor-Acqusition timeseries",
     "csv_export": "csv export",
+    "pie_chart": "statistics",
     "provenance": "provenance",
     "histEvents": "related historical events",
     "actors": "related actors",
@@ -113,6 +114,22 @@
     "sentCount": "Sent",
     "receivedCount": "Received",
     "allCount": "All"
+  },
+  "apexCharts": {
+    "grouping": "Grouping:",
+    "by": "by",
+    "property": "X-axis:",
+    "chartType": "Chart type:",
+    "pie": "pie chart",
+    "bar": "bar chart",
+    "other": "other",
+    "resultClasses": {
+      "collectionsByType": "type",
+      "collectionsByMaker": "maker",
+      "collectionsByAcquisitionType" : "provenance type" ,
+      "collectionsBytransferedTitleFrom": "transfered title from",
+      "collectionsBytransferedTitleTo": "transfered title to"
+    }
   },
   "exportToYasgui": "open the result table query in yasgui sparql editor",
   "openInLinkedDataBrowser": "open in linked data browser",

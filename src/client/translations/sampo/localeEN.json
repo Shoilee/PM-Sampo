@@ -77,8 +77,9 @@
   },
   "tabs": {
     "table": "table",
-    "acqusition_timeseries": "Actor-Acqusition timeseries",
     "csv_export": "csv export",
+    "place_animation": "Origin by Acquisition Year",
+    "acqusition_timeseries": "Actor-Acqusition timeseries",
     "pie_chart": "statistics",
     "provenance": "provenance",
     "histEvents": "related historical events",

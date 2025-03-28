@@ -50,7 +50,7 @@ class TemporalMap extends Component {
       viewport: {
         longitude: 26.91,
         latitude: 62.326,
-        zoom: 5.5,
+        zoom: 3,
         pitch: 0,
         bearing: 0
       },
@@ -67,6 +67,15 @@ class TemporalMap extends Component {
       facetClass: this.props.facetClass
     })
     this.setState({ mounted: true })
+    this.props.animateMap([0]) // reset time slider
+  }
+
+  getArrayRange = (start, stop, step) => {
+    const range = Array.from(
+    { length: (stop - start) / step + 1 },
+    (value, index) => start + index * step
+    )
+    return range
   }
 
   componentDidUpdate = prevProps => {
@@ -77,9 +86,12 @@ class TemporalMap extends Component {
         .sort()
       const startDate = uniqueDates[0]
       const endDate = uniqueDates[uniqueDates.length - 1]
-      const range = moment.range(startDate, endDate)
-      let days = Array.from(range.by('day'))
-      days = days.map(m => m.format('YYYY-MM-DD'))
+      //const range = moment.range(startDate, endDate)
+      //console.log(startDate)
+      //console.log(endDate)
+      //let days = Array.from(range.by('day'))
+      //days = days.map(m => m.format('YYYY-MM-DD'))
+      let days = this.getArrayRange(parseInt(startDate), parseInt(endDate), 1)
       const sliderValue = this.props.animationValue[0]
       const filteredData = this._filterData(sliderValue, this.props.results, days)
       this.setState({
@@ -87,6 +99,7 @@ class TemporalMap extends Component {
         memory: this.props.results,
         dates: days
       })
+      this.props.animateMap([0]) // reset time slider
     }
 
     if (prevProps.animationValue !== this.props.animationValue) {
@@ -110,14 +123,24 @@ class TemporalMap extends Component {
   };
 
   _filterData = (sliderValue, data, dates) => {
-    const animationCurrentDate = Date.parse(dates[sliderValue])
+    const animationCurrentDate = dates[sliderValue]
+    // console.log(dates)
     const newData = data.filter(value => {
-      return Date.parse(value.startDate) <= animationCurrentDate
+      return value.startDate <= animationCurrentDate
     })
+    // console.log(value.startDate)
+    // console.log(animationCurrentDate)
+    let newInterval = 0
+    if (this.props.resultClass == 'creationYearFindPlacesAnimation') {
+      newInterval = 20
+    }
     newData.map(value => {
-      const startDate = Date.parse(value.startDate)
-      const range = moment.range(startDate, animationCurrentDate)
-      if (range.diff('days') >= 2) {
+      const startDate = value.startDate
+      //const range = moment.range(startDate, animationCurrentDate)
+      //if (range.diff('days') >= 2) {
+      //console.log('start' + startDate)
+      //console.log(Math.abs(startDate - animationCurrentDate))
+      if (Math.abs(startDate - animationCurrentDate) > newInterval)  {
         value.isNew = false
       } else {
         value.isNew = true
@@ -135,18 +158,8 @@ class TemporalMap extends Component {
           {hoveredObject.prefLabel}
         </Typography>
         <Typography>
-          {intl.get('perspectives.battles.temporalMap.municipality')}: {hoveredObject.greaterPlace}
+          {hoveredObject.startDate}
         </Typography>
-        <Typography>
-          {intl.get('perspectives.battles.temporalMap.startDate')}: {moment(hoveredObject.startDate).format('DD.MM.YYYY')}
-        </Typography>
-        <Typography>
-          {intl.get('perspectives.battles.temporalMap.endDate')}: {moment(hoveredObject.endDate).format('DD.MM.YYYY')}
-        </Typography>
-        {has(hoveredObject, 'units') &&
-          <Typography>
-            {intl.get('perspectives.battles.temporalMap.units')}: {hoveredObject.units}
-          </Typography>}
       </Paper>
     )
   }
@@ -161,8 +174,8 @@ class TemporalMap extends Component {
         stroked: true,
         filled: true,
         radiusScale: 15,
-        radiusMinPixels: 8,
-        radiusMaxPixels: 100,
+        radiusMinPixels: 3,
+        radiusMaxPixels: 30,
         lineWidthMinPixels: 1,
         getPosition: d => [+d.long, +d.lat],
         getFillColor: d => d.isNew ? [255, 0, 0] : [0, 0, 0],
@@ -184,6 +197,15 @@ class TemporalMap extends Component {
     const { viewport, memory, dates } = this.state
     const { classes, animateMap, portalConfig } = this.props
     const { mapboxAccessToken, mapboxStyle } = portalConfig.mapboxConfig
+    // console.log(this.props.resultClass)
+    let duration = portalConfig.temporalMapConfig.sliderDuration
+    if (this.props.resultClass == "creationYearFindPlacesAnimation") {
+      duration =  {
+            "halfSpeed": 200,
+            "normalSpeed": 100,
+            "doubleSpeed": 50
+        }
+    }
     return (
       <div id='temporal-map-root' ref={this.mapElementRef} className={classes.root}>
         <ReactMapGL
@@ -198,10 +220,6 @@ class TemporalMap extends Component {
         >
           <div className={classes.navigationContainer}>
             <NavigationControl />
-            <FullscreenControl
-              className={classes.fullscreenButton}
-              container={document.querySelector('temporal-map-root')}
-            />
           </div>
           <DeckGL
             layers={this._renderLayers()}
@@ -213,7 +231,8 @@ class TemporalMap extends Component {
             dates={dates}
             animateMap={animateMap}
             initialValue={this.props.animationValue[0]}
-            sliderDuration={portalConfig.temporalMapConfig.sliderDuration}
+            sliderDuration={duration}
+            resultClass={this.props.resultClass}
           />
           {this._renderTooltip()}
         </ReactMapGL>

@@ -184,14 +184,13 @@
     "tooManyResults": "More than 500 results, please use clustered map or heatmap"
   },
   "instancePageGeneral": {
-    "introduction": "<p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"> This landing page provides a human-readable summary of the data points that link to this {entity}. The data included in this summary reflect only those data points used in the PM-SAMPO Portal. Click the Open in Linked Data Browser on button on the Export tab to view the complete set of classes and properties linked to this record. </p>",
-    "repetition": "<h6 class=\"MuiTypography-root MuiTypography-h6\"> Repetition of data </h6> <p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"> The same or similar data may appear within a single data field multiple times. This repetition occurs due to the merging of multiple records from different datasets to create the PM data. </p>"
+    "introduction": "<p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"> This landing page provides a human-readable summary of the metadata that link to this {entity}. The data included in this summary reflect only those data points used in the PM-SAMPO Portal. Click the Open in Linked Data Browser on button on the Export tab to view the complete set of classes and properties linked to this record. </p>"
   },
   "deckGlMap": {
     "arcColouring": "Arc colouring:",
     "showMoreInformation": "Click to show more information.",
     "placesMsMigrations": {
-      "legendTitle": "Arc colouring",
+      "legendTitle": "Arc colouFring",
       "legendFrom": "Manuscript production place",
       "legendTo": "Last known location",
       "from": "Production place:",

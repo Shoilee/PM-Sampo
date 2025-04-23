@@ -109,7 +109,7 @@
         "yasguiParams": {
             "contentTypeConstruct": "text/turtle",
             "contentTypeSelect": "application/sparql-results+json",
-            "endpoint": "https://api.colonialcollections.nl/datasets/nmvw/collection-archives/sparql",
+            "endpoint": "http://ldf.fi/pm-sampo/sparql",
             "requestMethod": "POST",
             "tabTitle": "Exported query"
         }

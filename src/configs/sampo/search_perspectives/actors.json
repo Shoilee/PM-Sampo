@@ -66,7 +66,7 @@
                               "numberedList": false
                             },
                             {
-                                "id": "timeSpan",
+                                "id": "histEventTimeSpan",
                                 "valueType": "object",
                                 "makeLink": false,
                                 "externalLink": false,
@@ -75,7 +75,7 @@
                                 "minWidth": 250
                             },
                             {
-                                "id": "description",
+                                "id": "histEventDescription",
                                 "valueType": "object",
                                 "makeLink": false,
                                 "externalLink": false,
@@ -166,7 +166,7 @@
                         "fetchResultsWhenMounted": true,
                         "tabPath": "actors",
                         "tabIcon": "CalendarViewDay",
-                        "sparqlQuery": "actorActorsQuery",
+                        "sparqlQuery": "actorHistoricatEventsQuery",
                         "filterTarget": "histEvents",
                         "properties": [
                             {
@@ -201,7 +201,7 @@
                               "externalLink": false,
                               "sortValues": true,
                               "numberedList": false
-                          }
+                            }
                         ]
                     }
                 }

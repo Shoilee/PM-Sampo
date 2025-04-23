@@ -282,6 +282,36 @@
             "onlyOnInstancePage": true
         },
         {
+            "id": "type",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 250,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "materials",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 250,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "intendedFor",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 250,
+            "onlyOnInstancePage": true
+        },
+        {
             "id": "productionPlace",
             "valueType": "object",
             "makeLink": true,
@@ -357,7 +387,7 @@
             "facetLabelPredicate": "skos:prefLabel",
             "sortButton": true,
             "sortBy": "instanceCount",
-            "sortByPredicate": "ccrm:P2_has_type/skos:prefLabel",
+            "sortByPredicate": "crm:P2_has_type/skos:prefLabel",
             "sortDirection": "desc"
         },
         "maker": {
@@ -495,7 +525,7 @@
             "searchField": true,
             "sortButton": true,
             "sortBy": "instanceCount",
-            "sortByPredicate": "ccrm:P2_has_type/skos:prefLabel",
+            "sortByPredicate": "crm:P2_has_type/skos:prefLabel",
             "sortDirection": "desc"
         },
         "excludeMaker": {
@@ -508,6 +538,67 @@
             "sortButton": true,
             "sortBy": "instanceCount",
             "sortByPredicate": "pm:maker/rdfs:label",
+            "sortDirection": "desc"
+        },
+        "excludePlaceofOrigin": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "pm:production_place",
+            "facetLabelPredicate": "rdfs:label|skos:prefLabel",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "pm:production_place/skos:prefLabel",
+            "sortDirection": "desc"
+        },
+        "excludeAcquisitionType": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "pm:provenance_type",
+            "facetLabelPredicate": "rdfs:label",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "pm:provenance_type/rdfs:label",
+            "sortDirection": "desc"
+        },
+        "excludeTransferredTitleFrom": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "pm:provenance_from_actor",
+            "facetLabelPredicate": "rdfs:label",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "pm:provenance_from_actor/rdfs:label",
+            "sortDirection": "desc"
+        },
+        "excludeTransferredTitleTo": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "crm:P24i_changed_ownership_through/crm:P22_transferred_title_to",
+            "facetLabelPredicate": "rdfs:label",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "crm:P24i_changed_ownership_through/crm:P22_transferred_title_to",
+            "sortDirection": "desc"
+        },
+        "excludeHistoricalEvents": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "pm:related_to/crm:P1_is_identified_by",
+            "facetLabelPredicate": "crm:P190_has_symbolic_content",
+            "facetValueFilter": "?id crm:P2_has_type aat:300404650 .",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "pm:related_to",
             "sortDirection": "desc"
         }
     }

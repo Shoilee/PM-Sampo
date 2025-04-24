@@ -84,7 +84,7 @@
     "provenance": "provenance",
     "histEvents": "related historical events",
     "actors": "related actors",
-    "collections": "related collections",
+    "collections": "related objects",
     "map": "map",
     "production_places": "production places",
     "production_places_heatmap": "production heatmap",
@@ -215,7 +215,7 @@
       }
     },
     "collections": {
-      "label": "Collections",
+      "label": "Objects",
       "facetResultsType": "collections",
       "shortDescription": "Object description",
       "longDescription": "<p class=\"MuiTypography-root MuiTypography-body1 MuiTypography-paragraph\"> Use this perspective to access data related to Objects directly. See <a href=\"/instructions\">instructions</a> for using the filters. The result view can be selected using the tabs: </p> <ul class=\"MuiTypography-root MuiTypography-body1\"> <li> <strong>TABLE</STRONG> view gives you a list of specific objects, based on the filter selected; if NO filter is selected, it gives you all the objects. </li> <li> <strong>PRODUCTION PLACE</strong> view visualizes the connection between OBJECTS and the places where they were produced. </li>  <li> <strong>PRODUCTION HEATMAP</strong> highlights the places with most objects produced. </li> <li> <strong>ORIGIN BY ACQUISITION YEAR</strong> tab shows from where objects originated from acquired by the museum each year from 1802 to 2023. </li> <li> <strong> ACQUISITION DATES</strong> shows how many objects per year has been acquired. </li> <li> <strong> STATISTICS </strong> presents the attribute values of the seleted objects statistically as a pie or a bar chart. The following attribute categories can be selected: maker, type, provenace type, transferred title from and transferred title to. </li> <li> <strong>ACTOR-ACQUISITION TIMELINES</strong> projects actor top 20 actors with highest number of collections along with overall object acquisition timelines .</li> <li> <strong> CSV EXPORT</strong> allows to download the filtered result as csv file. </li><li> <strong>EXPORT</strong> the SPARQL query used to generate the result table view into YASGUI query editor. </li> </ul>",

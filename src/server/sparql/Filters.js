@@ -404,11 +404,16 @@ const generateDisjunctionForUriFilter = ({
     ? `${predicate}/${parentProperty}*`
     : predicate
   const filterTriple = `?${filterTarget} ${predicateModified} ?${facetID}Filter .`
+
+  const excludeValues = facetID.includes("exclude")
+
   if (filterTripleFirst) {
     s += `
+    ${ excludeValues ? 'FILTER NOT EXISTS { ' : ''}
     VALUES ?${facetID}Filter { ${valuesStr} }
     `
-    s += filterTriple
+    s += filterTriple + `
+    ${ excludeValues ? ' }' : '' }`
   }
   if (inverse) {
     s += `
@@ -420,9 +425,11 @@ const generateDisjunctionForUriFilter = ({
   }
   if (!inverse && !filterTripleFirst) {
     s += `
+    ${ excludeValues ? 'FILTER NOT EXISTS { ' : ''}
     VALUES ?${facetID}Filter { ${valuesStr} }
     `
-    s += filterTriple
+    s += filterTriple + `
+    ${ excludeValues ? ' }' : '' }`
   }
   return s
 }

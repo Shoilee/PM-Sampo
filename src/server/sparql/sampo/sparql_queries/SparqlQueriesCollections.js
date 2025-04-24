@@ -31,6 +31,21 @@ export const collectionProperties = `
   }
   UNION
   {
+    ?id crm:P2_has_type ?type__id.
+    ?type__id skos:prefLabel ?type__prefLabel .
+  } 
+  UNION
+  {
+    ?id pm:materials_used ?materials__id.
+    ?materials__id skos:prefLabel ?materials__prefLabel .
+  } 
+  UNION
+  {
+    ?id pm:intended_use ?intendedFor__id.
+    ?intendedFor__id rdfs:label ?intendedFor__prefLabel .
+  } 
+  UNION
+  {
     ?id pm:maker ?maker__id.
     ?maker__id rdfs:label ?maker__prefLabel 
     BIND(CONCAT("/actors/page/", REPLACE(STR(?maker__id), "^.*\\\\/(.+)", "$1")) AS ?maker__dataProviderUrl)

@@ -166,7 +166,7 @@
                         "fetchResultsWhenMounted": true,
                         "tabPath": "actors",
                         "tabIcon": "CalendarViewDay",
-                        "sparqlQuery": "actorHistoricatEventsQuery",
+                        "sparqlQuery": "actorActorsQuery",
                         "filterTarget": "histEvents",
                         "properties": [
                             {

@@ -136,12 +136,10 @@ export const actorCollectionsQuery = `
     }
     UNION
     {
-      ?object__id crm:P65_shows_visual_item ?i_BNODE .
-      ?i_BNODE a crm:E36_Visual_Item .
-      ?i_BNODE <https://linked.art/ns/terms/digitally_shown_by> ?object__image__id .
-      ?object__image__id <https://linked.art/ns/terms/access_point> ?object__image__url .
+      ?object__id pm:shown_by ?object__image__id .
+      BIND (?object__image__id AS ?object__image__url) .
     }
-  }LIMIT 10
+  }
 `
 
 export const actorActorsQuery = `
@@ -164,7 +162,7 @@ export const actorActorsQuery = `
     ?object__collection__id crm:P24i_changed_ownership_through ?acqusiition2 .
     FILTER(?id != ?object__id)
 
-    ?object__collection__id dct:title | rdfs:label ?object__collection__prefLabel .
+    OPTIONAL {?object__collection__id dct:title | rdfs:label ?object__collection__prefLabel .}
     BIND(CONCAT("/collections/page/", REPLACE(STR(?object__collection__id), "^.*\\\\/(.+)", "$1")) AS ?object__collection__dataProviderUrl) 
 
     BIND(?object__id AS ?object__uri__id)
@@ -181,7 +179,7 @@ export const actorActorsQuery = `
       BIND(?object__type__id as ?object__type__dataProviderUrl)
       BIND(REPLACE(STR(?object__type__id), "^.*/(.*)$", "$1") as ?object__type__prefLabel)
     }
-  }LIMIT 10
+  }
 `
 
 export const actorPlacesQuery = `

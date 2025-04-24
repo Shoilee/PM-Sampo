@@ -400,6 +400,7 @@
             "facetType": "list",
             "filterType": "uriFilter",
             "predicate": "pm:roles",
+            "literal": true,
             "searchField": false,
             "sortButton": false,
             "sortBy": "instanceCount",

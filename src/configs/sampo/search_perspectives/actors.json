@@ -399,6 +399,7 @@
             "containerClass": "ten",
             "facetType": "list",
             "filterType": "uriFilter",
+            "literal": true,
             "predicate": "pm:roles",
             "searchField": false,
             "sortButton": false,

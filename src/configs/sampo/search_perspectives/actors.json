@@ -406,6 +406,18 @@
             "sortBy": "instanceCount",
             "sortByPredicate": "rdf:type",
             "sortDirection": "desc"
+        },
+        "name": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "literal": true,
+            "predicate": "pm:identified_by",
+            "searchField": true,
+            "sortButton": false,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "rdf:type",
+            "sortDirection": "desc"
         }
     }
 }

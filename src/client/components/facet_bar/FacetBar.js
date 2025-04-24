@@ -307,29 +307,74 @@ class FacetBar extends React.Component {
 
   renderFacets = ({ facets, someFacetIsFetching, propertiesTranslationsID }) => {
     const { screenSize } = this.props
+    const hasExclusions = facets && Object.keys(facets).filter((id) => id.includes("exclude")).length > 0
     if (screenSize === 'xs' || screenSize === 'sm') {
       // note: some Accordion styles defined in theme (App.js)
       return (
-        <Accordion>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls='panel1a-content'
-            id='panel1a-header'
-          >
-            <Typography variant={this.getTypographyVariant()}>{intl.get('facetBar.filters')}</Typography>
-          </AccordionSummary>
-          <AccordionDetails />
-          {facets && Object.keys(facets).map(facetID => {
-            if (facetID === 'datasetSelector') { return null }
-            if (!has(facets[facetID], 'filterType')) { return null }
-            return this.renderFacet({ facetID, someFacetIsFetching, propertiesTranslationsID })
-          })}
-        </Accordion>
+        <>
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls='panel1a-content'
+              id='panel1a-header'
+            >
+              <Typography variant={this.getTypographyVariant()}>{intl.get('facetBar.filters')}</Typography>
+            </AccordionSummary>
+            <AccordionDetails />
+            {facets && Object.keys(facets).filter((id) => !id.includes("exclude")).map(facetID => {
+              if (facetID === 'datasetSelector') { return null }
+              if (!has(facets[facetID], 'filterType')) { return null }
+              return this.renderFacet({ facetID, someFacetIsFetching, propertiesTranslationsID })
+            })}
+          </Accordion>
+          {hasExclusions ?
+            <Accordion>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls='panel1a-content'
+                id='panel1a-header'
+              >
+                <Typography variant={this.getTypographyVariant()}>{intl.get('facetBar.exclusionFilters')}</Typography>
+              </AccordionSummary>
+              <AccordionDetails />
+              {facets && Object.keys(facets).filter((id) => id.includes("exclude")).map(facetID => {
+                if (facetID === 'datasetSelector') { return null }
+                if (!has(facets[facetID], 'filterType')) { return null }
+                return this.renderFacet({ facetID, someFacetIsFetching, propertiesTranslationsID })
+              })}
+            </Accordion>
+          : ''}
+        </>
       )
     } else {
       return (
         <>
-          {facets && Object.keys(facets).map(facetID => {
+          {facets && Object.keys(facets).filter((id) => !id.includes("exclude")).map(facetID => {
+            if (facetID === 'datasetSelector') { return null }
+            if (!has(facets[facetID], 'filterType')) { return null }
+            return this.renderFacet({ facetID, someFacetIsFetching, propertiesTranslationsID })
+          })}
+          {hasExclusions ?
+            <Paper
+              sx={theme => ({
+                padding: theme.spacing(1),
+                borderBottomLeftRadius: 0,
+                borderBottomRightRadius: 0
+              })}
+            >
+            <Typography
+              component='h2'
+              variant={this.getTypographyVariant()}
+              sx={{
+                fontWeight: 'bold',
+                fontSize: '1rem'
+              }}
+            >
+              {intl.get('facetBar.exclude')}:
+            </Typography>
+            </Paper>
+          : ''}
+          {facets && Object.keys(facets).filter((id) => id.includes("exclude")).map(facetID => {
             if (facetID === 'datasetSelector') { return null }
             if (!has(facets[facetID], 'filterType')) { return null }
             return this.renderFacet({ facetID, someFacetIsFetching, propertiesTranslationsID })

@@ -33,9 +33,11 @@
   "facetBar": {
     "results": "Results",
     "filters": "Filters",
+    "exclusionFilters": "Exclusion filters",
     "activeFilters": "Active filters:",
     "removeAllFilters": "Remove all",
     "narrowDownBy": "Narrow down by",
+    "exclude": "Exclude values",
     "filterOptions": "Filter options",
     "filterByName": "Filter by name",
     "filterByBoundingBox": "Filter by bounding box",
@@ -314,6 +316,34 @@
         "provActivity": {
           "label": "Provenance Activity",
           "description": "Acqusition or Transfer of Custody Event forms parm of the Provenance Activity"
+        },
+        "excludeType": {
+          "label": "Exclude: Type",
+          "description": "Different type of objects based on the thesaurus NOT to be included in the results"
+        },
+        "excludeMaker": {
+          "label": "Exclude: Maker",
+          "description": "The creator of the object NOT to be included in the results"
+        },
+        "excludePlaceofOrigin": {
+          "label": "Exclude: Place of Origin",
+          "description": "The place of origin for the object NOT to be included in the results"
+        },
+        "excludeAcquisitionType": {
+          "label": "Exclude: Acquisition Type",
+          "description": "The objects of acqusition type NOT to be included in the results"
+        },
+        "excludeTransferredTitleFrom": {
+          "label": "Exclude: Transferred Title From",
+          "description": "The objects, transferred title from a actor who is NOT to be included in the results"
+        },
+        "excludeTransferredTitleTo": {
+          "label": "Exclude: Transferred Title To",
+          "description": "The objects, transferred title to a actor who is NOT to be included in the results"
+        },
+        "excludeHistoricalEvents": {
+          "label": "Exclude: Connected Historical Events",
+          "description": "The objects connected historical event NOT to be included in the results"
         }
       }
     },

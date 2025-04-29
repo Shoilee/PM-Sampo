@@ -338,13 +338,13 @@ const generateUriFilter = ({
     }
     UNION 
     {
-      ${generateMissingValueBlock({ predicate, filterTarget })}
+      ${generateMissingValueBlock({ predicate, filterTarget, facetID })}
     }
     `
   }
   if (!inverse && modifiedValues.length === 0 && indexOfUnknown !== -1) {
     s = `
-      ${generateMissingValueBlock({ predicate, filterTarget })}
+      ${generateMissingValueBlock({ predicate, filterTarget, facetID })}
     `
   }
   return s
@@ -362,13 +362,14 @@ export const handleUnknownValue = values => {
   }
 }
 
-const generateMissingValueBlock = ({ predicate, filterTarget }) => {
+const generateMissingValueBlock = ({ predicate, filterTarget, facetID }) => {
+  const excludeValues = facetID.includes("exclude")
   return ` 
     VALUES ?facetClass { <FACET_CLASS> }
     ?${filterTarget} <FACET_CLASS_PREDICATE> ?facetClass .
-    FILTER NOT EXISTS {
+    ${excludeValues ? '' : 'FILTER NOT EXISTS {'}
       ?${filterTarget} ${predicate} [] .
-    }
+    ${excludeValues ? '' : '}'}
   `
 }
 

@@ -166,7 +166,7 @@
                         "fetchResultsWhenMounted": true,
                         "tabPath": "actors",
                         "tabIcon": "CalendarViewDay",
-                        "sparqlQuery": "actorHistoricatEventsQuery",
+                        "sparqlQuery": "actorActorsQuery",
                         "filterTarget": "histEvents",
                         "properties": [
                             {
@@ -399,9 +399,22 @@
             "containerClass": "ten",
             "facetType": "list",
             "filterType": "uriFilter",
+            "literal": true,
             "predicate": "pm:roles",
             "literal": true,
             "searchField": false,
+            "sortButton": false,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "rdf:type",
+            "sortDirection": "desc"
+        },
+        "name": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "literal": true,
+            "predicate": "pm:identified_by",
+            "searchField": true,
             "sortButton": false,
             "sortBy": "instanceCount",
             "sortByPredicate": "rdf:type",
